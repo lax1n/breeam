@@ -1,11 +1,19 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from pages.models import Genre
+from pages.models import Slide
+
 
 # Create your views here.
 
 
-def show_genres(request):
-    return render_to_response("genres.html",
-                              {'nodes': Genre.objects.all()},
+def index(request):
+    return render_to_response("index.html")
+
+
+def show_slide(request, slug):
+    slide = get_object_or_404(Slide, slug=slug)
+    return render_to_response("slide.html",
+                              {'slide': slide,
+                               'slide_prev': slide.get_previous_sibling,
+                               'slide_next': slide.get_next_sibling},
                               context_instance=RequestContext(request))

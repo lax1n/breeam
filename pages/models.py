@@ -3,11 +3,18 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 # Create your models here.
 
-class Genre(MPTTModel):
-    name = models.CharField(max_length=50, unique=True)
+
+class Slide(MPTTModel):
+    title = models.CharField(max_length=50, unique=True, null=False)
+    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to='media/images/slide_images/', default='media/images/slide_images/default.png')
     parent = TreeForeignKey('self', null=True, related_name='children', db_index=True)
 
-    class MPTTMeta:
-        order_insertion_by = ['name']
+    def __str__(self):
+        return self.title
 
 
+class SlideButton(models.Model):
+    slide = models.ForeignKey(Slide)
+    name = models.CharField(max_length=20, unique=False)
+    url = models.URLField(max_length=100, unique=False)

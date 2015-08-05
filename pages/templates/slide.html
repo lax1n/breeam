@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Current Slide Title -->
+    <h2>{{ slide.title }} </h2>
+    <!-- Current Slide Image -->
+    <img src="/{{ slide.image }}" />
+    {% if slide_prev != None %}
+        <!-- Link for the previous slide slide -->
+        <a href={{ slide_prev.slug }}>Previous Slide</a>
+    {% endif %}
+    {% if slide_next != None %}
+        <!-- Link for the next slide -->
+        <a href={{ slide_next.slug }}>Next Slide</a>
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>
