@@ -7,7 +7,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 class Slide(MPTTModel):
     title = models.CharField(max_length=50, unique=True, null=False)
     slug = models.SlugField(unique=True)
-    image = models.FileField(upload_to='images/slide_images/', default='images/slide_images/default.png')
+    image = models.FileField(upload_to='images/slide_images/', default='images/slide_images/default.jpg')
     parent = TreeForeignKey('self', null=True, related_name='children', db_index=True)
 
     def __str__(self):
