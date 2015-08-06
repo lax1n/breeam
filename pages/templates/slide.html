@@ -1,22 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <!-- Current Slide Title -->
-    <h2>{{ slide.title }} </h2>
-    <!-- Current Slide Image -->
-    <img src="/{{ slide.image }}" />
-    {% if slide_prev != None %}
-        <!-- Link for the previous slide slide -->
-        <a href={{ slide_prev.slug }}>Previous Slide</a>
-    {% endif %}
-    {% if slide_next != None %}
-        <!-- Link for the next slide -->
-        <a href={{ slide_next.slug }}>Next Slide</a>
-    {% endif %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="../media/css/mainStyles.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
+
 <body>
 
+<section class="mainContainer container-fluid">
+
+	<header class="topDecor row">
+    	<div class="col-md-4">
+        	<img src="../media/images/breamImgs_coffeeCup.svg" class="img-responsive">
+        </div>
+        <div class="col-md-4">
+        	<img src="../media/images/breamImgs_smartPhone.svg" class="img-responsive">
+        </div>
+        <div class="col-md-4">
+            <img src="../media/images/breamImgs_notePinkPencil.svg" class="img-responsive">
+        </div>
+    </header>
+    
+    <!-- Current Slide Title -->
+    <h2>{{ slide.title }} </h2>
+    <section class="centerContent row">
+            
+            <div class="figures row">
+            </div> <!-- figure -->
+			<div class="figures row">
+            	<div class="col-md-1"></div>
+                <div class="col-md-1">
+					{% if slide_prev != None %}
+						<!-- Link for the next slide -->
+						<a href={{ slide_prev.slug }} class="arrow-left"></a>
+					{% endif %}
+                </div>
+                <div class="col-md-1"></div>
+            	<div class="col-md-6">
+					<!-- Current Slide Image -->
+					<img src="/media/{{ slide.image }}" />
+        		</div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+					{% if slide_next != None %}
+						<!-- Link for the next slide -->
+						<a href={{ slide_next.slug }} class="arrow-right"></a>
+					{% endif %}
+                </div>
+                <div class="col-md-1"></div>
+            </div> <!-- figure -->
+    </section>
+    
+    <footer class="mainFooter row">
+    	<div class="col-md-4">
+        	<img src="../media/images/breamImgs_notesSimple.svg" class="img-responsive">
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        	<img src="../media/images/breamImgs_notesBrownPencil.svg" class="img-responsive">
+        </div>
+    </footer>
+
+</section>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
 </html>
