@@ -27,7 +27,6 @@
     <!-- Current Slide Title -->
     <h2>{{ slide.title }} </h2>
     <section class="centerContent row">
-            
             <div class="figures row">
             </div> <!-- figure -->
 			<div class="figures row">
@@ -53,6 +52,15 @@
                 <div class="col-md-1"></div>
             </div> <!-- figure -->
     </section>
+
+    <!-- Timeline -->
+    <div class="row">
+        {% include 'layouts/timeline.html' %}
+    </div>
+    <!-- Slide buttons -->
+    <div class="row">
+        {% include 'layouts/buttons.html' %}
+    </div>
     
     <footer class="mainFooter row">
     	<div class="col-md-4">

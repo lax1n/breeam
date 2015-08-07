@@ -1,0 +1,9 @@
+<div class="col-md-12 text-center">
+    <div class="btn-group" data-toggle="buttons">
+        <ul class="nav nav-pills">
+           {% for button in buttons %}
+               <li role="presentation" class="active"><a href="{{ button.url }}">{{ button.name }}</a></li>
+           {% endfor %}
+        </ul>
+    </div>
+</div>

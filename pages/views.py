@@ -15,5 +15,7 @@ def show_slide(request, slug):
     return render_to_response("slide.html",
                               {'slide': slide,
                                'slide_prev': slide.get_previous_sibling,
-                               'slide_next': slide.get_next_sibling},
+                               'slide_next': slide.get_next_sibling,
+                               'siblings': slide.get_siblings(include_self=True),
+                               'buttons': slide.slidebutton_set.all},
                               context_instance=RequestContext(request))

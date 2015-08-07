@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="../media/css/timeline.css">
+</head>
+<body>
+<ol id="timeline">
+    {% for sibling in siblings %}
+        {% if sibling == slide %}
+        <li id="current">
+        {% else %}
+        <li>
+        {% endif %}
+            <a href="{{ sibling.slug }}">{{ sibling.title.capitalize }}</a>
+            <span class="details">
+            {{ sibling.title.capitalize }}
+            </span>
+        </li>
+    {% endfor %}
+</ol>
