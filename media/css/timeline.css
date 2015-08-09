@@ -3,7 +3,7 @@
 ol#timeline {
 	position: relative;
 	display: block;
-	margin: 100px;
+	margin: auto;
 	height: 4px;
 	background: #9b2;
 }

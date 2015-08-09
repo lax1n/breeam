@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Untitled Document</title>
-<link rel="stylesheet" href="../media/css/mainStyles.css">
+<link rel="stylesheet" href="../../media/css/mainStyles.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
@@ -41,7 +41,11 @@
 
     <!-- Timeline -->
     <div class="row">
-        {% include 'layouts/timeline.html' %}
+    	<div class="col-md-1"></div>
+        <div class="col-md-10">
+        	{% include 'layouts/timeline.html' %}
+        </div>
+        <div class="col-md-1"></div>
     </div>
     <!-- Slide buttons -->
     <div class="row">
