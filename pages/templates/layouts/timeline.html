@@ -1,17 +1,13 @@
 <head>
     <link rel="stylesheet" href="../media/css/timeline.css">
 </head>
-<ol id="timeline">
+<div class="pagination">
     {% for sibling in siblings %}
         {% if sibling == slide %}
-        <li id="current">
+            <div data-tooltip="Tooltip 1" class="pagination__dot pagination__dot--active"></div>
         {% else %}
-        <li>
+            <div data-tooltip="Tooltip 2" class="pagination__dot"></div>
         {% endif %}
-            <a href="{{ sibling.slug }}">{{ sibling.title.capitalize }}</a>
-            <span class="details">
-            {{ sibling.title.capitalize }}
-            </span>
-        </li>
     {% endfor %}
-</ol>
+
+</div>
