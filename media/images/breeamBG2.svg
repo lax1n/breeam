@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="960px" height="540px" viewBox="0 0 960 540" enable-background="new 0 0 960 540" xml:space="preserve">
+<filter  id="StainedFilter">
+	<feBlend  result="blend" in="SourceGraphic" in2="BackgroundImage" mode="multiply"></feBlend>
+	<feComposite  operator="in" result="comp" in="blend" in2="SourceAlpha"></feComposite>
+</filter>
+<path marker-end="none" marker-start="none" fill="#EEEFD9" d="M0.031-1.306v542.399H960.03V-1.306H0.031z"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0.031" y="-1.306" width="959.999" height="542.399"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M-0.057,69.438c74.962,9.682,153.455-12.434,229.288-19.145c64.099-5.672,136.286-13.7,200.4-8.399
+		c63.516,5.252,130.395,13.737,194.399,10.8c91.36-4.193,233.157-29.827,319.2-4.8c8.21,1.009,8.955,20.638,16.645,21.544"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M-0.124,116.904c134.578-4.426,254.651-38.672,384.155-40.21c54.031-0.641,68.764,3.931,117.601,14.4
+		c64.408,13.807,190.112-7.513,261.6-7.2c70.041,0.306,121.959,29.267,196.712,33.01"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M-0.125,190.874c161.77,14.583,406.164-81.794,543.756-36.181c-1.788,5.67-6.896,9.483-7.2,15.6
+		c46.775,17.156,175.523-2.798,231.6-3.6c81.305-1.163,110.675,16.916,191.845,24.181"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M959.943,251.408c-93.323,1.156-155.408,0.542-251.912-3.115c-70.097-2.656-130.155-19.744-198-28.8
+		c-89.86-11.995-184.434-7.05-273.6,8.4c-86.986,15.072-150.538,23.515-236.556,23.515"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M-0.125,302.5c80.482-21.197,182.674-7.28,268.957-11.007c63.647-2.749,164.603-24.476,219.6-20.399
+		c40.416,2.994,79.949,22.465,118.8,33.6c69.415,19.895,268.354,0.73,352.645-2.193"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M959.875,348.315c-133.658,6.416-220.517,3.617-353.845,5.578c-38.141,0.561-51.431-25.977-80.399-31.2
+		c-51.2-9.232-129.466-13.896-177.601,2.4c5.408,11.343-8.832,14.916-18,16.8c-93.342,19.186-227.512,8.072-330.156,6.422"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M-0.125,387.342c134.935,0.251,266.5-5.621,397.356,4.951c36.943,2.985,98.068-2.859,130.8,6c8.738,2.365,12.156,12.052,24,15.601
+		c77.643,23.264,310.825-25.813,407.912-26.552"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M959.943,449.313c-149.357,0-311.21,35.026-453.512,17.38c-43.562-5.402-82.851-28.685-126-33.6
+		c-59.061-6.728-119.203-13.234-178.8-6c-29.576,3.59-63.222,20.509-90,21.6c-49.484,2.016-62.002,2.967-111.756,0.62"/>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" stroke-opacity="0.4353" d="
+		M959.943,484.62c-79.356-2.534-124.939,46.552-205.112,42.073C589.887,517.481,2.944,492.12-0.056,484.62"/>
+</g>
+<g id="Shape" marker-end="none" marker-start="none" filter="url(#StainedFilter)">
+	<rect x="0.069" y="-1.668" fill="none" width="959.999" height="542.399"/>
+</g>
+</svg>

@@ -1,67 +1,107 @@
 @charset "utf-8";
 /* CSS Document */
 
+html, body{
+	height: 100%;
+}
+
 body{
-	background-image: url('../images/concrete_seamless.png');
+	background-image: url(../imgs/breeamBG2.svg);
 	background-repeat: repeat;
-	overflow: hidden;
 }
 
-.topDecor div img{
-	width: 40%;
-	margin: -40px auto 0 auto;
+@font-face{
+	font-family: GeosansLight;
+	src: url(../fonts/GeosansLight.ttf);
 }
 
-.figureTxt div h2{
-	margin: auto;
-	width: 80%;
-	padding: 10px;
-	text-align: center;
-	color: rgb(80, 80, 80);
-	background-color: rgb(255, 255, 255);
-	box-shadow: 10px 10px 0px rgb(217, 211, 188);
-	-webkit-box-shadow: 10px 10px 0px rgb(217, 211, 188);
-	-moz-box-shadow: 10px 10px 0px rgb(217, 211, 188);
-	-o-box-shadow: 10px 10px 0px rgb(217, 211, 188);
-	-ms-box-shadow: 10px 10px 0px rgb(217, 211, 188);
+h1{
+	font-family: GeosansLight !important;
+	font-size: 5em !important;
 }
 
-.figures{
-	margin-top: 30px;
+.centerContent{
+	position: relative;
 }
 
-.figures div img{
-	margin: auto;
-	min-width: 70%;
-}
-
-.figures .arrow-left {
+.arrow-left {
 	width: 0; 
 	height: 0; 
 	border-top: 30px solid transparent;
 	border-bottom: 30px solid transparent; 
 	border-right:30px solid rgb(80, 80, 80);
-	display: block;
-	margin-top: 150px; 
+	position: fixed;
+	left: 1%;
+	top: 50%;
 }
 
-.figures .arrow-right {
+.arrow-right {
 	width: 0; 
 	height: 0; 
 	border-top: 30px solid transparent;
 	border-bottom: 30px solid transparent;
 	border-left: 30px solid rgb(80, 80, 80);
-	display: block;
-	margin-top: 150px;
-}
-
-.mainFooter{
 	position: fixed;
-	bottom: 0;
+	right: 1%;
+	top: 50%;
 }
 
-.mainFooter div img{
-	width: 40%;
-	margin: 0 auto 0 auto;
-	position: relative;
+.centerContent div div a img{
+	width: 100%;
 }
+
+.centerContent div div a{
+	color: rgb(80, 80, 80);
+}
+
+.pageTitle{
+	position: absolute;
+	top: -100px;
+}
+
+.imgContainer{
+    position: relative;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for vh unit */
+  min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+                        
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+  
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+
+ /* Make it a flex container */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; 
+  
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  	-webkit-align-items : center;
+    -moz-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+  
+  /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+	width: 100%;
+  
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+  
+    Therefore, we should use the following declarations to get it centered again */
+	-webkit-box-pack : center;
+    -moz-box-pack : center;
+    -ms-flex-pack : center;
+	-webkit-justify-content : center;
+    justify-content : center;
+}
+
