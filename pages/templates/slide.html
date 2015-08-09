@@ -11,47 +11,61 @@
 <body>
 
 <section class="mainContainer container-fluid">
+
+    <header class="mainHeader">
+        <div>
+            <img src="../../media/images/breeamImgs_coffeeCup.svg">
+        </div>
+        <div>
+            <img src="../../media/images/breeamImgs_smartPhone.svg">
+        </div>
+        <div>
+            <img src="../../media/images/breeamImgs_notePinkPencil.svg">
+        </div>
+    </header>
     
-    <div class="centerContent row container-fluid vertical-center">
-    	<div class="col-md-1">
-      		{% if slide_prev != None %}
-				<!-- Link for the next slide -->
-				<a href={{ slide_prev.slug }} class="arrow-left"></a>
-			{% endif %}
-            
-            {% if slide_next != None %}
-				<!-- Link for the next slide -->
-				<a href={{ slide_next.slug }} class="arrow-right"></a>
-			{% endif %}
-      	</div>
-      	<div class="col-md-10">
-             <div class="pageTitle">
-             	<!-- Current Slide Title -->
-    			<h1>{{ slide.title }} </h1>
-             </div>
-        	 <div class="imgContainer text-center">
-             	<a href="#">
-                	<!-- Current Slide Image -->
-					<img src="/media/{{ slide.image }}" alt="" class="img-responsive" />
-                </a>
-    		</div>
+    <div class="centerContent row container-fluid">
+        <div class="row">
+            <div class="col-md-1">
+                {% if slide_prev != None %}
+                    <!-- Link for the next slide -->
+                    <a href={{ slide_prev.slug }} class="arrow-left"></a>
+                {% endif %}
+                
+                {% if slide_next != None %}
+                    <!-- Link for the next slide -->
+                    <a href={{ slide_next.slug }} class="arrow-right"></a>
+                {% endif %}
+            </div>
+            <div class="col-md-10">
+                 <div class="pageTitle">
+                    <!-- Current Slide Title -->
+                    <h1>{{ slide.title }} </h1>
+                 </div>
+                 <div class="center-block">
+                    <a href="#">
+                        <!-- Current Slide Image -->
+                        <img src="/media/{{ slide.image }}" alt="" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
         </div>
-      	<div class="col-md-1"></div>
+        
+        <!-- Timeline -->
+        <div class="timelineRow row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                {% include 'layouts/timeline.html' %}
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        
+        <!-- Slide buttons -->
+        <div class="navButtons row">
+            {% include 'layouts/buttons.html' %}
+        </div>
 	</div> <!-- centerContent -->
-
-    <!-- Timeline -->
-    <div class="row">
-    	<div class="col-md-1"></div>
-        <div class="col-md-10">
-        	{% include 'layouts/timeline.html' %}
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-    <!-- Slide buttons -->
-    <div class="row">
-        {% include 'layouts/buttons.html' %}
-    </div>
-
 </section>
 
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

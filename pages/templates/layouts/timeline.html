@@ -3,11 +3,13 @@
 </head>
 <div class="pagination">
     {% for sibling in siblings %}
+    	<a href="{{ sibling.slug }}">
         {% if sibling == slide %}
-            <div data-tooltip="Tooltip 1" class="pagination__dot pagination__dot--active"></div>
+            <div data-tooltip="{{ sibling.title.capitalize }}" class="pagination__dot pagination__dot--active"></div>
         {% else %}
-            <div data-tooltip="Tooltip 2" class="pagination__dot"></div>
+            <div data-tooltip="{{ sibling.title.capitalize }}" class="pagination__dot"></div>
         {% endif %}
+        </a>
     {% endfor %}
 
 </div>

@@ -5,14 +5,13 @@
   left: 0;
   right: 0;
   height: 15px;
-  margin: auto;
   text-align: center;
 }
 .pagination__dot {
   position: relative;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #5ae4dd;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgb(100, 100, 100);
   border-radius: 100px;
   display: inline-block;
   cursor: pointer;
@@ -21,7 +20,7 @@
           transition: .3s;
 }
 .pagination__dot--active {
-  background: #5ae4dd;
+  background: rgba(80, 80, 80, 0.5);
 }
 .pagination__dot:hover {
   -webkit-transition: .3s;
@@ -42,7 +41,7 @@
   top: -40px;
   left: -36px;
   background: white;
-  width: 80px;
+  width: 160px;
   font-family: "Montserrat";
   font-size: 14px;
   padding: 8px 0;
