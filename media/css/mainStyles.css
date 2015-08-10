@@ -8,6 +8,7 @@ html, body{
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
+	opacity: 0;
 }
 
 @font-face{
@@ -17,7 +18,7 @@ body{
 
 h1{
 	font-family: GeosansLight !important;
-	font-size: 5em !important;
+	font-size: 8em !important;
 }
 
 .mainHeader{
@@ -99,26 +100,49 @@ h1{
 }
 
 .timelineRow{
-	height: 50px;
+	min-height: 50px;
+	margin-bottom: 50px;
 }
 
 .navButtons div div ul li a{
 	border-radius: 0px;
+	text-align: center !important;
 	border: none;
 	color: white;
+	padding: 20px 60px 20px 60px !important;
+	margin: 10px;
 }
-
+	
 .navButtons div div ul li a:nth-child(1){
 	background-color: rgb(88, 171, 239);
 	box-shadow: 0px 5px 0px rgb(50, 147, 222);
 }
 
 .navButtons div div ul li a:nth-child(1):hover{
-	background-color: rgb(20, 20, 20);
-	box-shadow: 0px 5px 0px #888888;
+	background-color: rgb(100, 180, 250);
 }
 
+/*
 .navButtons div div ul li a:nth-child(2){
 	background-color: rgb(88, 239, 127);
 	box-shadow: 0px 5px 0px rgb(50, 222, 115);
 }
+
+*/
+
+@media all and (max-width: 1280px) {
+	h1{
+		font-size: 6em !important;		
+	}
+	
+    .navButtons div div ul li a{
+		padding: 15px 40px 15px 40px !important;
+	}
+}
+
+@media all and (max-width: 1024px) {
+    .navButtons div div ul li a{
+		padding: 10px 30px 10px 30px !important;
+	}
+}
+

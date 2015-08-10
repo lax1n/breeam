@@ -20,7 +20,7 @@
           transition: .3s;
 }
 .pagination__dot--active {
-  background: rgba(80, 80, 80, 0.5);
+  background: rgb(100, 100, 100);
 }
 .pagination__dot:hover {
   -webkit-transition: .3s;
