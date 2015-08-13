@@ -1,10 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-html, body{
-	height: 100%;
-}
-
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
@@ -23,32 +19,54 @@ h1{
 
 .mainHeader{
 	width: 100%;
-}
-
-.mainHeader div{
+	padding: 0 !important;
 	float: left;
-	width: 33.33333333333333%;
-	height: 100%;
+	position: absolute;
+	top: 0;
+	z-index: -1;
 }
 
-.mainHeader div img{
-	width: inherit;
-	max-wdith: 100%;
-	max-height: 100%;
-	margin-top: -10%;
+.mainHeader div {
+    width: 33.33333333333333%;
+    text-align: left;
+    overflow: hidden; /* hide the cropped portion */
+	float: left;
 }
 
-.mainHeader div:nth-child(2) img{
-	display: block;
-	margin: auto;
+.mainHeader div:nth-child(2) {
+	text-align: center;
 }
 
-.mainHeader div:nth-child(3) img{
-	float: right !important;
+.mainHeader div:nth-child(3) {
+	text-align: right;
+}
+
+.mainHeader div img {
+    position: relative;
+	width: 50%;
+	top: -7em;
+}
+
+.mainHeader div:nth-child(1) img {
+	left: -100px;
+}
+
+.mainHeader div:nth-child(3) img {
+	left: 100px;
 }
 
 .centerContent{
 	margin-top: 250px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;	
+	display: block;
+}
+
+.pageTitle{
+	color: rgb(100, 100, 100);
+	position: absolute;
+	top: -70px;
 }
 
 .arrow-left {
@@ -81,18 +99,6 @@ h1{
 	color: rgb(80, 80, 80);
 }
 
-.pageTitle{
-	position: absolute;
-	top: -70px;
-}
-
-.centerContent{
-	display: flex;
-  	justify-content: center;
-  	align-items: center;	
-	display: block;
-}
-
 .timelineRow{
 	min-height: 50px;
 	margin-bottom: 2%;
@@ -118,33 +124,35 @@ h1{
 
 .mainFooter{
 	width: 100%;
-	height: 100%;
-	overflow: hidden;
+	padding: 0 !important;
+	float: left;
 	position: absolute;
-	bottom: 0;
 	z-index: -1;
 }
 
-.mainFooter div{
-	position: relative;
+.mainFooter div {
+    width: 50%;
+    text-align: left;
+    overflow: hidden; /* hide the cropped portion */
+	height: 200px;
 	float: left;
+}
+
+.mainFooter div:nth-child(2) {
+	text-align: right;
+}
+
+.mainFooter div img {
+    position: relative;
 	width: 33.33333333333333%;
-	height: 100%;
-	top: 90%;
 }
 
-.mainFooter div img{
-	width: inherit;
-	max-wdith: 100%;
-	max-height: 100%;
+.mainFooter div:nth-child(1) img {
+	left: -100px;
 }
 
-.mainFooter div:nith-child(3){
-	float: right;
-}
-
-.mainFooter div:nth-child(3) img{
-	float: right;
+.mainFooter div:nth-child(2) img {
+	left: 100px;
 }
 
 
