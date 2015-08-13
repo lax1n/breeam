@@ -2,7 +2,7 @@
     <div class="btn-group">
         <ul class="nav nav-pills">
            {% for button in buttons %}
-               <li><a href="{{ button.url }}" class="btn btn-primary btn-lg" role="button">{{ button.name }}</a></li>
+               <li><a href="{{ button.url }}" class="btn btn-primary btn-lg {{ colors.forloop.counter0 }}" role="button">{{ button.name }}</a></li>
            {% endfor %}
         </ul>
     </div>
