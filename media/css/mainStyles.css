@@ -17,7 +17,7 @@ h1{
 	font-size: 8em !important;
 }
 
-.mainContainer, .mainContent{
+.mainContainer, .centerContent{
 	padding: 0 !important;
 }
 
@@ -60,6 +60,7 @@ h1{
 }
 
 .centerContent{
+	width: 100%;
 	margin-top: 250px;
 	display: flex;
   	justify-content: center;
@@ -161,6 +162,7 @@ h1{
     overflow: hidden; /* hide the cropped portion */
 	height: 200px;
 	float: left;
+	margin-top: 1%;
 }
 
 .mainFooter div:nth-child(2) {
