@@ -153,6 +153,7 @@ h1{
 	padding: 0 !important;
 	float: left;
 	position: absolute;
+	bottom: 0;
 	z-index: -1;
 }
 
@@ -162,7 +163,6 @@ h1{
     overflow: hidden; /* hide the cropped portion */
 	height: 200px;
 	float: left;
-	margin-top: 1%;
 }
 
 .mainFooter div:nth-child(2) {
