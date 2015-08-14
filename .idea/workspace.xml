@@ -32,24 +32,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buttons.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="buttons.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/templates/layouts/buttons.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13325869">
-              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.33297062">
+              <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
               <folding>
                 <element signature="e#0#76#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timeline.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/media/css/timeline.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,11 +86,11 @@
         <option value="$PROJECT_DIR$/media/css/mainStyles.css" />
         <option value="$PROJECT_DIR$/pages/models.py" />
         <option value="$PROJECT_DIR$/pages/templates/layouts/timeline.html" />
-        <option value="$PROJECT_DIR$/media/css/timeline.css" />
         <option value="$PROJECT_DIR$/pages/admin.py" />
+        <option value="$PROJECT_DIR$/pages/templates/slide.html" />
+        <option value="$PROJECT_DIR$/media/css/timeline.css" />
         <option value="$PROJECT_DIR$/pages/templates/layouts/buttons.html" />
         <option value="$PROJECT_DIR$/pages/views.py" />
-        <option value="$PROJECT_DIR$/pages/templates/slide.html" />
       </list>
     </option>
   </component>
@@ -628,8 +638,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding>
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -719,8 +729,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding>
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -794,8 +804,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding>
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -951,21 +961,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/media/css/timeline.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media/css/mainStyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1439549521938" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439552918485" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1006,21 +1008,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/views.py">
+    <entry file="file://$PROJECT_DIR$/media/css/timeline.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/templates/layouts/buttons.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13325869">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33297062">
+          <caret line="18" column="68" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
