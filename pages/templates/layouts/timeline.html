@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="../media/css/timeline.css">
 </head>
-<div class="pagination">
+<div class="pagination" id="timeline">
     {% for sibling in siblings %}
     	<a href="{{ sibling.slug }}">
         {% if sibling == slide %}

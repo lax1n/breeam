@@ -7,13 +7,16 @@ from pages.models import Slide
 
 
 def index(request):
-    slide = Slide.objects.first()
-    return redirect('/pages/' + slide.slug)
+    return render_to_response("index.html",
+                              {'slides': Slide.objects.all,
+                               'first_slide': Slide.objects.first,
+                               'siblings': Slide.objects.all},
+                              context_instance=RequestContext(request))
 
 
 def show_slide(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
-    return render_to_response("slide.html",
+    return render_to_response("layouts/slide.html",
                               {'slide': slide,
                                'slide_prev': slide.get_previous_sibling,
                                'slide_next': slide.get_next_sibling,
