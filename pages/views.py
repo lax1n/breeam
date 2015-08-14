@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 from pages.models import Slide
 
@@ -7,7 +7,8 @@ from pages.models import Slide
 
 
 def index(request):
-    return render_to_response("index.html")
+    slide = Slide.objects.first()
+    return redirect('/pages/' + slide.slug)
 
 
 def show_slide(request, slug):
