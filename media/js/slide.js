@@ -76,14 +76,16 @@ $(function(){
 	}
 
 	function prevSlide(){
+    	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
 		setSlide(this);
+		updateArrows()
 		return false;
 	}
 
 	function nextSlide(){
-    	$(".pagination .selected").removeClass("selected").parent().next().find("a").addClass("selected");
-
+    	$(".pagination .selected").removeClass("selected").next().addClass("selected");
 		setSlide(this);
+		updateArrows()
 		return false;
 	}
 });
