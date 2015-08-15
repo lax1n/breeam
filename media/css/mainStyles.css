@@ -67,6 +67,7 @@ h1{
   	align-items: center;	
 	display: block;
 	opacity: 1;
+	clear: both;
 }
 
 .pageTitle{

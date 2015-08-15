@@ -42,11 +42,10 @@ $(function(){
 	function setSlide(name){
 	   var toLoad = '/pages/' + $(name).attr('href');
 	   content.animate({
-				left: "100%",
 				opacity: 0
-		   }, 1000, loadContent);
-
-       function loadContent() {
+		   }, 500, loadContent);
+	   
+	   function loadContent() {
         	content.load(toLoad,'',showNewContent())
     	}
 
@@ -54,7 +53,7 @@ $(function(){
         	content.animate({
 				left: "0%",
 				opacity: 1
-		   }, 1000);;
+		   }, 500);
     	}
 	}
 
@@ -62,21 +61,26 @@ $(function(){
 		var prev = $(".pagination .selected").prev().attr('href');
 		if(prev != null){
 			$(".arrow-left").attr('href', prev);
-			$(".arrow-left").css("opacity", 1);
+			$(".arrow-left").css("display", "block");
 		}else{
-			$(".arrow-left").css("opacity", 0);
+			$(".arrow-left").css("display", "none");
 		}
 		var next = $(".pagination .selected").next().attr('href');
 		if(next != null){
 			$(".arrow-right").attr('href', next);
-			$(".arrow-right").css("opacity", 1);
+			$(".arrow-right").css("display", "block");;
 		}else{
-			$(".arrow-right").css("opacity", 0);
+			$(".arrow-right").css("display", "none");
 		}
 	}
 
 	function prevSlide(){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
+		content.animate({
+				left: "-100%",
+		   }, 500, function(){
+			   		content.css("left", "100%");	
+			   	});
 		setSlide(this);
 		updateArrows()
 		return false;
@@ -84,6 +88,11 @@ $(function(){
 
 	function nextSlide(){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
+		content.animate({
+				left: "100%",
+		   }, 500, function(){
+			   		content.css("left", "-100%");	
+			   	});
 		setSlide(this);
 		updateArrows()
 		return false;
