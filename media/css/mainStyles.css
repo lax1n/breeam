@@ -4,7 +4,7 @@
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
-	opacity: 0;
+	overflow-x: hidden;
 }
 
 @font-face{
@@ -66,12 +66,12 @@ h1{
   	justify-content: center;
   	align-items: center;	
 	display: block;
+	opacity: 1;
 }
 
 .pageTitle{
 	color: rgb(100, 100, 100);
-	position: absolute;
-	top: -70px;
+	margin-top: -80px;
 }
 
 .arrow-left {
@@ -175,8 +175,7 @@ h1{
 .mainFooter{
 	width: 100%;
 	padding: 0 !important;
-	float: left;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	z-index: -1;
 }
