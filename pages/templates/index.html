@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Breeam - {{ slide.title.capitalize }}</title>
+<title>Breeam</title>
 <link rel="stylesheet" href="../../media/css/mainStyles.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
@@ -28,15 +28,10 @@
         {% for slide in slides %}
             <div class="row">
                 <div class="col-md-1">
-                    {% if slide_prev != None %}
                         <!-- Link for the next slide -->
-                        <a href={{ slide_prev.slug }} class="arrow-left"></a>
-                    {% endif %}
-
-                    {% if slide_next != None %}
+                        <a href="" class="arrow-left"></a>
                         <!-- Link for the next slide -->
-                        <a href={{ slide_next.slug }} class="arrow-right"></a>
-                    {% endif %}
+                        <a href="" class="arrow-right"></a>
                 </div>
                 <div class="col-md-10 centerContentDiv" id="content">
                 </div>
