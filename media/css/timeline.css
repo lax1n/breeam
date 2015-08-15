@@ -28,24 +28,20 @@
 
 .selected .pagination__dot{
 	transition: width 1s;
-	width: 15px;
-	height: 15px;
 	border-color: white;
   	background: white;
+	transform: scale(1.7,1.7);
 }
 
-.pagination__dot--active {
-  background: rgb(100, 100, 100);
-}
 .pagination__dot:hover {
   -webkit-transition: .3s;
           transition: .3s;
   border-color: white;
   background: white;
   opacity: 1;
-  width: 13px;
-  height: 13px;
+  transform: scale(1.7,1.7);
 }
+
 .pagination__dot:hover:before {
   top: -48px;
   opacity: 1;
