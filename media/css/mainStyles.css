@@ -110,14 +110,6 @@ h1{
 	margin-bottom: 2%;
 }
 
-.selected .pagination__dot{
-	transition: width 1s;
-	width: 15px;
-	height: 15px;
-	border-color: white;
-  	background: white;
-}
-
 .navButtons div div ul li a{
 	border-radius: 0px;
 	text-align: center !important;
