@@ -37,9 +37,9 @@ $(function(){
 	function newPageClickEvent(){
 		//Check position of click
 		if($(this).position().left > $(".pagination .selected").position().left){
-			rightContentAnimation();
-		}else{
 			leftContentAnimation();
+		}else{
+			rightContentAnimation();
 		}
 		setSlide(this);
     	return false;
@@ -98,7 +98,7 @@ $(function(){
 
 	function prevSlide(){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
-		leftContentAnimation();
+		rightContentAnimation();
 		setSlide(this);
 		updateArrows()
 		return false;
@@ -106,7 +106,7 @@ $(function(){
 
 	function nextSlide(){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
-		rightContentAnimation();
+		leftContentAnimation();
 		setSlide(this);
 		updateArrows()
 		return false;
