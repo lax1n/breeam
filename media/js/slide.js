@@ -35,6 +35,12 @@ $(function(){
 	}();
 	
 	function newPageClickEvent(){
+		//Check position of click
+		if($(this).position().left > $(".pagination .selected").position().left){
+			rightContentAnimation();
+		}else{
+			leftContentAnimation();
+		}
 		setSlide(this);
     	return false;
 	};
@@ -74,13 +80,25 @@ $(function(){
 		}
 	}
 
-	function prevSlide(){
-    	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
+	function leftContentAnimation(){
 		content.animate({
 				left: "-100%",
 		   }, 500, function(){
-			   		content.css("left", "100%");	
-			   	});
+			   		content.css("left", "100%");
+		});
+	}
+
+	function rightContentAnimation(){
+		content.animate({
+				left: "100%",
+		   }, 500, function(){
+			   		content.css("left", "-100%");
+		});
+	}
+
+	function prevSlide(){
+    	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
+		leftContentAnimation();
 		setSlide(this);
 		updateArrows()
 		return false;
@@ -88,11 +106,7 @@ $(function(){
 
 	function nextSlide(){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
-		content.animate({
-				left: "100%",
-		   }, 500, function(){
-			   		content.css("left", "-100%");	
-			   	});
+		rightContentAnimation();
 		setSlide(this);
 		updateArrows()
 		return false;
