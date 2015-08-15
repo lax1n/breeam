@@ -14,6 +14,7 @@ $(function(){
 		
 		function setStartUp(){
 			var first = $('div#timeline a:first-child').attr('href');
+            $('div#timeline a:first-child').addClass("selected");
    			content.load('/pages/' + first);
 		};
 		
