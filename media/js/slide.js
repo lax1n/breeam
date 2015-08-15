@@ -49,7 +49,7 @@ $(function(){
 	   var toLoad = '/pages/' + $(name).attr('href');
 	   content.animate({
 				opacity: 0
-		   }, 500, loadContent);
+		   }, 300, loadContent);
 	   
 	   function loadContent() {
         	content.load(toLoad,'',showNewContent())
@@ -59,7 +59,7 @@ $(function(){
         	content.animate({
 				left: "0%",
 				opacity: 1
-		   }, 500);
+		   }, 300);
     	}
 	}
 
