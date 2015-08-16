@@ -49,7 +49,7 @@ $(function(){
 	   var toLoad = '/pages/' + $(name).attr('href');
 	   content.animate({
 				opacity: 0
-		   }, 300, loadContent);
+		   }, 500, loadContent);
 	   
 	   function loadContent() {
         	content.load(toLoad,'',showNewContent())
@@ -59,7 +59,7 @@ $(function(){
         	content.animate({
 				left: "0%",
 				opacity: 1
-		   }, 300);
+		   }, 500);
     	}
 	}
 
@@ -82,7 +82,7 @@ $(function(){
 
 	function leftContentAnimation(){
 		content.animate({
-				left: "-100%",
+				left: "-100%"
 		   }, 500, function(){
 			   		content.css("left", "100%");
 		});
