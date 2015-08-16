@@ -52,7 +52,9 @@ $(function(){
 		   }, 500, loadContent);
 	   
 	   function loadContent() {
-        	content.load(toLoad,'',showNewContent())
+		   content.load(toLoad, function(){
+			   showNewContent();
+		   });
     	}
 
     	function showNewContent() {
