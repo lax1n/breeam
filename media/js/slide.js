@@ -48,7 +48,7 @@ $(function(){
 	function setSlide(name){
 	   var toLoad = '/pages/' + $(name).attr('href');
 	   content.animate({
-				opacity: 0
+				opacity: 0,
 		   }, 500, loadContent);
 	   
 	   function loadContent() {
@@ -59,7 +59,7 @@ $(function(){
 
     	function showNewContent() {
         	content.animate({
-				left: "0%",
+				left: ["0%", "easeInQuint"],
 				opacity: 1
 		   }, 500);
     	}
@@ -84,7 +84,7 @@ $(function(){
 
 	function leftContentAnimation(){
 		content.animate({
-				left: "-100%"
+				left: ["-100%", "easeOutQuint"]
 		   }, 500, function(){
 			   		content.css("left", "100%");
 		});
@@ -92,7 +92,7 @@ $(function(){
 
 	function rightContentAnimation(){
 		content.animate({
-				left: "100%",
+				left: ["100%", "easeOutQuint"]
 		   }, 500, function(){
 			   		content.css("left", "-100%");
 		});
