@@ -2,6 +2,7 @@
 $(function(){
 	
 	var content;
+	var buttons;
 	
 	var init = function(){
 		setHTMLObjects();
@@ -10,12 +11,14 @@ $(function(){
 		
 		function setHTMLObjects(){
 			content = $("#content");
+			buttons = $("#buttons");
 		};
 		
 		function setStartUp(){
-			var first = $('div#timeline a:first-child').attr('href');
+			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
-   			content.load('/pages/' + first);
+   			content.load(first);
+			setButtons(first);
 			updateArrows();
 		};
 		
@@ -46,14 +49,16 @@ $(function(){
 	};
 
 	function setSlide(name){
-	   var toLoad = '/pages/' + $(name).attr('href');
-	   content.animate({
+		var toLoad = '/pages/' + $(name).attr('href');
+		buttons.fadeOut();
+		content.animate({
 				opacity: 0,
 		   }, 500, loadContent);
 	   
 	   function loadContent() {
 		   content.load(toLoad, function(){
 			   showNewContent();
+			   setButtons(toLoad);
 		   });
     	}
 
@@ -63,6 +68,12 @@ $(function(){
 				opacity: 1
 		   }, 500);
     	}
+	}
+
+	function setButtons(slide){
+		buttons.hide().load(slide + '/buttons', function(){
+			buttons.fadeIn("slow");
+		})
 	}
 
 	function updateArrows(){

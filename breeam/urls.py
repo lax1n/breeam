@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'pages.views.index'),
+    url(r'^pages/(?P<slug>[^\.]+)/buttons', 'pages.views.show_buttons'),
     url(r'^pages/(?P<slug>[^\.]+)', 'pages.views.show_slide'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]
