@@ -59,6 +59,11 @@ h1{
 	left: 100px;
 }
 
+.pageTitle{
+	color: rgb(100, 100, 100);
+	margin-top: -5em;
+}
+
 .centerContent{
 	width: 100%;
 	margin-top: 250px;
@@ -68,12 +73,6 @@ h1{
 	display: block;
 	opacity: 1;
 	clear: both;
-}
-
-.pageTitle{
-	color: rgb(100, 100, 100);
-	position: absolute;
-	top: -1em;
 }
 
 .arrow-left {
@@ -232,10 +231,6 @@ h1{
 		margin-top: 180px;
 	}
 	
-	.pageTitle{
-		top: -5em;
-	}
-	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
 		left: -50px;
 	}
@@ -263,13 +258,13 @@ h1{
 		top: -3em;
 	}
 	
+	.pageTitle{
+		margin-top: -10em;
+	}
+	
 	.centerContent{
 		position: relative;
 		margin-top: 300px;
-	}
-	
-	.pageTitle{
-		top: -6em;
 	}
 	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
@@ -301,10 +296,6 @@ h1{
 	
 	.centerContent{
 		margin-top: 220px;
-	}
-	
-	.pageTitle{
-		top: -7em;
 	}
 	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
