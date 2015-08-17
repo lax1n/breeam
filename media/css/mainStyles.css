@@ -72,7 +72,8 @@ h1{
 
 .pageTitle{
 	color: rgb(100, 100, 100);
-	margin-top: -80px;
+	position: absolute;
+	top: -1em;
 }
 
 .arrow-left {
@@ -206,23 +207,121 @@ h1{
 }
 
 
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1920px) {
+
+	.centerContent{
+		margin-top: 230px;
+	}
+	
+	.pageTitle{
+		top: -8em;
+	}
+}
+
+
+@media all and (max-width: 1366px) {
 	h1{
 		font-size: 6em !important;		
+	}
+	
+	.mainHeader div img {
+		top: -3em;
+	}
+
+	.centerContent{
+		margin-top: 180px;
+	}
+	
+	.pageTitle{
+		top: -5em;
+	}
+	
+	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
+		left: -50px;
+	}
+
+	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
+		left: 50px;
 	}
 	
     .navButtons div div ul li a{
 		padding: 15px 40px 15px 40px !important;
 	}
+	
+	.mainFooter div img {
+		top: 30%;
+	}
 }
+
+
+@media all and (max-width: 1280px) {
+	h1{
+		font-size: 6em !important;		
+	}
+	
+	.mainHeader div img {
+		top: -3em;
+	}
+	
+	.centerContent{
+		position: relative;
+		margin-top: 300px;
+	}
+	
+	.pageTitle{
+		top: -6em;
+	}
+	
+	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
+		left: -50px;
+	}
+
+	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
+		left: 50px;
+	}
+	
+    .navButtons div div ul li a{
+		padding: 15px 40px 15px 40px !important;
+	}
+	
+	.mainFooter div img {
+		top: 30%;
+	}
+}
+
 
 @media all and (max-width: 1024px) {
 	h1{
-		font-size: 4em !important;		
+		font-size: 5em !important;		
+	}
+	
+	.mainHeader div img {
+		top: -1em;
+	}
+	
+	.centerContent{
+		margin-top: 220px;
+	}
+	
+	.pageTitle{
+		top: -7em;
+	}
+	
+	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
+		left: -50px;
+	}
+
+	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
+		left: 50px;
 	}
 
     .navButtons div div ul li a{
 		padding: 10px 30px 10px 30px !important;
 	}
+	
+	.mainFooter div img {
+		top: 30%;
+	}
+
 }
 
