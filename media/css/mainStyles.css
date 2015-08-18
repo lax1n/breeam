@@ -235,13 +235,18 @@ h1{
 
 
 @media all and (max-width: 1920px) {
-
-	.centerContent{
-		margin-top: 230px;
-	}
 	
 	.centerContent{
-		top: -10%;
+		top: 10%;
+	}
+
+	.timelineRow{
+		margin-top: 20px;
+	}
+
+	.navButtons{
+		margin-top: 45%;
+		margin-bottom: 50px;
 	}
 }
 
@@ -265,7 +270,6 @@ h1{
 	
 	.timelineRow{
 		margin-top: 0px;
-		min-height: 50px;
 	}
 
 	.navButtons{
@@ -306,7 +310,6 @@ h1{
 	
 	.timelineRow{
 		margin-top: 20px;
-		min-height: 50px;
 	}
 
 	.navButtons{
@@ -347,7 +350,6 @@ h1{
 
 	.timelineRow{
 		margin-top: 10px;
-		min-height: 50px;
 	}
 
 	.navButtons{
