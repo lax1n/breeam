@@ -11,7 +11,8 @@
 <body>
 
 <section class="mainContainer container-fluid page-wrap">
-
+	
+    <!-- Header with decor items -->
     <header class="mainHeader">
         <div>
             <img src="../../media/images/breeamImgs_coffeeCup.svg">
@@ -24,6 +25,7 @@
         </div>
     </header>
     
+    <!-- Main content, including slider. Timeline + page buttons not included. -->
     <div class="centerContent row container-fluid">
         {% for slide in slides %}
             <div class="row">
@@ -33,14 +35,14 @@
                         <!-- Link for the next slide -->
                         <a href="" class="arrow-right"></a>
                 </div>
-                <div class="col-md-10 centerContentDiv" id="content">
+                <div class="col-md-10" id="content">
                 </div>
             <div class="col-md-1"></div>
             </div>
         {% endfor %}
 	</div> <!-- centerContent -->
     
-            <!-- Timeline -->
+    <!-- Timeline -->
     <div class="timelineRow row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -49,10 +51,11 @@
         <div class="col-md-1"></div>
     </div>
         
-        <!-- Slide buttons -->
+    <!-- Slide buttons -->
     <div class="navButtons row" id="buttons">
     </div>
     
+    <!-- Footer with decor items -->
     <footer class="mainFooter container-fluid">
         <div>
             <img src="../../media/images/breeamImgs_coffeeCup.svg">

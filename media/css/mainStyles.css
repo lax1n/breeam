@@ -1,15 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
 
+@font-face{
+	font-family: GeosansLight;
+	src: url(../fonts/GeosansLight.ttf);
+}
+
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
 	overflow-x: hidden;
-}
-
-@font-face{
-	font-family: GeosansLight;
-	src: url(../fonts/GeosansLight.ttf);
 }
 
 h1{
@@ -20,6 +20,10 @@ h1{
 .mainContainer, .centerContent{
 	padding: 0 !important;
 }
+
+
+/* --- Main header css settings --- */
+
 
 .mainHeader{
 	width: 100%;
@@ -33,7 +37,7 @@ h1{
 .mainHeader div {
     width: 33.33333333333333%;
     text-align: left;
-    overflow: hidden; /* hide the cropped portion */
+    overflow: hidden;
 	float: left;
 }
 
@@ -59,6 +63,10 @@ h1{
 	left: 100px;
 }
 
+
+/* --- Main content css settings --- */
+
+
 .pageTitle{
 	color: rgb(100, 100, 100);
 	margin-top: -5em;
@@ -66,13 +74,9 @@ h1{
 
 .centerContent{
 	width: 100%;
-	margin-top: 250px;
-	display: flex;
-  	justify-content: center;
-  	align-items: center;	
+	margin-top: 250px;	
 	display: block;
 	opacity: 1;
-	clear: both;
 }
 
 .arrow-left {
@@ -97,7 +101,7 @@ h1{
 	top: 50%;
 }
 
-.centerContent div div a img{
+.centerContent div div a img {
 	width: 100%;
 }
 
@@ -105,8 +109,16 @@ h1{
 	color: rgb(80, 80, 80);
 }
 
+
+/* --- Timeline + page button css settings --- */
+
+
 .timelineRow{
 	min-height: 50px;
+}
+
+.navButtons{
+	margin-bottom: 50px;
 }
 
 .navButtons div div ul li a{
@@ -172,6 +184,10 @@ h1{
 	background-color: #ffd21e;
 }		
 
+
+/* --- Main footer css adjustments --- */
+
+
 .mainFooter{
 	width: 100%;
 	padding: 0 !important;
@@ -204,6 +220,9 @@ h1{
 .mainFooter div:nth-child(2) img {
 	left: 100px;
 }
+
+
+/* --- Media queries for 1024, 1280, 1366 and 1920 --- */
 
 
 @media all and (max-width: 1920px) {
