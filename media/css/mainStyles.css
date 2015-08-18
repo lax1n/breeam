@@ -9,7 +9,7 @@
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
-	overflow-x: hidden;
+
 }
 
 h1{
@@ -29,7 +29,7 @@ h1{
 	width: 100%;
 	padding: 0 !important;
 	float: left;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: -1;
 }
@@ -37,7 +37,6 @@ h1{
 .mainHeader div {
     width: 33.33333333333333%;
     text-align: left;
-    overflow: hidden;
 	float: left;
 }
 
@@ -74,8 +73,7 @@ h1{
 .centerContent{
 	width: 100%;	
 	opacity: 1;
-	position: fixed;
-	top: 10%;
+	height: 100%;
 }
 
 .arrow-left {
@@ -102,6 +100,7 @@ h1{
 
 .centerImgContainer {
 	max-width: 100%;
+	min-height: 400px;
 	max-height: 700px;
     overflow: hidden;
     text-align: center; /* ensures the image is always in the h-middle */
@@ -119,16 +118,27 @@ h1{
 
 /* --- Timeline + page button css settings --- */
 
-
 .timelineRow{
-	margin-top: 50px;
-	min-height: 50px;
+	position: absolute;
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+	bottom: 25%;
 }
 
 .navButtons{
-	margin-top: 45%;
-	margin-bottom: 50px;
+	position: absolute;
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+	bottom: 5%;
 }
+
+
 
 .navButtons div div ul li a{
 	border-radius: 0px;
@@ -235,18 +245,9 @@ h1{
 
 
 @media all and (max-width: 1920px) {
-	
-	.centerContent{
-		top: 10%;
-	}
 
 	.timelineRow{
 		margin-top: 20px;
-	}
-
-	.navButtons{
-		margin-top: 45%;
-		margin-bottom: 50px;
 	}
 }
 
@@ -255,10 +256,6 @@ h1{
 	h1{
 		font-size: 6em !important;		
 	}
-
-	.centerContent{
-		top: -20%;
-	}
 	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
 		left: -50px;
@@ -266,15 +263,6 @@ h1{
 
 	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
 		left: 50px;
-	}
-	
-	.timelineRow{
-		margin-top: 0px;
-	}
-
-	.navButtons{
-		margin-top: 45%;
-		margin-bottom: 50px;
 	}
 	
     .navButtons div div ul li a{
@@ -296,25 +284,12 @@ h1{
 		top: -3em;
 	}
 	
-	.centerContent{
-		top: 0%;
-	}
-	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
 		left: -50px;
 	}
 
 	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
 		left: 50px;
-	}
-	
-	.timelineRow{
-		margin-top: 20px;
-	}
-
-	.navButtons{
-		margin-top: 65%;
-		margin-bottom: 50px;
 	}
 	
     .navButtons div div ul li a{
@@ -336,25 +311,12 @@ h1{
 		top: -1em;
 	}
 	
-	.centerContent{
-		top: -10%;
-	}
-	
 	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
 		left: -50px;
 	}
 
 	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
 		left: 50px;
-	}
-
-	.timelineRow{
-		margin-top: 10px;
-	}
-
-	.navButtons{
-		margin-top: 60%;
-		margin-bottom: 50px;
 	}
 
     .navButtons div div ul li a{

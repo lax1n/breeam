@@ -10,7 +10,7 @@
 
 <body>
 
-<section class="mainContainer container-fluid page-wrap">
+<section class="mainContainer container-fluid">
 	
     <!-- Header with decor items -->
     <header class="mainHeader">
@@ -25,7 +25,7 @@
         </div>
     </header>
     
-    <!-- Main content, including slider and timeline, page buttons not included. -->
+    <!-- Main content, including slider, timeline and page buttons. -->
     <div class="centerContent row container-fluid">
         {% for slide in slides %}
             <div class="row">
@@ -43,18 +43,14 @@
         
     <!-- Timeline -->
     <div class="timelineRow row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
         	{% include 'layouts/timeline.html' %}
-        </div>
-        <div class="col-md-1"></div>
     </div>
-        
-	</div> <!-- centerContent -->
-        
+    
     <!-- Slide buttons -->
     <div class="navButtons row" id="buttons">
     </div>
+        
+	</div> <!-- centerContent -->
     
     <!-- Footer with decor items -->
     <footer class="mainFooter container-fluid">
