@@ -25,7 +25,7 @@
         </div>
     </header>
     
-    <!-- Main content, including slider. Timeline + page buttons not included. -->
+    <!-- Main content, including slider and timeline, page buttons not included. -->
     <div class="centerContent row container-fluid">
         {% for slide in slides %}
             <div class="row">
@@ -40,8 +40,7 @@
             <div class="col-md-1"></div>
             </div>
         {% endfor %}
-	</div> <!-- centerContent -->
-    
+        
     <!-- Timeline -->
     <div class="timelineRow row">
         <div class="col-md-1"></div>
@@ -50,6 +49,8 @@
         </div>
         <div class="col-md-1"></div>
     </div>
+        
+	</div> <!-- centerContent -->
         
     <!-- Slide buttons -->
     <div class="navButtons row" id="buttons">
