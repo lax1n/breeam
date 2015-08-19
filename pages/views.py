@@ -27,7 +27,7 @@ def show_slide(request, slug):
 
 def show_buttons(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
-    return render_to_response("layouts/buttons.html",
+    return render_to_response("includes/buttons.html",
                               {'buttons': slide.slidebutton_set.all},
                               context_instance=RequestContext(request))
 

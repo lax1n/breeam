@@ -1,0 +1,47 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/mainStyles.css" %}">
+    <link rel="stylesheet" href="{% static "css/timeline.css" %}">
+    <link rel="stylesheet" href="{% static "css/loader.css" %}">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <!-- Header with decor items -->
+    <header class="mainHeader">
+        <div>
+            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_smartPhone.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
+        </div>
+    </header>
+
+    <!-- Content will be rendered here -->
+    {% block content %}{% endblock content %}
+
+    <!-- Footer with decor items -->
+    <footer class="mainFooter container-fluid">
+        <div>
+            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_notesSimple.svg" %}">
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script src="{% static "js/slide.js" %}"></script>
+    {% block js %}{% endblock js %}
+</body>
+</html>

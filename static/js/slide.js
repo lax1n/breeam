@@ -1,6 +1,7 @@
 
 $(function(){
-	
+
+	var loader;
 	var content;
 	var buttons;
 	
@@ -10,6 +11,7 @@ $(function(){
 		setEvents();
 		
 		function setHTMLObjects(){
+			loader = $("#loader");
 			content = $("#content");
 			buttons = $("#buttons");
 		};
@@ -54,7 +56,7 @@ $(function(){
 		content.animate({
 				opacity: 0,
 		   }, 500, loadContent);
-	   
+		showLoader();
 	   function loadContent() {
 		   content.load(toLoad, function(){
 			   showNewContent();
@@ -62,12 +64,20 @@ $(function(){
 		   });
     	}
 
+		function showLoader(){
+			loader.fadeIn();
+		}
+
     	function showNewContent() {
         	content.animate({
 				left: ["0%", "easeInQuint"],
 				opacity: 1
-		   }, 500);
+		   }, 500, hideLoader());
     	}
+
+		function hideLoader(){
+			loader.fadeOut();
+		}
 	}
 
 	function setButtons(slide){
@@ -87,7 +97,7 @@ $(function(){
 		var next = $(".pagination .selected").next().attr('href');
 		if(next != null){
 			$(".arrow-right").attr('href', next);
-			$(".arrow-right").css("display", "block");;
+			$(".arrow-right").css("display", "block");
 		}else{
 			$(".arrow-right").css("display", "none");
 		}

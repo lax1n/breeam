@@ -1,0 +1,11 @@
+<div class="pagination" id="timeline">
+    {% for sibling in siblings %}
+    	<a href="{{ sibling.slug }}">
+        {% if sibling == slide %}
+            <div data-tooltip="{{ sibling.title }}" class="pagination__dot pagination__dot--active"></div>
+        {% else %}
+            <div data-tooltip="{{ sibling.title }}" class="pagination__dot"></div>
+        {% endif %}
+        </a>
+    {% endfor %}
+</div>

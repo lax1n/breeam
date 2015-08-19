@@ -1,73 +1,54 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Breeam</title>
-<link rel="stylesheet" href="../../media/css/mainStyles.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-</head>
+{% extends 'layouts/layout.html' %}
+{% block title %}Breeam{% endblock title %}
 
-<body>
+{% block content %}
 
-<section class="mainContainer container-fluid">
-	
-    <!-- Header with decor items -->
-    <header class="mainHeader">
-        <div>
-            <img src="../../media/images/breeamImgs_coffeeCup.svg">
-        </div>
-        <div>
-            <img src="../../media/images/breeamImgs_smartPhone.svg">
-        </div>
-        <div>
-            <img src="../../media/images/breeamImgs_notePinkPencil.svg">
-        </div>
-    </header>
-    
-    <!-- Main content, including slider, timeline and page buttons. -->
-    <div class="centerContent row container-fluid">
-        {% for slide in slides %}
-            <div class="row">
-                <div class="col-md-1">
-                        <!-- Link for the next slide -->
-                        <a href="" class="arrow-left"></a>
-                        <!-- Link for the next slide -->
-                        <a href="" class="arrow-right"></a>
+    <section class="mainContainer container-fluid">
+
+        <!-- Main content, including slider, timeline and page buttons. -->
+        <div class="centerContent row container-fluid">
+            {% for slide in slides %}
+                <div class="row">
+                    <div class="col-md-1">
+                            <!-- Link for the next slide -->
+                            <a href="" class="arrow-left"></a>
+                            <!-- Link for the next slide -->
+                            <a href="" class="arrow-right"></a>
+                    </div>
+                    <div class="col-md-10" id="content">
+                    </div>
+                <div class="col-md-1"></div>
                 </div>
-                <div class="col-md-10" id="content">
-                </div>
-            <div class="col-md-1"></div>
+            {% endfor %}
+
+            <!-- Loader -->
+            <div class="sk-circle" id="loader">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
             </div>
-        {% endfor %}
-        
-    <!-- Timeline -->
-    <div class="timelineRow row">
-        	{% include 'layouts/timeline.html' %}
-    </div>
-    
-    <!-- Slide buttons -->
-    <div class="navButtons row" id="buttons">
-    </div>
-        
-	</div> <!-- centerContent -->
-    
-    <!-- Footer with decor items -->
-    <footer class="mainFooter container-fluid">
-        <div>
-            <img src="../../media/images/breeamImgs_coffeeCup.svg">
-        </div>
-        <div>
-            <img src="../../media/images/breeamImgs_notesSimple.svg">
-        </div>
-    </footer>
-    
-</section>
 
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<script src="../../media/js/slide.js"></script>
-</body>
-</html>
+            <!-- Timeline -->
+            <div class="timelineRow row">
+                {% include 'includes/timeline.html' %}
+            </div>
+
+            <!-- Slide buttons -->
+            <div class="navButtons row" id="buttons">
+            </div>
+
+        </div> <!-- centerContent -->
+
+    </section>
+
+
+{% endblock content %}
