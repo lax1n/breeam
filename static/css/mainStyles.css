@@ -18,8 +18,13 @@ h1{
 	font-size: 8em !important;
 }
 
+div{
+	display: block;
+}
+
 .mainContainer, .centerContent{
 	padding: 0 !important;
+	margin: 0 !important;
 }
 
 
@@ -72,9 +77,9 @@ h1{
 }
 
 .centerContent{
-	width: 100%;	
+	width: 100%;
+	height: 100%;	
 	opacity: 1;
-	height: 100%;
 }
 
 .arrow-left {
@@ -99,7 +104,15 @@ h1{
 	top: 50%;
 }
 
-.centerImgContainer {
+#content{
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 300px;
+	max-height: 700px;
+}
+
+#content .centerImgContainer {
 	max-width: 100%;
 	min-height: 400px;
 	max-height: 700px;
@@ -109,7 +122,10 @@ h1{
 }
 
 .centerContent div div a img {
-	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
 }
 
 .centerContent div div a{
@@ -120,17 +136,14 @@ h1{
 /* --- Timeline + page button css settings --- */
 
 .timelineRow{
-	position: absolute;
-	margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 100%;
-	bottom: 25%;
+	position: relative;
+	width: 100%;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
 }
 
 .navButtons{
-	position: absolute;
 	margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -138,8 +151,6 @@ h1{
     width: 100%;
 	bottom: 5%;
 }
-
-
 
 .navButtons div div ul li a{
 	border-radius: 0px;
@@ -271,12 +282,6 @@ h1{
 	
 	.mainFooter div img {
 		top: 30%;
-	}
-}
-
-@media all and (max-width: 1366px), all and (min-height: 950px) {
-	#content{
-		margin-top: 10%;
 	}
 }
 

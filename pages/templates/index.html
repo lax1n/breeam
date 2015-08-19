@@ -7,19 +7,18 @@
 
         <!-- Main content, including slider, timeline and page buttons. -->
         <div class="centerContent row container-fluid">
-            {% for slide in slides %}
-                <div class="row">
-                    <div class="col-md-1">
-                            <!-- Link for the next slide -->
-                            <a href="" class="arrow-left"></a>
-                            <!-- Link for the next slide -->
-                            <a href="" class="arrow-right"></a>
-                    </div>
-                    <div class="col-md-10" id="content">
-                    </div>
-                <div class="col-md-1"></div>
+        	<div class="row">
+            	<div class="col-md-1">
+                	<!-- Link for the next slide -->
+                    <a href="" class="arrow-left"></a>
+                    <!-- Link for the next slide -->
+                    <a href="" class="arrow-right"></a>
+				</div>
+                <div class="col-md-10" id="content">
                 </div>
-            {% endfor %}
+                <div class="col-md-1"></div>
+  
+			</div>
 
             <!-- Loader -->
             <div class="sk-circle" id="loader">
@@ -36,10 +35,10 @@
                 <div class="sk-circle11 sk-child"></div>
                 <div class="sk-circle12 sk-child"></div>
             </div>
-
-            <!-- Timeline -->
-            <div class="timelineRow row">
-                {% include 'includes/timeline.html' %}
+            
+			<!-- Timeline -->
+            <div class="timelineRow">
+            	{% include 'includes/timeline.html' %}
             </div>
 
             <!-- Slide buttons -->
