@@ -9,6 +9,7 @@
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
+	overflow-x: hidden;
 
 }
 
@@ -251,7 +252,6 @@ h1{
 	}
 }
 
-
 @media all and (max-width: 1366px) {
 	h1{
 		font-size: 6em !important;		
@@ -271,6 +271,12 @@ h1{
 	
 	.mainFooter div img {
 		top: 30%;
+	}
+}
+
+@media all and (max-width: 1366px), all and (min-height: 950px) {
+	#content{
+		margin-top: 10%;
 	}
 }
 
