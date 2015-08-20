@@ -91,6 +91,7 @@ div{
 	position: fixed;
 	left: 1%;
 	top: 50%;
+	z-index: 1;
 }
 
 .arrow-right {
@@ -102,6 +103,7 @@ div{
 	position: fixed;
 	right: 1%;
 	top: 50%;
+	z-index: 1;
 }
 
 #content{
@@ -121,7 +123,7 @@ div{
     overflow: hidden; /* hide the cropped portion */
 }
 
-.centerContent div div a img {
+#content .centerImgContainer img {
 	max-width: 100%;
 	height: auto;
 	display: block;
@@ -146,10 +148,6 @@ div{
 .navButtons{
 	margin-left: auto;
     margin-right: auto;
-    left: 0;
-    right: 0;
-    width: 100%;
-	bottom: 5%;
 }
 
 .navButtons div div ul li a{

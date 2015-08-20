@@ -20,7 +20,7 @@ $(function(){
 			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
    			content.load(first, function(){
-				$("#image").css("width", $(window).width() * 0.9);
+				$("#image").css("width", $(window).width() * 0.9, "height", $(window));
 			});
 			setButtons(first);
 			updateArrows();
