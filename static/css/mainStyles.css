@@ -247,9 +247,9 @@ header div:nth-child(3) img {
 footer{
 	width: 100%;
 	height: 30vh;
-	margin-top: -15vh;
 	z-index: -1;
 	position: fixed;
+	bottom: -5vh;
 }
 
 footer div {
@@ -278,10 +278,6 @@ footer div:nth-child(2) img {
 	left: 10vh;
 }	
 
-
-@media all and (max-width: 1920px) {
-
-}
 
 
 @media all and (max-width: 1366px) {
