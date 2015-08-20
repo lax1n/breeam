@@ -19,7 +19,9 @@ $(function(){
 		function setStartUp(){
 			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
-   			content.load(first);
+   			content.load(first, function(){
+				$("#image").css("width", $(window).width() * 0.9);
+			});
 			setButtons(first);
 			updateArrows();
 		};
@@ -59,6 +61,7 @@ $(function(){
 		showLoader();
 	   function loadContent() {
 		   content.load(toLoad, function(){
+			   $("#image").css("width", $(window).width() * 0.9);
 			   showNewContent();
 			   setButtons(toLoad);
 		   });
