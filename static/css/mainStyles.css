@@ -27,6 +27,7 @@ time, mark, audio, video {
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
+	overflow-x: hidden;
 
 }
 
@@ -121,7 +122,7 @@ header div:nth-child(3) img {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 0;
+	left: 10%;
 	right: 0;
 }
 
@@ -188,6 +189,11 @@ header div:nth-child(3) img {
 	color: white;
 	padding: 2vh 6vh 2vh 6vh !important;
 	margin: 10px;
+	transition: .3s;
+}
+
+.navButtons div ul li a:hover{
+	transform: scale(1.1,1.1);
 }
 
 .navButtons div ul li:nth-child(1) a{
@@ -277,3 +283,34 @@ footer div:nth-child(1) img {
 footer div:nth-child(2) img {
 	left: 10vh;
 }	
+
+
+@media all and (max-width: 1920px) {
+
+}
+
+
+@media all and (max-width: 1366px) {
+	h1{
+		font-size: 6em !important;		
+	}
+}
+
+
+@media all and (max-width: 1280px) {
+	h1{
+		font-size: 6em !important;		
+	}
+}
+
+
+@media all and (max-width: 1024px) {
+	h1{
+		font-size: 4em !important;		
+	}
+	
+	.navButtons div ul li a{
+		padding: 1vh 3vh 1vh 3vh !important;
+	}
+
+}
