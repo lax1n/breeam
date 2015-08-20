@@ -1,9 +1,7 @@
-<div class="test col-md-12 text-center">
-    <div class="btn-group">
-        <ul class="nav nav-pills">
-           {% for button in buttons %}
-               <li><a href="{{ button.url }}" class="btn btn-primary btn-lg" role="button">{{ button.name }}</a></li>
-           {% endfor %}
-        </ul>
-    </div>
+<div class="btn-group">
+	<ul class="nav-pills">
+    	{% for button in buttons %}
+        	<li><a href="{{ button.url }}" class="btn btn-primary btn-lg" role="button">{{ button.name }}</a></li>
+        {% endfor %}
+	</ul>
 </div>

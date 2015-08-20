@@ -10,31 +10,10 @@
     {% block css %}{% endblock css %}
 </head>
 <body>
-    <!-- Header with decor items -->
-    <header class="mainHeader">
-        <div>
-            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
-        </div>
-        <div>
-            <img src="{% static "images/breeamImgs_smartPhone.svg" %}">
-        </div>
-        <div>
-            <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
-        </div>
-    </header>
-
     <!-- Content will be rendered here -->
-    {% block content %}{% endblock content %}
-
-    <!-- Footer with decor items -->
-    <footer class="mainFooter container-fluid">
-        <div>
-            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
-        </div>
-        <div>
-            <img src="{% static "images/breeamImgs_notesSimple.svg" %}">
-        </div>
-    </footer>
+    <div class="mainContainer">
+    	{% block content %}{% endblock content %}
+    </div>
 
     <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

@@ -19,9 +19,7 @@ $(function(){
 		function setStartUp(){
 			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
-   			content.load(first, function(){
-				$("#image").css("width", $(window).width() * 0.9, "height", $(window));
-			});
+   			content.load(first);
 			setButtons(first);
 			updateArrows();
 		};
@@ -61,7 +59,6 @@ $(function(){
 		showLoader();
 	   function loadContent() {
 		   content.load(toLoad, function(){
-			   $("#image").css("width", $(window).width() * 0.9);
 			   showNewContent();
 			   setButtons(toLoad);
 		   });
@@ -73,7 +70,7 @@ $(function(){
 
     	function showNewContent() {
         	content.animate({
-				left: ["0%", "easeInQuint"],
+				"margin-left": ["0%", "easeInQuint"],
 				opacity: 1
 		   }, 500, hideLoader());
     	}
@@ -108,17 +105,17 @@ $(function(){
 
 	function leftContentAnimation(){
 		content.animate({
-				left: ["-100%", "easeOutQuint"]
+				"margin-left": ["-100%", "easeOutQuint"]
 		   }, 500, function(){
-			   		content.css("left", "100%");
+			   		content.css("margin-left", "100%");
 		});
 	}
 
 	function rightContentAnimation(){
 		content.animate({
-				left: ["100%", "easeOutQuint"]
+				"margin-left": ["100%", "easeOutQuint"]
 		   }, 500, function(){
-			   		content.css("left", "-100%");
+			   		content.css("margin-left", "-100%");
 		});
 	}
 

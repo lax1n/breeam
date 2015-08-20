@@ -1,52 +1,69 @@
 {% extends 'layouts/layout.html' %}
 {% block title %}Breeam{% endblock title %}
-
+{% load staticfiles %}<!DOCTYPE html>
 {% block content %}
 
-    <section class="container-fluid">
+<!-- Main content, including slider, timeline and page buttons. -->
+<div class="mainContent">
 
-        <!-- Main content, including slider, timeline and page buttons. -->
-        <div class="centerContent row container-fluid">
-        	<div class="row">
-            	<div class="col-md-1">
-                	<!-- Link for the next slide -->
-                    <a href="" class="arrow-left"></a>
-                    <!-- Link for the next slide -->
-                    <a href="" class="arrow-right"></a>
-				</div>
-                <div class="col-md-10" id="content">
-                </div>
-                <div class="col-md-1"></div>
+    <!-- Header with decor items -->
+    <header>
+        <div>
+            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_smartPhone.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
+        </div>
+    </header>
+    {% for slide in slides %}
+	<div class="sliderContainer" id="content">
+        <!-- Link for the next slide -->
+        <a href="" class="arrow-left"></a>
+        <!-- Link for the next slide -->
+		<a href="" class="arrow-right"></a>
+	</div>
+    {% endfor %}
   
-			</div>
+	</div> <!-- sliderContainer + content -->
 
-            <!-- Loader -->
-            <div class="sk-circle" id="loader">
-                <div class="sk-circle1 sk-child"></div>
-                <div class="sk-circle2 sk-child"></div>
-                <div class="sk-circle3 sk-child"></div>
-                <div class="sk-circle4 sk-child"></div>
-                <div class="sk-circle5 sk-child"></div>
-                <div class="sk-circle6 sk-child"></div>
-                <div class="sk-circle7 sk-child"></div>
-                <div class="sk-circle8 sk-child"></div>
-                <div class="sk-circle9 sk-child"></div>
-                <div class="sk-circle10 sk-child"></div>
-                <div class="sk-circle11 sk-child"></div>
-                <div class="sk-circle12 sk-child"></div>
-            </div>
+	<!-- Loader -->
+	<div class="sk-circle" id="loader">
+		<div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+	</div>
             
-			<!-- Timeline -->
-            <div class="timelineRow">
-            	{% include 'includes/timeline.html' %}
-            </div>
+	<!-- Timeline -->
+    <div class="timelineContainer">
+		{% include 'includes/timeline.html' %}
+	</div> <!-- timelineContainer -->
 
-            <!-- Slide buttons -->
-            <div class="navButtons row" id="buttons">
-            </div>
+	<!-- Slide buttons -->
+	<div class="navButtons" id="buttons"></div>
+    
+    <!-- Footer with decor items -->
+    <footer>
+        <div>
+            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
+        </div>
+        <div>
+            <img src="{% static "images/breeamImgs_notesSimple.svg" %}">
+        </div>
+    </footer>    
 
-        </div> <!-- centerContent -->
+</div> <!-- mainContent -->
 
-    </section>
+
 {% endblock content %}
-

@@ -1,5 +1,23 @@
-@charset "utf-8";
-/* CSS Document */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
 @font-face{
 	font-family: GeosansLight;
@@ -9,77 +27,61 @@
 body{
 	background-image: url(../images/breeamBG2.svg);
 	background-repeat: repeat;
-	overflow-x: hidden;
 
 }
 
 h1{
 	font-family: GeosansLight !important;
 	font-size: 8em !important;
+	color: rgb(100, 100, 100) !important;
 }
 
-div{
-	display: block;
+.mainContainer, .mainContent{
+	width: auto;
+	max-width: 100%;
+	max-height: 100vh;
 }
 
-.mainContainer, .centerContent{
-	padding: 0 !important;
-	margin: 0 !important;
+.mainContent{
+	opacity: 1;
 }
 
-
-/* --- Main header css settings --- */
-
-
-.mainHeader{
+header{
 	width: 100%;
-	padding: 0 !important;
-	float: left;
-	position: fixed;
-	top: 0;
+	height: 30vh;
+	margin-top: -5vh;
 	z-index: -1;
+	position: fixed;
 }
 
-.mainHeader div {
+header div {
     width: 33.33333333333333%;
+	height: 100%;
     text-align: left;
 	float: left;
 }
 
-.mainHeader div:nth-child(2) {
+header div:nth-child(2) {
 	text-align: center;
 }
 
-.mainHeader div:nth-child(3) {
+header div:nth-child(3) {
 	text-align: right;
 }
 
-.mainHeader div img {
+header div img {
     position: relative;
 	width: 50%;
-	top: -7em;
+	height: inherit;
+	margin-top: -9vh;
 }
 
-.mainHeader div:nth-child(1) img {
-	left: -100px;
+header div:nth-child(1) img {
+	left: -10vh;
 }
 
-.mainHeader div:nth-child(3) img {
-	left: 100px;
-}
-
-
-/* --- Main content css settings --- */
-
-
-.pageTitle{
-	color: rgb(100, 100, 100);
-}
-
-.centerContent{
-	width: 100%;
-	height: 100%;	
-	opacity: 1;
+header div:nth-child(3) img {
+	left: 10vh;
 }
 
 .arrow-left {
@@ -106,235 +108,154 @@ div{
 	z-index: 1;
 }
 
-#content{
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	min-height: 300px;
-	max-height: 700px;
+.sliderContainer{
+	width: auto;
+	max-width: 100%;
+	max-height: 70vh;
+	margin-top: 5vh;
 }
 
-#content .centerImgContainer {
+.slideContainer .imgContainer{
 	max-width: 100%;
-	min-height: 400px;
-	max-height: 700px;
-    overflow: hidden;
+	min-height: 70vh;
     text-align: center; /* ensures the image is always in the h-middle */
-    overflow: hidden; /* hide the cropped portion */
 }
 
-#content .centerImgContainer img {
+.imgContainer img{
+	width: 90%;
+	height: 70vh;
+	display: block;
+	margin: 0 auto;
+}
+
+.timelineContainer{
+	width: auto;
 	max-width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
+	max-height: 5vh;
+	text-align: center;
+	margin-top: -5vh;
+	margin-bottom: 5vh;
 }
 
-.centerContent div div a{
-	color: rgb(80, 80, 80);
-}
-
-
-/* --- Timeline + page button css settings --- */
-
-.timelineRow{
-	position: relative;
-	width: 100%;
-	height: 50px;
-	display: block;
-	margin: 0 auto;
+.pagination{
+	height: 5vh;
+	display: inline-block;
 }
 
 .navButtons{
-	margin-left: auto;
-    margin-right: auto;
+	width: auto;
+	max-width: 100%;
+	max-height: 15vh;
+	display: block;
 }
 
-.navButtons div div ul li a{
+.navButtons .btn-group{
+	width: 100%;
+	height: 15vh;
+	text-align: center;
+}
+
+.navButtons .btn-group ul{
+	display: inline-block;
+}
+
+.navButtons div ul{
+	list-style: none;
+}
+
+.navButtons div ul li a{
 	border-radius: 0px;
 	text-align: center !important;
 	border: none;
 	color: white;
-	padding: 20px 60px 20px 60px !important;
+	padding: 2vh 6vh 2vh 6vh !important;
 	margin: 10px;
 }
 
-.navButtons div div ul li:nth-child(1) a{
+.navButtons div ul li:nth-child(1) a{
 	background-color: #55aced;
 	box-shadow: 0px 5px 0px #1a75b8;
 }
 
-.navButtons div div ul li:nth-child(1) a:hover{
+.navButtons div ul li:nth-child(1) a:hover{
 	background-color: #5cb9ff;
 }
 
-.navButtons div div ul li:nth-child(2) a{
+.navButtons div ul li:nth-child(2) a{
 	background-color: #48e58a;
 	box-shadow: 0px 5px 0px #16b459;
 }
 
-.navButtons div div ul li:nth-child(2) a:hover{
+.navButtons div ul li:nth-child(2) a:hover{
 	background-color: #41f28c;
 }
 
-.navButtons div div ul li:nth-child(3) a{
+.navButtons div ul li:nth-child(3) a{
 	background-color: #e64d3c;
 	box-shadow: 0px 5px 0px #ce3524;
 }
 
-.navButtons div div ul li:nth-child(3) a:hover{
+.navButtons div ul li:nth-child(3) a:hover{
 	background-color: #ff5845;
 }
 
-.navButtons div div ul li:nth-child(4) a{
+.navButtons div ul li:nth-child(4) a{
 	background-color: #9b59b5;
 	box-shadow: 0px 5px 0px #6b2388;
 }
 
-.navButtons div div ul li:nth-child(4) a:hover{
+.navButtons div ul li:nth-child(4) a:hover{
 	background-color: #c565eb;
 }
 
-.navButtons div div ul li:nth-child(5) a{
+.navButtons div ul li:nth-child(5) a{
 	background-color: #e57d22;
 	box-shadow: 0px 5px 0px #cf6507;
 }
 
-.navButtons div div ul li:nth-child(5) a:hover{
+.navButtons div ul li:nth-child(5) a:hover{
 	background-color: #ff8a23;
 }
 
-.navButtons div div ul li:nth-child(6) a{
+.navButtons div ul li:nth-child(6) a{
 	background-color: #f1c40f;
 	box-shadow: 0px 5px 0px #d8aa00;
 }
 
-.navButtons div div ul li:nth-child(6) a:hover{
+.navButtons div ul li:nth-child(6) a:hover{
 	background-color: #ffd21e;
-}		
-
-
-/* --- Main footer css adjustments --- */
-
-
-.mainFooter{
-	width: 100%;
-	padding: 0 !important;
-	position: fixed;
-	bottom: 0;
-	z-index: -1;
 }
 
-.mainFooter div {
+footer{
+	width: 100%;
+	height: 30vh;
+	margin-top: -15vh;
+	z-index: -1;
+	position: fixed;
+}
+
+footer div {
     width: 50%;
+	height: 100%;
     text-align: left;
-    overflow: hidden; /* hide the cropped portion */
-	height: 200px;
 	float: left;
 }
 
-.mainFooter div:nth-child(2) {
+footer div:nth-child(2) {
 	text-align: right;
 }
 
-.mainFooter div img {
+footer div img {
     position: relative;
 	width: 33.33333333333333%;
+	height: inherit;
+	margin-top: 3vh;
 }
 
-.mainFooter div:nth-child(1) img {
-	left: -100px;
+footer div:nth-child(1) img {
+	left: -10vh;
 }
 
-.mainFooter div:nth-child(2) img {
-	left: 100px;
-}
-
-
-/* --- Media queries for 1024, 1280, 1366 and 1920 --- */
-
-
-@media all and (max-width: 1920px) {
-
-	.timelineRow{
-		margin-top: 20px;
-	}
-}
-
-@media all and (max-width: 1366px) {
-	h1{
-		font-size: 6em !important;		
-	}
-	
-	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
-		left: -50px;
-	}
-
-	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
-		left: 50px;
-	}
-	
-    .navButtons div div ul li a{
-		padding: 15px 40px 15px 40px !important;
-	}
-	
-	.mainFooter div img {
-		top: 30%;
-	}
-}
-
-
-@media all and (max-width: 1280px) {
-	h1{
-		font-size: 6em !important;		
-	}
-	
-	.mainHeader div img {
-		top: -3em;
-	}
-	
-	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
-		left: -50px;
-	}
-
-	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
-		left: 50px;
-	}
-	
-    .navButtons div div ul li a{
-		padding: 15px 40px 15px 40px !important;
-	}
-	
-	.mainFooter div img {
-		top: 30%;
-	}
-}
-
-
-@media all and (max-width: 1024px) {
-	h1{
-		font-size: 5em !important;		
-	}
-	
-	.mainHeader div img {
-		top: -1em;
-	}
-	
-	.mainHeader div:nth-child(1) img, .mainFooter div:nth-child(1) img {
-		left: -50px;
-	}
-
-	.mainHeader div:nth-child(3) img, .mainFooter div:nth-child(2) {
-		left: 50px;
-	}
-
-    .navButtons div div ul li a{
-		padding: 10px 30px 10px 30px !important;
-	}
-	
-	.mainFooter div img {
-		top: 30%;
-	}
-
-}
-
+footer div:nth-child(2) img {
+	left: 10vh;
+}	
