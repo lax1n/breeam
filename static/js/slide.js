@@ -70,7 +70,7 @@ $(function(){
 
     	function showNewContent() {
         	content.animate({
-				"margin-left": ["0%", "easeInQuint"],
+				left: ["0%", "easeInQuint"],
 				opacity: 1
 		   }, 500, hideLoader());
     	}
@@ -105,17 +105,17 @@ $(function(){
 
 	function leftContentAnimation(){
 		content.animate({
-				"margin-left": ["-100%", "easeOutQuint"]
+				left: ["-100%", "easeOutQuint"]
 		   }, 500, function(){
-			   		content.css("margin-left", "100%");
+			   		content.css("left", "100%");
 		});
 	}
 
 	function rightContentAnimation(){
 		content.animate({
-				"margin-left": ["100%", "easeOutQuint"]
+				left: ["100%", "easeOutQuint"]
 		   }, 500, function(){
-			   		content.css("margin-left", "-100%");
+			   		content.css("left", "-100%");
 		});
 	}
 

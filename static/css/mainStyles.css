@@ -86,29 +86,29 @@ header div:nth-child(3) img {
 }
 
 .arrow-left {
+	font-size: 4em;
+	color: rgb(100, 100, 100);
+	z-index: 1;
+	opacity: 0.5;
+	transition: .3s;
 	position: fixed;
 	top: 50%;
 	left: 1%;
-	border: none;
-	font-size: 5em;
+}
+
+.arrow-right{
+	font-size: 4em;
+	color: rgb(100, 100, 100);
 	z-index: 1;
 	opacity: 0.5;
 	transition: .3s;
-}
-
-.arrow-right {
 	position: fixed;
 	top: 50%;
 	right: 1%;
-	border: none;
-	font-size: 5em;
-	z-index: 1;
-	opacity: 0.5;
-	transition: .3s;
 }
 
 .arrow-left:hover, .arrow-right:hover{
-	transform: scale(1.4);
+	transform: scale(1.3);
 	opacity: 1;
 }
 
