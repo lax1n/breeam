@@ -1,6 +1,6 @@
 {% extends 'layouts/layout.html' %}
+{% load staticfiles %}
 {% block title %}Breeam{% endblock title %}
-{% load staticfiles %}<!DOCTYPE html>
 {% block content %}
 
 <!-- Main content, including slider, timeline and page buttons. -->
@@ -18,14 +18,13 @@
             <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
         </div>
     </header>
-    {% for slide in slides %}
+    
+	<!-- Link for the next slide -->
+    <a href="" class="arrow-left">&#9001;</a>
+    <!-- Link for the next slide -->
+	<a href="" class="arrow-right">&#9002;</a>
 	<div class="sliderContainer" id="content">
-        <!-- Link for the next slide -->
-        <a href="" class="arrow-left"></a>
-        <!-- Link for the next slide -->
-		<a href="" class="arrow-right"></a>
 	</div>
-    {% endfor %}
   
 	</div> <!-- sliderContainer + content -->
 
