@@ -65,7 +65,7 @@ $(function(){
     	}
 
 		function showLoader(){
-			loader.fadeIn();
+			loader.fadeTo(1000, 1);
 		}
 
     	function showNewContent() {
