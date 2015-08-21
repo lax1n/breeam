@@ -1,6 +1,8 @@
 
 .loader {
   position: absolute;
+  display: none;
+  overflow: hidden;
   top: 30%;
   left: 0;
   right: 0;
@@ -8,8 +10,8 @@
   margin: 0px auto;
   width: 100px;
   height: 100px;
-  zoom: 3;
-  -moz-transform: scale(3);
+  zoom: 2.4;
+  -moz-transform: scale(2.4);
   opacity: 0;
 }
 
