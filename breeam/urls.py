@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^admin/logout/$', 'django.contrib.auth.views.logout', {'next_page': 'pages.views.index'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'pages.views.index'),
     url(r'^pages/(?P<slug>[^\.]+)/buttons', 'pages.views.show_buttons'),

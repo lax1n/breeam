@@ -69,7 +69,7 @@ $(function(){
 			   }else{
 				   page_title.attr('class', 'pageTitleStandard')
 			   }
-			   headline.replaceWith('<h1 id="headline">' + data.title + '</h1>');
+			   $("#headline").replaceWith('<h1 id="headline">' + data.title + '</h1>');
 			   image.attr('src', data.image_src);
 			   showNewContent();
 			   setButtons(toLoad);
