@@ -84,6 +84,20 @@ header div:nth-child(3) img {
 	left: 10vh;
 }
 
+.loginBtn{
+	font-family: GeosansLight;
+	font-size: 2em;
+	color: rgb(100, 100, 100);
+	position: absolute;
+	top: 7%;
+	right: 10%;
+	z-index: 1;
+}
+
+.loginBtn:hover{
+	text-decoration: none;
+}
+
 .arrow-left {
 	font-size: 4em;
 	color: rgb(100, 100, 100);
