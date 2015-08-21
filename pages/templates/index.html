@@ -40,15 +40,12 @@
     </a>
     
     <div class="mainWrapper">
-		
+
         <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
         	<h1 id="headline">{{ first_slide.title }}</h1>
         </div>
-        
+
         <div class="sliderContainer" id="content">
-        	<!--<div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
-				<h1 id="headline">{{ first_slide.title }}</h1>
-        	</div>-->
             <div class="imgContainer">
                 <!-- Current Slide Image -->
                 <img src="{{ first_slide.image.url }}" alt="" id="image"/>

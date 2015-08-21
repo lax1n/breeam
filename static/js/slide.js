@@ -67,6 +67,7 @@ $(function(){
 				opacity: 0,
 		   }, 500, loadContent);
 		showLoader();
+		headline.fadeOut();
 	   function loadContent() {
 		   $.getJSON(toLoad + '/json', function(data){
 			   if(data.align_title_in_image){
@@ -74,7 +75,7 @@ $(function(){
 			   }else{
 				   page_title.attr('class', 'pageTitleStandard')
 			   }
-			   $("#headline").replaceWith('<h1 id="headline">' + data.title + '</h1>');
+			   $("#headline").text(data.title);
 			   image.attr('src', data.image_src);
 			   showNewContent();
 			   setButtons(toLoad);
@@ -93,7 +94,9 @@ $(function(){
     	}
 
 		function hideLoader(){
-			loader.fadeOut();
+			loader.fadeOut(function(){
+				headline.delay(500).fadeIn();
+			});
 		}
 	}
 

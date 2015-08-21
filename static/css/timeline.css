@@ -25,6 +25,10 @@
 	opacity: 1;	
 }
 
+.pagination a:hover {
+    text-decoration: none;
+}
+
 .selected .pagination__dot{
 	transition: width 1s;
 	border-color: white;
