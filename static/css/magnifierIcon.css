@@ -2,6 +2,7 @@
 /* CSS Document */
 
 .magnifier-icon {
+  z-index: 2;
   display: block;
   position: absolute;
   top: 3%;
