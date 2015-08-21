@@ -294,7 +294,7 @@ footer{
 	width: 100%;
 	height: 30vh;
 	z-index: -1;
-	position: absolute;
+	position: fixed;
 	overflow: hidden;
 	bottom: -3vh;
 }
