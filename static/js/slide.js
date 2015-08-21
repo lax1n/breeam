@@ -2,6 +2,7 @@
 $(function(){
 
 	var loader;
+	var $icon;
 	var content;
 	var buttons;
 	var page_title;
@@ -15,6 +16,7 @@ $(function(){
 		
 		function setHTMLObjects(){
 			loader = $("#loader");
+			$icon = $('.magnifier-icon');
 			content = $("#content");
 			buttons = $("#buttons");
 			page_title = $("#page_title");
@@ -41,6 +43,9 @@ $(function(){
 			});
 			$('a.arrow-left').click(prevSlide);
 			$('a.arrow-right').click(nextSlide);
+			$icon.on('click', function (){
+  				$(this).toggleClass('is-open');
+			});
 		};
 	}();
 	
