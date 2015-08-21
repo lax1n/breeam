@@ -4,6 +4,9 @@ $(function(){
 	var loader;
 	var content;
 	var buttons;
+	var page_title;
+	var headline;
+	var image;
 	
 	var init = function(){
 		setHTMLObjects();
@@ -14,12 +17,14 @@ $(function(){
 			loader = $("#loader");
 			content = $("#content");
 			buttons = $("#buttons");
+			page_title = $("#page_title");
+			headline = $("#headline");
+			image = $("#image");
 		};
 		
 		function setStartUp(){
 			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
-   			content.load(first);
 			setButtons(first);
 			updateArrows();
 		};
@@ -58,10 +63,17 @@ $(function(){
 		   }, 500, loadContent);
 		showLoader();
 	   function loadContent() {
-		   content.load(toLoad, function(){
+		   $.getJSON(toLoad + '/json', function(data){
+			   if(data.align_title_in_image){
+				   page_title.attr('class', 'pageTitleFloat')
+			   }else{
+				   page_title.attr('class', 'pageTitleStandard')
+			   }
+			   headline.replaceWith('<h1 id="headline">' + data.title + '</h1>');
+			   image.attr('src', data.image_src);
 			   showNewContent();
 			   setButtons(toLoad);
-		   });
+			});
     	}
 
 		function showLoader(){

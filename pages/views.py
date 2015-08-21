@@ -1,6 +1,8 @@
-from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
+from django.http import JsonResponse
 from pages.models import Slide
+from django.core import serializers
 
 
 # Create your views here.
@@ -23,6 +25,15 @@ def show_slide(request, slug):
                                'siblings': slide.get_siblings(include_self=True),
                                'buttons': slide.slidebutton_set.all},
                               context_instance=RequestContext(request))
+
+
+def slide_json(request, slug):
+    slide = get_object_or_404(Slide, slug=slug)
+    return JsonResponse({
+        'title': slide.title,
+        'align_title_in_image': slide.align_title_in_image,
+        'image_src': slide.image.url
+    })
 
 
 def show_buttons(request, slug):
