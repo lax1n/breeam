@@ -128,7 +128,6 @@ header div:nth-child(3) img {
 
 .pageTitleFloat{
 	position: absolute;
-	max-width: 90%;
 	top: 0;
 	bottom: 0;
 	left: 10%;
@@ -137,7 +136,7 @@ header div:nth-child(3) img {
 }
 
 .pageTitleStandard{
-	width: 100%;
+	max-width: 90%;
 	height: 10vh;
 	margin-left: 10%;
 	margin-bottom: 50px;
