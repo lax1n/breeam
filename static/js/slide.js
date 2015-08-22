@@ -44,7 +44,11 @@ $(function(){
 			$('a.arrow-left').click(prevSlide);
 			$('a.arrow-right').click(nextSlide);
 			$icon.on('click', function (){
+				if($(this).hasClass('is-open')){
+					exitMacroView();
+				}
   				$(this).toggleClass('is-open');
+				showMacroView();
 			});
 		};
 	}();
@@ -153,5 +157,24 @@ $(function(){
 		setSlide(this);
 		updateArrows()
 		return false;
+	}
+
+	function showMacroView(){
+		$("#wrapper").fadeOut('slow', function(){
+			$("#macro_wrapper").hide();
+			$("#macro_wrapper").load('/macro/', function(){
+				$("#wrapper").css("display", "none");
+				$("#macro_wrapper").addClass("macroWrapper");
+				$("#macro_wrapper").fadeIn();
+			});
+		});
+	}
+
+	function exitMacroView(){
+		$("#macro_wrapper").fadeOut('slow', function(){
+			$("#macro_wrapper").removeClass("macroWrapper");
+			$("#macro_wrapper").empty();
+			$("#wrapper").fadeIn();
+		});
 	}
 });
