@@ -25,7 +25,7 @@ $(function(){
 		};
 		
 		function setStartUp(){
-			var first = '/pages/' + $('div#timeline a:first-child').attr('href');
+			var first = $('div#timeline a:first-child').attr('href');
             $('div#timeline a:first-child').addClass("selected");
 			setButtons(first);
 			updateArrows();
@@ -55,6 +55,11 @@ $(function(){
 			$(document).on('click', '#macro_url', function() {
 				var slide_href = $(this).attr('href');
 				$.getJSON('/pages/' + slide_href + '/json', function(data){
+					if(data.align_title_in_image){
+						page_title.attr('class', 'pageTitleFloat')
+					}else{
+						page_title.attr('class', 'pageTitleStandard')
+					}
 					$("#headline").text(data.title);
 					image.attr('src', data.image_src);
 					$icon.toggleClass('is-open');
@@ -63,6 +68,7 @@ $(function(){
 					$(".pagination").find(".selected").removeClass("selected");
 					$('.pagination a[href="' + slide_href + '"]').addClass("selected");
 					updateArrows();
+					setButtons(slide_href);
 					//Exit macro view
 					exitMacroView();
 				});
@@ -83,7 +89,7 @@ $(function(){
 	};
 
 	function setSlide(name){
-		var toLoad = '/pages/' + $(name).attr('href');
+		var toLoad = $(name).attr('href');
 		buttons.fadeOut();
 		content.animate({
 				opacity: 0,
@@ -91,7 +97,7 @@ $(function(){
 		showLoader();
 		headline.fadeOut();
 	   function loadContent() {
-		   $.getJSON(toLoad + '/json', function(data){
+		   $.getJSON('/pages/' + toLoad + '/json', function(data){
 			   if(data.align_title_in_image){
 				   page_title.attr('class', 'pageTitleFloat')
 			   }else{
@@ -122,8 +128,8 @@ $(function(){
 		}
 	}
 
-	function setButtons(slide){
-		buttons.hide().load(slide + '/buttons', function(){
+	function setButtons(slide_href){
+		buttons.hide().load('/pages/' + slide_href + '/buttons', function(){
 			buttons.fadeIn("slow");
 		})
 	}
