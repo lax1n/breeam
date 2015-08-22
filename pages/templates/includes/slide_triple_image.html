@@ -1,0 +1,46 @@
+<div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
+    <h1 id="headline">{{ first_slide.title }}</h1>
+</div>
+
+<div class="sliderContainer" id="content">
+    <div class="imgContainer">
+        <!-- Current Slide Image -->
+        <div class="row text-center">
+            <div class="col-xs-4">
+                <img src="{{ first_slide.image.url }}" alt="" id="image"/>
+            </div>
+            <div class="col-xs-4">
+                <img src="{{ first_slide.image.url }}" alt="" id="image"/>
+            </div>
+            <div class="col-xs-4">
+                <img src="{{ first_slide.image.url }}" alt="" id="image"/>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xs-4">
+                <h1>{{ first_slide.title }}</h1>
+            </div>
+            <div class="col-xs-4">
+                <h1>{{ first_slide.title }}</h1>
+            </div>
+            <div class="col-xs-4">
+                <h1>{{ first_slide.title }}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <svg class="circular">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+  </svg>
+</div>
+
+<!-- Timeline -->
+<div class="timelineContainer">
+    {% include 'includes/timeline.html' %}
+</div> <!-- timelineContainer -->
+
+<!-- Slide buttons -->
+<div class="navButtons" id="buttons"></div>
