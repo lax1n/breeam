@@ -120,34 +120,6 @@ header div:nth-child(3) img {
 	border: 2px solid rgb(100, 100, 100);
 }
 
-.arrow-left {
-	font-size: 4em;
-	color: rgb(70, 70, 70) !important;
-	z-index: 1;
-	opacity: 0.5;
-	transition: .3s;
-	position: fixed;
-	top: 50%;
-	left: 1%;
-}
-
-.arrow-right{
-	font-size: 4em;
-	color: rgb(70, 70, 70) !important;
-	z-index: 1;
-	opacity: 0.5;
-	transition: .3s;
-	position: fixed;
-	top: 50%;
-	right: 1%;
-}
-
-.arrow-left:hover, .arrow-right:hover{
-	color: rgb(150, 150, 150);
-	transform: scale(1.3);
-	opacity: 1;
-}
-
 .mainWrapper{
 	position: relative;
 	height: 85vh;
@@ -192,6 +164,8 @@ header div:nth-child(3) img {
 	margin: 0 auto;
 }
 
+/* --- tripple img template --- */
+
 .trippleImgTxt div a{
 	font-size: 1.5vw;
 	color: rgb(70, 70, 70) !important;
@@ -217,6 +191,36 @@ header div:nth-child(3) img {
 .trippleImgs a img{
 	max-height: 50vh;
 	margin-top: 4vh;
+}
+
+/* --- tripple img template end -- */
+
+.arrow-left {
+	font-size: 4em;
+	color: rgb(70, 70, 70) !important;
+	z-index: 1;
+	opacity: 0.5;
+	transition: .3s;
+	position: absolute;
+	top: 50%;
+	left: 1%;
+}
+
+.arrow-right{
+	font-size: 4em;
+	color: rgb(70, 70, 70) !important;
+	z-index: 1;
+	opacity: 0.5;
+	transition: .3s;
+	position: absolute;
+	top: 50%;
+	right: 1%;
+}
+
+.arrow-left:hover, .arrow-right:hover{
+	color: rgb(150, 150, 150);
+	transform: scale(1.3);
+	opacity: 1;
 }
 
 .timelineContainer{

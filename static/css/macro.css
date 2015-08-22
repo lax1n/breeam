@@ -8,8 +8,9 @@
 
 .macroWrapper img{
     transition: 0.5s;
+	margin: 10px;
 }
 
 .macroWrapper img:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
