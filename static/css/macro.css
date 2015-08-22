@@ -5,3 +5,11 @@
     position:relative;
     top:10vh;
 }
+
+.macroWrapper img{
+    transition: 0.5s;
+}
+
+.macroWrapper img:hover{
+    transform: scale(1.2);
+}

@@ -1,7 +1,7 @@
 <div class="row">
     {% for slide in slides %}
         <div class="col-xs-3">
-            <img src="{{ slide.image.url }}" class="img-responsive" />
+            <a href="{{ slide.slug }}" id="macro_url"><img src="{{ slide.image.url }}" class="img-responsive" /></a>
         </div>
     {% endfor %}
 </div>

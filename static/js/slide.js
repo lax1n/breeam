@@ -45,10 +45,28 @@ $(function(){
 			$('a.arrow-right').click(nextSlide);
 			$icon.on('click', function (){
 				if($(this).hasClass('is-open')){
+					$(this).toggleClass('is-open');
 					exitMacroView();
+				}else{
+					$(this).toggleClass('is-open');
+					showMacroView();
 				}
-  				$(this).toggleClass('is-open');
-				showMacroView();
+			});
+			$(document).on('click', '#macro_url', function() {
+				var slide_href = $(this).attr('href');
+				$.getJSON('/pages/' + slide_href + '/json', function(data){
+					$("#headline").text(data.title);
+					image.attr('src', data.image_src);
+					$icon.toggleClass('is-open');
+
+					//Update slide surroundings
+					$(".pagination").find(".selected").removeClass("selected");
+					$('.pagination a[href="' + slide_href + '"]').addClass("selected");
+					updateArrows();
+					//Exit macro view
+					exitMacroView();
+				});
+				return false;
 			});
 		};
 	}();
