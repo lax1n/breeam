@@ -1,16 +1,76 @@
 .macroWrapper {
     width:80%;
-    height:80vh;
+    height:70vh;
     margin:auto;
     position:relative;
-    top:10vh;
+    top:15vh;
 }
 
 .macroWrapper img{
     transition: 0.5s;
-	margin: 10px;
+	margin: 20px;
 }
 
 .macroWrapper img:hover{
     transform: scale(1.1);
+}
+
+
+/* -- funker ikke
+.macroWrapper div div a:visited img{
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+}
+
+*/
+
+
+.macroTooltip a[data-tooltip] {
+  position: relative;
+}
+
+.macroTooltip a[data-tooltip]::before,
+.macroTooltip a[data-tooltip]::after {
+  position: absolute;
+  display: none;
+  opacity: 0.85;
+}
+
+.macroTooltip a[data-tooltip]::before {
+  /*
+   * using data-tooltip instead of title so we 
+   * don't have the real tooltip overlapping
+   */
+  
+  content: attr(data-tooltip);
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  /* we don't want the text to wrap */
+  
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.macroTooltip a[data-tooltip]:hover::before,
+.macroTooltip a[data-tooltip]:hover::after {
+  display: block;
+}
+
+/* bottom tooltip */
+
+.macroTooltip a[data-tooltip][data-placement="bottom"]::before {
+  top: 100%;
+  left: 43%;
+  margin-top: 10px;
+}
+
+.macroTooltip a[data-tooltip][data-placement="bottom"]::after {
+  border-bottom-color: #000;
+  border-top: none;
+  top: 100%;
+  margin-top: 4px;
 }
