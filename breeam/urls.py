@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/logout/$', 'django.contrib.auth.views.logout', {'next_page': 'pages.views.index'}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'pages.views.index'),
+    url(r'^macro/$$', 'pages.views.macro'),
     url(r'^pages/(?P<slug>[^\.]+)/buttons', 'pages.views.show_buttons'),
     url(r'^pages/(?P<slug>[^\.]+)/json', 'pages.views.slide_json'),
     url(r'^pages/(?P<slug>[^\.]+)', 'pages.views.show_slide'),

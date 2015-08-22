@@ -16,6 +16,12 @@ def index(request):
                               context_instance=RequestContext(request))
 
 
+def macro(request):
+    return render_to_response("macro.html",
+                              {'slides': Slide.objects.all},
+                              context_instance=RequestContext(request))
+
+
 def show_slide(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
     return render_to_response("layouts/slide.html",
