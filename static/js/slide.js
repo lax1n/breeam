@@ -42,18 +42,28 @@ $(function(){
 				updateArrows();
 			});
 			content.swipe( {
-        		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) { 
-					prevSlide();
+        		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
+					if($(".pagination .selected").next().attr('href') != null){
+						nextSlide($(".pagination .selected").next());
+					}
         		},
-				
-				swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) { 
-					nextSlide();
-        		},  
+
+				swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
+					if($(".pagination .selected").prev().attr('href') != null){
+						prevSlide($(".pagination .selected").prev());
+					}
+        		},
 				threshold:75
-				
+
       		});
-			$('a.arrow-left').click(prevSlide);
-			$('a.arrow-right').click(nextSlide);
+			$('a.arrow-left').click(function(){
+				prevSlide(this);
+				return false;
+			});
+			$('a.arrow-right').click(function(){
+				nextSlide(this);
+				return false;
+			});
 			$icon.on('click', function (){
 				if($(this).hasClass('is-open')){
 					$(this).toggleClass('is-open');
@@ -178,18 +188,18 @@ $(function(){
 		});
 	}
 
-	function prevSlide(){
+	function prevSlide(prev){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
 		rightContentAnimation();
-		setSlide(this);
+		setSlide(prev);
 		updateArrows()
 		return false;
 	}
 
-	function nextSlide(){
+	function nextSlide(next){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
 		leftContentAnimation();
-		setSlide(this);
+		setSlide(next);
 		updateArrows()
 		return false;
 	}
