@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from pages.models import Slide, SlideButton
+from pages.models import Slide, SlideButton, SlideHeader, SlideImage
 from django.conf.urls import url, patterns
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
@@ -14,10 +14,20 @@ class SlideButtonInline(admin.StackedInline):
     extra = 3
 
 
+class SlideHeaderInline(admin.StackedInline):
+    model = SlideHeader
+    extra = 1
+
+
+class SlideImageInline(admin.StackedInline):
+    model = SlideImage
+    extra = 1
+
+
 class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
     list_display = ('title', 'position')
     prepopulated_fields = {'slug': ('title',)}
-    inlines = [SlideButtonInline]
+    inlines = [SlideHeaderInline, SlideImageInline, SlideButtonInline]
 
     @property
     def _list_url_args(self):
