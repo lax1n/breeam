@@ -1,5 +1,5 @@
 <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
-    <!--<h1 id="headline">{{ first_slide.title }}</h1>-->
+    <h1 id="headline">{{ first_slide.title }}</h1>
 </div>
 
 <div class="sliderContainer" id="content">
@@ -29,17 +29,17 @@
         <div class="row container-fluid text-center trippleImgs">
             <div class="col-xs-4">
                 <a href="#">
-                	<img class="img-responsive" src="../../../static/images/breeamImgs_builder.svg" alt="" id="image"/>
+                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
                 </a>
             </div>
             <div class="col-xs-4">
             	<a href="#">
-                	<img class="img-responsive" src="../../../static/images/breeamImgs_builder.svg" alt="" id="image"/>
+                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
 				</a>
             </div>
             <div class="col-xs-4">
             	<a href="#">
-                	<img class="img-responsive" src="../../../static/images/breeamImgs_builder.svg" alt="" id="image"/>
+                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
 				</a>
             </div>
         </div>

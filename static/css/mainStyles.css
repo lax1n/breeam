@@ -127,20 +127,26 @@ header div:nth-child(3) img {
 }
 
 #page_title{
-	width: 100%;
+	width: 90%;
 	height: 15vh;
+	margin: 0 auto;
 }
 
 #page_title h1{
 	font-size: 5vw !important;
-	float: left;
-	margin-left: 10%;
+	margin: 0 !important;
 }
 
 .pageTitleFloat h1{
 	z-index: 1;
 	position: absolute;
 	top: 12vh;
+}
+
+.pageTitleCenter h1{
+	text-align: center;
+	left: 0;
+	right: 0;
 }
 
 .sliderContainer{

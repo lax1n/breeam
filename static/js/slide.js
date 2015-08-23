@@ -41,6 +41,17 @@ $(function(){
 				$(this).addClass("selected");
 				updateArrows();
 			});
+			content.swipe( {
+        		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) { 
+					prevSlide();
+        		},
+				
+				swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) { 
+					nextSlide();
+        		},  
+				threshold:75
+				
+      		});
 			$('a.arrow-left').click(prevSlide);
 			$('a.arrow-right').click(nextSlide);
 			$icon.on('click', function (){
