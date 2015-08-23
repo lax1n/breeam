@@ -41,7 +41,7 @@ $(function(){
 				$(this).addClass("selected");
 				updateArrows();
 			});
-			content.swipe( {
+			$(".mainContainer").not(".arrow-left", ".arrow-right").swipe( {
         		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
 					if($(".pagination .selected").next().attr('href') != null){
 						nextSlide($(".pagination .selected").next());
