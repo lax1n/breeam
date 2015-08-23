@@ -43,13 +43,13 @@ $(function(){
 			});
 			$(".mainContainer").not(".arrow-left", ".arrow-right").swipe( {
         		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
-					if($(".pagination .selected").next().attr('href') != null){
+					if($(".pagination .selected").next().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
 						nextSlide($(".pagination .selected").next());
 					}
         		},
 
 				swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
-					if($(".pagination .selected").prev().attr('href') != null){
+					if($(".pagination .selected").prev().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
 						prevSlide($(".pagination .selected").prev());
 					}
         		},
