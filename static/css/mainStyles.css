@@ -149,19 +149,19 @@ header div:nth-child(3) img {
 	right: 0;
 }
 
-.sliderContainer{
+.content-container {
 	position: relative;
 	width: 100%;
 	max-width: 100%;
 	max-height: 60vh;
 }
 
-.imgContainer{
+.slider-content {
 	width: auto;
 	height: 60vh;
 }
 
-.imgContainer img{
+.slider-content img{
 	min-width: 30%;
 	max-width: 80%;
 	height: inherit !important;

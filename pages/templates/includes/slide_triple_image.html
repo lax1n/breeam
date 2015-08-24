@@ -1,62 +1,31 @@
-<div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
-    <h1 id="headline">{{ first_slide.title }}</h1>
-</div>
-
-<div class="sliderContainer" id="content">
-
-	<!-- Link for the next slide -->
-	<a href="#" class="arrow-left">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <!-- Link for the next slide -->
-	<a href="#" class="arrow-right">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-    
-    <div class="imgContainer">
-        <!-- Current Slide Image -->
-        <div class="row container-fluid text-center trippleImgTxt">
-            <div class="col-xs-4">
-                <a href="#">{{ first_slide.title }}</a>
-            </div>
-            <div class="col-xs-4">
-                <a href="#">{{ first_slide.title }}</a>
-            </div>
-            <div class="col-xs-4">
-                <a href="#">{{ first_slide.title }}</a>
-            </div>
+<div class="slider-content" id="slider">
+    <!-- Current Slide Image -->
+    <div class="row container-fluid text-center trippleImgTxt">
+        <div class="col-xs-4">
+            <a href="#" id="header-1">{{ first_slide.title }}</a>
         </div>
-        <div class="row container-fluid text-center trippleImgs">
-            <div class="col-xs-4">
-                <a href="#">
-                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
-                </a>
-            </div>
-            <div class="col-xs-4">
-            	<a href="#">
-                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
-				</a>
-            </div>
-            <div class="col-xs-4">
-            	<a href="#">
-                	<img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image"/>
-				</a>
-            </div>
+        <div class="col-xs-4">
+            <a href="#" id="header-2">{{ first_slide.title }}</a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#" id="header-3">{{ first_slide.title }}</a>
+        </div>
+    </div>
+    <div class="row container-fluid text-center trippleImgs">
+        <div class="col-xs-4">
+            <a href="#">
+                <img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image-1"/>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#">
+                <img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image-2"/>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#">
+                <img class="img-responsive" src="{{ first_slide.image.url }}" alt="" id="image-3"/>
+            </a>
         </div>
     </div>
 </div>
-
-<!-- Loader -->
-<div class="loader" id="loader">
-  <svg class="circular">
-    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-  </svg>
-</div>
-
-<!-- Timeline -->
-<div class="timelineContainer">
-    {% include 'includes/timeline.html' %}
-</div> <!-- timelineContainer -->
-
-<!-- Slide buttons -->
-<div class="navButtons" id="buttons"></div>

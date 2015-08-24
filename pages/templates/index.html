@@ -31,7 +31,45 @@
     <a class="loginBtn" href="{% url 'admin:login' %}">Sign in</a>
     
     <div class="mainWrapper" id="wrapper">
-    	{% include 'includes/slide.html' %}
+
+        <!-- Slide title -->
+        {% block slide-title %}
+            <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
+                <h1 id="headline">{{ first_slide.title }}</h1>
+            </div>
+        {% endblock slide-title %}
+
+        <!-- Slide content -->
+        <div class="content-container">
+            <!-- Link for the next slide -->
+            <a href="#" class="arrow-left">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <!-- Link for the next slide -->
+            <a href="#" class="arrow-right">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+    	    {% include 'includes/slide.html' %}
+        </div>
+
+        <!-- Loader -->
+        {% block loader %}
+            <div class="loader" id="loader">
+              <svg class="circular">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+              </svg>
+            </div>
+        {% endblock loader %}
+
+        <!-- Timeline -->
+        {% block timeline %}
+            <div class="timelineContainer">
+                {% include 'includes/timeline.html' %}
+            </div> <!-- timelineContainer -->
+        {% endblock timeline %}
+
+        <!-- Slide buttons -->
+        <div class="navButtons" id="buttons"></div>
     </div> <!-- mainWrapper -->
 
     <div id="macro_wrapper">

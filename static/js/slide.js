@@ -1,9 +1,8 @@
-
 $(function(){
 
 	var loader;
 	var $icon;
-	var content;
+	var slider;
 	var buttons;
 	var page_title;
 	var headline;
@@ -17,7 +16,7 @@ $(function(){
 		function setHTMLObjects(){
 			loader = $("#loader");
 			$icon = $('.magnifier-icon');
-			content = $("#content");
+			slider = $("#slider");
 			buttons = $("#buttons");
 			page_title = $("#page_title");
 			headline = $("#headline");
@@ -100,46 +99,52 @@ $(function(){
 	
 	function newPageClickEvent(){
 		//Check position of click
-		if($(this).position().left > $(".pagination .selected").position().left){
-			leftContentAnimation();
+        var obj = $(this);
+		if(obj.position().left > $(".pagination .selected").position().left){
+            $.when(leftContentAnimation()).then(function () {
+                setSlide(obj, 'right')
+            });
 		}else{
-			rightContentAnimation();
+            $.when(rightContentAnimation()).done(setSlide(this, 'left'));
 		}
-		setSlide(this);
     	return false;
 	};
 
-	function setSlide(name){
+	function setSlide(name, direction){
 		var toLoad = $(name).attr('href');
 		buttons.fadeOut();
-		content.animate({
-				opacity: 0,
-		   }, 500, loadContent);
-		showLoader();
+		//slider.animate({
+		//		opacity: 0,
+		//   }, 500, loadContent);
+        loadContent();
+        showLoader();
 		headline.fadeOut();
-	   function loadContent() {
-		   $.getJSON('/pages/' + toLoad + '/json', function(data){
-			   if(data.align_title_in_image){
-				   page_title.attr('class', 'pageTitleFloat')
-			   }else{
-				   page_title.attr('class', 'pageTitleStandard')
-			   }
-			   $("#headline").text(data.title);
-			   image.attr('src', data.image_src);
-			   showNewContent();
-			   setButtons(toLoad);
-			});
-    	}
+        return false;
+        function loadContent() {
+            $.getJSON('/pages/' + toLoad + '/json', function(data){
+                if(data.align_title_in_image){
+                    page_title.attr('class', 'pageTitleFloat')
+                }else{
+                    page_title.attr('class', 'pageTitleStandard')
+                }
+                $("#headline").text(data.title);
+                image.attr('src', data.image_src);
+                showNewContent();
+                setButtons(toLoad);
+            });
+        }
 
 		function showLoader(){
 			loader.fadeTo(1000, 1);
 		}
 
     	function showNewContent() {
-        	content.animate({
-				left: ["0%", "easeInQuint"],
-				opacity: 1
-		   }, 500, hideLoader());
+            if(direction == 'left'){
+        	    slider.show('slide', {direction: 'left'}, 1000);
+            }else if(direction == 'right'){
+                slider.show('slide', {direction: 'right'}, 1000);
+            }
+            hideLoader();
     	}
 
 		function hideLoader(){
@@ -173,34 +178,24 @@ $(function(){
 	}
 
 	function leftContentAnimation(){
-		content.animate({
-				left: ["-100%", "easeOutQuint"]
-		   }, 500, function(){
-			   		content.css("left", "100%");
-		});
+		slider.hide('slide', {direction: 'left'}, 1000);
 	}
 
 	function rightContentAnimation(){
-		content.animate({
-				left: ["100%", "easeOutQuint"]
-		   }, 500, function(){
-			   		content.css("left", "-100%");
-		});
+		slider.hide('slide', {direction: 'right'}, 1000);
 	}
 
 	function prevSlide(prev){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
-		rightContentAnimation();
-		setSlide(prev);
-		updateArrows()
+		$.when(rightContentAnimation()).then(setSlide(prev, 'left'));
+		updateArrows();
 		return false;
 	}
 
 	function nextSlide(next){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
-		leftContentAnimation();
-		setSlide(next);
-		updateArrows()
+		$.when(leftContentAnimation()).then(setSlide(next, 'right'));
+		updateArrows();
 		return false;
 	}
 
