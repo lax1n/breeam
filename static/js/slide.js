@@ -110,7 +110,7 @@ $(function(){
 	function setSlide(name, direction){
 		var toLoad = $(name).attr('href');
 		buttons.fadeOut();
-        slider.hide('slide', {direction: direction}, 1000, function () {
+        slider.hide('slide', {direction: direction, easing: 'easeInQuint'}, 1000, function () {
             loadContent();
         });
         showLoader();
@@ -136,7 +136,7 @@ $(function(){
 
     	function showNewContent() {
             direction = (direction == 'right') ? 'left' : 'right';
-            slider.show('slide', {direction: direction}, 1000);
+            slider.show('slide', {direction: direction, easing: 'easeInQuint'}, 1000);
             hideLoader();
     	}
 
