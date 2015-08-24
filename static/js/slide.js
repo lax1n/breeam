@@ -172,14 +172,14 @@ $(function(){
 
 	function prevSlide(prev){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
-		setSlide(prev, 'left');
+		setSlide(prev, 'right');
 		updateArrows();
 		return false;
 	}
 
 	function nextSlide(next){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
-		setSlide(next, 'right');
+		setSlide(next, 'left');
 		updateArrows();
 		return false;
 	}
