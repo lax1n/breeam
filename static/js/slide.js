@@ -100,10 +100,8 @@ $(function(){
 	function newPageClickEvent(){
 		//Check position of click
 		if($(this).position().left > $(".pagination .selected").position().left){
-            //leftContentAnimation();
             setSlide(this, 'right');
 		}else{
-            //rightContentAnimation();
             setSlide(this, 'left');
 		}
     	return false;
@@ -112,9 +110,6 @@ $(function(){
 	function setSlide(name, direction){
 		var toLoad = $(name).attr('href');
 		buttons.fadeOut();
-		//slider.animate({
-		//		opacity: 0,
-		//   }, 500, loadContent);
         slider.hide('slide', {direction: direction}, 1000, function () {
             loadContent();
         });
@@ -140,11 +135,8 @@ $(function(){
 		}
 
     	function showNewContent() {
-            if(direction == 'left'){
-        	    slider.show('slide', {direction: 'left'}, 1000);
-            }else if(direction == 'right'){
-                slider.show('slide', {direction: 'right'}, 1000);
-            }
+            direction = (direction == 'right') ? 'left' : 'right';
+            slider.show('slide', {direction: direction}, 1000);
             hideLoader();
     	}
 
@@ -176,14 +168,6 @@ $(function(){
 		}else{
 			$(".arrow-right").css("display", "none");
 		}
-	}
-
-	function leftContentAnimation(){
-		slider.hide('slide', {direction: 'left'}, 1000);
-	}
-
-	function rightContentAnimation(){
-		slider.hide('slide', {direction: 'right'}, 1000);
 	}
 
 	function prevSlide(prev){
