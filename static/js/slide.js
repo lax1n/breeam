@@ -99,13 +99,12 @@ $(function(){
 	
 	function newPageClickEvent(){
 		//Check position of click
-        var obj = $(this);
-		if(obj.position().left > $(".pagination .selected").position().left){
-            leftContentAnimation();
-            setTimeout(setSlide(obj, 'right'), 1000);
+		if($(this).position().left > $(".pagination .selected").position().left){
+            //leftContentAnimation();
+            setSlide(this, 'right');
 		}else{
-            rightContentAnimation();
-            setTimeout(setSlide(this, 'left'), 1000);
+            //rightContentAnimation();
+            setSlide(this, 'left');
 		}
     	return false;
 	};
@@ -116,7 +115,9 @@ $(function(){
 		//slider.animate({
 		//		opacity: 0,
 		//   }, 500, loadContent);
-        loadContent();
+        slider.hide('slide', {direction: direction}, 1000, function () {
+            loadContent();
+        });
         showLoader();
 		headline.fadeOut();
         return false;
@@ -187,14 +188,14 @@ $(function(){
 
 	function prevSlide(prev){
     	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
-		$.when(rightContentAnimation()).then(setSlide(prev, 'left'));
+		setSlide(prev, 'left');
 		updateArrows();
 		return false;
 	}
 
 	function nextSlide(next){
     	$(".pagination .selected").removeClass("selected").next().addClass("selected");
-		$.when(leftContentAnimation()).then(setSlide(next, 'right'));
+		setSlide(next, 'right');
 		updateArrows();
 		return false;
 	}
