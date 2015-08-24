@@ -101,11 +101,11 @@ $(function(){
 		//Check position of click
         var obj = $(this);
 		if(obj.position().left > $(".pagination .selected").position().left){
-            $.when(leftContentAnimation()).then(function () {
-                setSlide(obj, 'right')
-            });
+            leftContentAnimation();
+            setTimeout(setSlide(obj, 'right'), 1000);
 		}else{
-            $.when(rightContentAnimation()).done(setSlide(this, 'left'));
+            rightContentAnimation();
+            setTimeout(setSlide(this, 'left'), 1000);
 		}
     	return false;
 	};
