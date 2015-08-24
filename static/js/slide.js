@@ -100,9 +100,9 @@ $(function(){
 	function newPageClickEvent(){
 		//Check position of click
 		if($(this).position().left > $(".pagination .selected").position().left){
-            setSlide(this, 'right');
-		}else{
             setSlide(this, 'left');
+		}else{
+            setSlide(this, 'right');
 		}
     	return false;
 	};
