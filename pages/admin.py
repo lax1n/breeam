@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from pages.models import Slide, SlideButton, SlideHeader, SlideImage
+from pages.models import Slide, SlideButton, SlideHeader, SlideImage, Template
 from django.conf.urls import url, patterns
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
@@ -11,17 +11,29 @@ from django.core.urlresolvers import reverse
 
 class SlideButtonInline(admin.StackedInline):
     model = SlideButton
-    extra = 3
+    extra = 0
 
 
 class SlideHeaderInline(admin.StackedInline):
     model = SlideHeader
-    extra = 1
+
+    def get_extra(self, request, obj=None, **kwargs):
+        extra = 0
+        if obj:
+            extra = obj.template.headers - obj.slideheader_set.count()
+        return extra
+
+    def get_max_num(self, request, obj=None, **kwargs):
+
+        if obj:
+            return obj.template.headers
+        else:
+            return 0
 
 
 class SlideImageInline(admin.StackedInline):
     model = SlideImage
-    extra = 1
+    extra = 0
 
 
 class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
@@ -75,3 +87,4 @@ class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
 
 
 admin.site.register(Slide, SlideAdmin)
+admin.site.register(Template)

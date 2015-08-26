@@ -4,15 +4,21 @@ from mptt.models import MPTTModel, TreeForeignKey
 # Create your models here.
 
 
-class Templates(models.Model):
-    path_to_template = models.FileField(upload_to='templates/slider_layouts/')
+class Template(models.Model):
+    name = models.CharField(max_length=50, blank=True, null=True)
+    file_name = models.CharField(max_length=100, blank=True, null=True)
+    headers = models.IntegerField(blank=True, null=True, default=0)
+    images = models.IntegerField(blank=True, null=True, default=1)
+
+    def __str__(self):
+        return self.name
 
 
 class Slide(MPTTModel):
     title = models.CharField(max_length=50, unique=True, null=False)
     align_title_in_image = models.BooleanField(default=False, blank=True)
     slug = models.SlugField(unique=True) #Used to access slides and if url is needed then it will be used to give a SEO friendly URL
-    template = models.ForeignKey(Templates, blank=True, null=True)
+    template = models.ForeignKey(Template, null=True, default=1)
     image = models.FileField(upload_to='images/slide_images/', default='images/slide_images/default.jpg')
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
 
