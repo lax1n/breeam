@@ -1,6 +1,6 @@
 <div class="row">
     {% for slide in slides %}
-        <div class="col-xs-3 text-center macroTooltip">
+        <div class="col-xs-3 text-center macroLinks macroTooltip">
             <a href="{{ slide.slug }}" data-placement="bottom" data-tooltip="{{ slide.title }}" id="macro_url"><img src="{{ slide.image.url }}" class="img-responsive" /></a>
         </div>
     {% endfor %}

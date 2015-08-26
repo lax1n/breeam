@@ -87,7 +87,8 @@ header div:nth-child(3) img {
 	font-family: GeosansLight;
 	font-weight: bold;
 	font-size: 2em;
-	color: rgb(70, 70, 70);
+	color: rgb(100, 100, 100);
+	opacity: 0.6;
 	position: absolute;
 	top: 2%;
 	left: 20%;
@@ -96,7 +97,8 @@ header div:nth-child(3) img {
 
 .logo:hover{
 	text-decoration: none;
-	color: rgb(50, 50, 50);
+	color: rgb(20, 20, 20);
+	opacity: 1;
 }
 
 .loginBtn{
@@ -104,26 +106,29 @@ header div:nth-child(3) img {
 	font-weight: bold;
 	font-size: 1em;
 	color: rgb(70, 70, 70);
+	opacity: 0.6;
 	position: absolute;
 	top: 2%;
 	right: 20%;
 	z-index: 1;
 	padding: 5px 20px;
 	border-radius: 25px;
-	border: 2px solid rgb(70, 70, 70);
+	border: 2px solid rgb(100, 100, 100);
 	background-color: rgba(255, 255, 255, 0);
 }
 
 .loginBtn:hover{
 	text-decoration: none;
-	color: rgb(50, 50, 50);
-	border: 2px solid rgb(100, 100, 100);
+	color: rgb(20, 20, 20);
+	border: 2px solid rgb(20, 20, 20);
+	opacity: 1;
 }
 
 .mainWrapper{
 	position: relative;
 	height: 85vh;
 	top: 5vh;
+	z-index: 1;
 }
 
 #warning-message{
@@ -165,7 +170,7 @@ header div:nth-child(3) img {
 .pageTitleFloat h1{
 	z-index: 1;
 	position: absolute;
-	top: 12vh;
+	top: 30%;
 }
 
 .pageTitleCenter h1{
