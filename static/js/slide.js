@@ -55,6 +55,17 @@ $(function(){
 				threshold:75
 
       		});
+			
+			$('.magnifier-icon').mouseover(function(){
+				$(this).addClass("newBefore").css("opacity", "1");
+				$(".magnifier-handle, .magnifier-handle-x").css("background", "rgb(20, 20, 20)");
+			});
+			
+			$('.magnifier-icon').mouseleave(function(){
+				$(this).removeClass('newBefore').css("opacity", "0.6");
+				$(".magnifier-handle, .magnifier-handle-x").css("background", "rgb(100, 100, 100)");
+			});	
+				
 			$('a.arrow-left').click(function(){
 				prevSlide(this);
 				return false;
@@ -93,6 +104,15 @@ $(function(){
 					exitMacroView();
 				});
 				return false;
+			});
+			
+			$(".macroWrapper a").visited(function() {
+				$(this).css(
+					{
+						filter: "grayscale(100%)",
+						opacity: 0.5,
+					}
+				);
 			});
 		};
 	}();

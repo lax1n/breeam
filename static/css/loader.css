@@ -3,7 +3,8 @@
   position: absolute;
   display: none;
   overflow: hidden;
-  top: 30%;
+  z-index: -1;
+  top: 40%;
   left: 0;
   right: 0;
   bottom: 30%;
