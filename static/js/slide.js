@@ -7,6 +7,11 @@ $(function(){
 	var page_title;
 	var headline;
 	var image;
+
+	//Macro view variables
+	var interval = 12;
+	var start = 1;
+	var end = interval;
 	
 	var init = function(){
 		setHTMLObjects();
@@ -28,6 +33,7 @@ $(function(){
             $('div#timeline a:first-child').addClass("selected");
 			setButtons(first);
 			updateArrows();
+			initiate_macro_view_nav();
 		};
 		
 		function setEvents(){
@@ -120,6 +126,17 @@ $(function(){
 						opacity: 0.5,
 					}
 				);
+			});
+
+			$(document).on("click", "#macro_next", function () {
+				nextMacroView();
+			});
+			$(document).on("click", "#macro_prev", function () {
+				prevMacroView();
+			});
+
+			$(".macro_nav_a").click(function () {
+				setMacroView($(this).attr('href'))
 			});
 		};
 	}();
@@ -216,21 +233,60 @@ $(function(){
 		$("footer").fadeOut('slow');
 		$("#wrapper").fadeOut('slow', function(){
 			$("#macro_wrapper").hide();
-			$("#macro_wrapper").load('/macro/1/12/', function(){
+			$("#macro_wrapper").load('/macro/' + start + '/' + end + '/', function(){
 				$("#wrapper").css("display", "none");
 				$("#macro_wrapper").addClass("macroWrapper");
 				$("#macro_wrapper").fadeIn();
+				$("#macro_nav").fadeIn();
 			});
 		});
 	}
 
 	function exitMacroView(){
+		$("#macro_nav").fadeOut();
 		$("#macro_wrapper").fadeOut('slow', function(){
 			$("header").fadeIn('slow');
 			$("footer").fadeIn('slow');
 			$("#macro_wrapper").removeClass("macroWrapper");
 			$("#macro_wrapper").empty();
 			$("#wrapper").fadeIn();
+		});
+		start = 1;
+		end = interval;
+	}
+
+	function initiate_macro_view_nav(){
+		$(".macro_nav_a").each(function(){
+			$(this).attr('href', '/macro/' + start + '/' + end + '/');
+			start += interval;
+			end += interval;
+		});
+		start = 1;
+		end = interval;
+	}
+
+	function nextMacroView(){
+		start += interval;
+		end += interval;
+		setMacroView('/macro/' + start + '/' + end + '/');
+	}
+
+	function prevMacroView(){
+		if(start - interval < 1){
+			start = 1;
+			end = interval
+		}else{
+			start -= interval;
+			end -= interval;
+		}
+		setMacroView('/macro/' + start + '/' + end + '/');
+	}
+
+	function setMacroView(view){
+		$("#macro_wrapper").fadeOut(function(){
+			$("#macro_wrapper").load(view, function(){
+				$("#macro_wrapper").fadeIn();
+			});
 		});
 	}
 });

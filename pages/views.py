@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import JsonResponse
 from pages.models import Slide
-from django.core import serializers
+import math
 
 
 # Create your views here.
@@ -12,7 +12,8 @@ def index(request):
     return render_to_response("index.html",
                               {'slides': Slide.objects.all,
                                'first_slide': Slide.objects.first,
-                               'siblings': Slide.objects.all},
+                               'siblings': Slide.objects.all,
+                               'macro_pages': list(range(math.ceil(Slide.objects.count()/12)))},
                               context_instance=RequestContext(request))
 
 

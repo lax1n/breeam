@@ -78,6 +78,25 @@
 
     <div id="macro_wrapper">
     </div> <!-- macroWrapper -->
+    <div class="row text-center" id="macro_nav">
+        <ul class="pagination">
+            <li>
+                <a href="javascript:void(0)" aria-label="Previous" id="macro_prev">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            {% for macro_page in macro_pages %}
+                <li>
+                    <a href="javascript:void(0)" class="macro_nav_a">{{ forloop.counter }}</a>
+                </li>
+            {% endfor %}
+            <li>
+                <a href="javascript:void(0)" aria-label="Next" id="macro_next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <!-- Footer with decor items -->
     <footer>
