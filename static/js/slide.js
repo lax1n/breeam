@@ -153,15 +153,15 @@ $(function(){
 
 	function setSlide(name, direction){
 		var toLoad = $(name).attr('href');
-		//buttons.fadeOut();
+		$("#buttons").fadeOut();
         slider.hide('slide', {direction: direction, easing: 'easeInQuint'}, 1000, function () {
             loadContent();
         });
         showLoader();
-		//headline.fadeOut();
+		$("#headline").fadeOut();
         function loadContent() {
             $.get('/pages/' + toLoad + '/', function(data){
-				$("#page_title").html($(data).find("#page_title"));
+				$("#page_title").html($(data).find("#page_title div"));
 				$("#slider").html($(data).find("#slider"));
 				$("#buttons").html($(data).find("#buttons"));
                 /*if(data.align_title_in_image){
@@ -172,6 +172,7 @@ $(function(){
                 $("#headline").text(data.title);
                 image.attr('src', data.image_src);*/
                 showNewContent();
+				$("#buttons").fadeIn();
                 //setButtons(toLoad);
             });
         }
