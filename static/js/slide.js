@@ -158,10 +158,11 @@ $(function(){
             loadContent();
         });
         showLoader();
-		$("#headline").fadeOut();
+		headline.fadeOut();
         function loadContent() {
             $.get('/pages/' + toLoad + '/', function(data){
-				$("#page_title").html($(data).find("#page_title div"));
+				$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
+				headline.text($(data).find("#headline").text());
 				$("#slider").html($(data).find("#slider"));
 				$("#buttons").html($(data).find("#buttons"));
                 /*if(data.align_title_in_image){
@@ -172,8 +173,6 @@ $(function(){
                 $("#headline").text(data.title);
                 image.attr('src', data.image_src);*/
                 showNewContent();
-				$("#buttons").fadeIn();
-                //setButtons(toLoad);
             });
         }
 
@@ -189,7 +188,8 @@ $(function(){
 
 		function hideLoader(){
 			loader.fadeOut(function(){
-				headline.delay(500).fadeIn();
+				buttons.delay(1000).fadeIn();
+				headline.delay(1500).fadeIn();
 			});
 		}
 	}

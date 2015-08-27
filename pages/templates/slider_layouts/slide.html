@@ -1,8 +1,6 @@
 <div id="holder">
-    <div id="page_title">
-        <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}">
-            <h1 id="headline">{{ slide.title }}</h1>
-        </div>
+    <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
+        <h1 id="headline">{{ slide.title }}</h1>
     </div>
     <div class="slider-content" id="slider">
         <!-- Current Slide Image -->

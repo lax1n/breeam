@@ -38,10 +38,8 @@
 
         <!-- Slide title -->
         {% block slide-title %}
-            <div id="page_title">
-                <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}">
-                    <h1 id="headline">{{ first_slide.title }}</h1>
-                </div>
+            <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
+                <h1 id="headline">{{ first_slide.title }}</h1>
             </div>
         {% endblock slide-title %}
 
