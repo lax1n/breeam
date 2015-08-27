@@ -6,6 +6,15 @@
     top: 15vh;
 }
 
+#macro_nav{
+	display: none;
+	position: absolute;
+	top: 90%;
+	bottom: 10%;
+	left: 0;
+	right: 0;
+}
+
 .macroWrapper div div{
 	padding: 2vh 0 2vh 0;
 }
