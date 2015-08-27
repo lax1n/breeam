@@ -67,7 +67,8 @@
 
 .macroTooltip a[data-tooltip][data-placement="bottom"]::before {
   top: 50%;
-  left: 43%;
+  left: 25%;
+  right: 25%;
   z-index: 2;
 }
 
