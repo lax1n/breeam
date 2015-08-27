@@ -16,9 +16,9 @@ def index(request):
                               context_instance=RequestContext(request))
 
 
-def macro(request):
+def macro(request, start, end):
     return render_to_response("macro.html",
-                              {'slides': Slide.objects.all},
+                              {'slides': Slide.objects.all()[int(start)-1:int(end)]},
                               context_instance=RequestContext(request))
 
 
