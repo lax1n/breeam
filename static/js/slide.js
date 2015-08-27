@@ -205,6 +205,8 @@ $(function(){
 	}
 
 	function showMacroView(){
+		$("header").fadeOut('slow');
+		$("footer").fadeOut('slow');
 		$("#wrapper").fadeOut('slow', function(){
 			$("#macro_wrapper").hide();
 			$("#macro_wrapper").load('/macro/', function(){
@@ -217,6 +219,8 @@ $(function(){
 
 	function exitMacroView(){
 		$("#macro_wrapper").fadeOut('slow', function(){
+			$("header").fadeIn('slow');
+			$("footer").fadeIn('slow');
 			$("#macro_wrapper").removeClass("macroWrapper");
 			$("#macro_wrapper").empty();
 			$("#wrapper").fadeIn();
