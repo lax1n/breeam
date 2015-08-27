@@ -240,6 +240,7 @@ header div:nth-child(3) img {
 	position: fixed;
 	top: 50%;
 	left: 1%;
+	display: none;
 }
 
 .arrow-right{
@@ -251,6 +252,7 @@ header div:nth-child(3) img {
 	position: fixed;
 	top: 50%;
 	right: 1%;
+	display: none;
 }
 
 .arrow-left:hover, .arrow-right:hover{
