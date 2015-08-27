@@ -15,6 +15,14 @@
 	right: 0;
 }
 
+#macro_nav ul li{
+	opacity: 0.7;
+}
+
+#macro_nav ul li a{
+	color: rgb(20, 20, 20);
+}
+
 .macroWrapper div div{
 	padding: 2vh 0 2vh 0;
 }
