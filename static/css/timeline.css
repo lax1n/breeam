@@ -29,6 +29,14 @@
     text-decoration: none;
 }
 
+.pagination a:active {
+    text-decoration: none;
+}
+
+.pagination a.selected {
+    text-decoration: none;
+}
+
 .selected .pagination__dot{
 	transition: width 1s;
 	border-color: white;
