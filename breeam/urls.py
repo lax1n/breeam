@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^macro/(?P<start>\d+)/(?P<end>\d+)/$', 'pages.views.macro'),
     url(r'^pages/(?P<slug>[^\.]+)/buttons', 'pages.views.show_buttons'),
     url(r'^pages/(?P<slug>[^\.]+)/json', 'pages.views.slide_json'),
-    url(r'^pages/(?P<slug>[^\.]+)', 'pages.views.show_slide'),
+    url(r'^pages/(?P<slug>[^\.]+)/$', 'pages.views.show_slide'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]

@@ -25,7 +25,7 @@ def macro(request, start, end):
 
 def show_slide(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
-    return render_to_response("layouts/slide.html",
+    return render_to_response("slider_layouts/slide.html",
                               {'slide': slide,
                                'slide_prev': slide.get_previous_sibling,
                                'slide_next': slide.get_next_sibling,

@@ -153,24 +153,26 @@ $(function(){
 
 	function setSlide(name, direction){
 		var toLoad = $(name).attr('href');
-		buttons.fadeOut();
+		//buttons.fadeOut();
         slider.hide('slide', {direction: direction, easing: 'easeInQuint'}, 1000, function () {
             loadContent();
         });
         showLoader();
-		headline.fadeOut();
-        return false;
+		//headline.fadeOut();
         function loadContent() {
-            $.getJSON('/pages/' + toLoad + '/json', function(data){
-                if(data.align_title_in_image){
+            $.get('/pages/' + toLoad + '/', function(data){
+				$("#page_title").html($(data).find("#page_title"));
+				$("#slider").html($(data).find("#slider"));
+				$("#buttons").html($(data).find("#buttons"));
+                /*if(data.align_title_in_image){
                     page_title.attr('class', 'pageTitleFloat')
                 }else{
                     page_title.attr('class', 'pageTitleStandard')
                 }
                 $("#headline").text(data.title);
-                image.attr('src', data.image_src);
+                image.attr('src', data.image_src);*/
                 showNewContent();
-                setButtons(toLoad);
+                //setButtons(toLoad);
             });
         }
 
