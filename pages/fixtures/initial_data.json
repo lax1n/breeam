@@ -1,0 +1,22 @@
+[
+  {
+    "model": "pages.template",
+    "pk": 1,
+    "fields": {
+      "name": "0x headers, 1x images",
+      "file_name": "standard",
+      "headers": 0,
+      "images": 1
+    }
+  },
+  {
+    "model": "pages.template",
+    "pk": 2,
+    "fields": {
+      "name": "3x headers, 3x images",
+      "file_name": "triple",
+      "headers": 3,
+      "images": 3
+    }
+  }
+]

@@ -106,5 +106,9 @@ class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
         return redirect("/".join(self.url_args) + '/')
 
 
+class TemplateAdmin(admin.ModelAdmin):
+    list_display = ('name', 'headers', 'images')
+
+
 admin.site.register(Slide, SlideAdmin)
-admin.site.register(Template)
+admin.site.register(Template, TemplateAdmin)
