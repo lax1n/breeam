@@ -17,8 +17,6 @@
 	max-width: 100%;
 	height: 20vh;
 	opacity: 1;
-	display: block;
-	margin: 0 auto;
 }
 
 .macroLinks:hover{
@@ -43,18 +41,18 @@
 }
 
 
-.macroTooltip a[data-tooltip] {
+.macroTooltip[data-tooltip] {
   position: relative;
 }
 
-.macroTooltip a[data-tooltip]::before,
-.macroTooltip a[data-tooltip]::after {
+.macroTooltip[data-tooltip]::before,
+.macroTooltip[data-tooltip]::after {
   position: absolute;
   display: none;
   opacity: 0.85;
 }
 
-.macroTooltip a[data-tooltip]::before {
+.macroTooltip[data-tooltip]::before {
   /*
    * using data-tooltip instead of title so we 
    * don't have the real tooltip overlapping
@@ -72,23 +70,22 @@
   text-decoration: none;
 }
 
-.macroTooltip a[data-tooltip]:hover::before,
-.macroTooltip a[data-tooltip]:hover::after {
+.macroTooltip[data-tooltip]:hover::before,
+.macroTooltip[data-tooltip]:hover::after {
   display: block;
 }
 
 /* bottom tooltip */
 
 
-.macroTooltip a[data-tooltip][data-placement="bottom"]::before {
+.macroTooltip[data-tooltip][data-placement="bottom"]::before {
   top: 50%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  left: 25%;
+  right: 25%;
   z-index: 2;
 }
 
-.macroTooltip a[data-tooltip][data-placement="bottom"]::after {
+.macroTooltip[data-tooltip][data-placement="bottom"]::after {
   border-bottom-color: #000;
   border-top: none;
   z-index: 2;
