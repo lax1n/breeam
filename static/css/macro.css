@@ -7,16 +7,25 @@
 }
 
 .macroLinks{
-	display: block;
+	position: relative;
 	max-width: 100%;
 	height: 20vh;
 	transition: 0.3s;
+	margin-bottom: 20px;
 }
 
 .macroLinks img{
 	max-width: 100%;
 	height: 20vh;
 	opacity: 1;
+}
+
+.quad img{
+	height: 10vh;
+}
+
+.macroLinks .trippleImgs a img{
+	margin-top: 0vh;
 }
 
 .macroLinks:hover{

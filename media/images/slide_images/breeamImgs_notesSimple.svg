@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="127.847px" height="177.993px" viewBox="38.422 449.538 127.847 177.993"
+	 enable-background="new 38.422 449.538 127.847 177.993" xml:space="preserve">
+<filter  id="StainedFilter">
+	<feBlend  result="blend" in="SourceGraphic" in2="BackgroundImage" mode="multiply"></feBlend>
+	<feComposite  operator="in" result="comp" in="blend" in2="SourceAlpha"></feComposite>
+</filter>
+<pattern  x="200.5" y="750.5" width="1000" height="1000" patternUnits="userSpaceOnUse" id="BitmapFill_4" viewBox="0 -1000 1000 1000" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 1000,0 1000,-1000 0,-1000 		"/>
+		<g transform="scale(117750 168750)">
+			<image overflow="visible" width="141" height="203" xlink:href="9F8E5215.png"  transform="matrix(1 0 0 -1 -11.7744 16.875)">
+			</image>
+		</g>
+	</g>
+</pattern>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0.069" y="-1.668" width="959.999" height="542.399"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+</g>
+<g id="Shape" marker-end="none" marker-start="none" filter="url(#StainedFilter)">
+	<rect x="0.069" y="-1.668" fill="none" width="959.999" height="542.399"/>
+</g>
+<g id="Group_9">
+	<g id="Group_10">
+		<g id="Group_11">
+			<defs>
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="48.519" y="458.781" width="117.75" height="168.75">
+					<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+				</filter>
+			</defs>
+			<mask maskUnits="userSpaceOnUse" x="48.519" y="458.781" width="117.75" height="168.75" id="TranspMask_4">
+				
+					<pattern  id="SVGID_3_" xlink:href="#BitmapFill_4" patternTransform="matrix(1 0 0 -1 -151.9814 -18997.418)"  filter="url(#Adobe_OpacityMaskFilter)">
+				</pattern>
+				<rect x="-96" y="-54" fill="url(#SVGID_3_)" filter="url(#Adobe_OpacityMaskFilter)" width="1151.999" height="648"/>
+			</mask>
+			<path marker-end="none" marker-start="none" mask="url(#TranspMask_4)" fill="#D9D3BC" d="M48.519,458.781h117.75v168.75H48.519
+				V458.781z"/>
+			<path marker-end="none" marker-start="none" fill="#FFFFFF" d="M136.469,458.088L38.422,469.38l17.983,156.154l98.048-11.292
+				L136.469,458.088z"/>
+		</g>
+		<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M123.762,483.283
+			L53.73,491.48"/>
+		<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M125.045,497.478
+			l-70.032,8.194"/>
+		<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M127.548,512.785
+			l-55.488,6.185"/>
+		<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M129.214,527.752
+			l-70.03,8.195"/>
+	</g>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M50.146,472.527
+		l-1.427-12.829"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M62.407,471.164
+		l-1.428-12.83"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M75.388,469.719
+		l-1.425-12.826"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M88.339,467.98
+		l-1.426-12.831"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M100.634,466.913
+		l-1.428-12.827"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M112.894,465.552
+		l-1.425-12.829"/>
+	<path fill="none" stroke="#9FBFD1" stroke-width="3.482" stroke-linecap="round" stroke-miterlimit="79.8403" d="M125.877,464.107
+		l-1.426-12.828"/>
+</g>
+</svg>

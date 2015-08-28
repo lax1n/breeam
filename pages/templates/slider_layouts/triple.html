@@ -11,7 +11,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="row container-fluid text-center trippleImgs sliderImgs">
+        <div class="row container-fluid text-center trippleImgs">
             {% for image in slide.slideimage_set.all|slice:":3" %}
                 <div class="col-xs-4">
                     <a href="{{ image.url }}" target="_blank">

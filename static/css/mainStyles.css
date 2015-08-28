@@ -186,12 +186,12 @@ header div:nth-child(3) img {
 	height: 60vh;
 }
 
-.slider-content, .sliderImgs {
+.slider-content {
 	width: auto;
 	height: 60vh;
 }
 
-.slider-content div img{
+.slider-content img{
 	min-width: 30%;
 	max-width: 80%;
 	height: inherit !important;
@@ -230,6 +230,21 @@ header div:nth-child(3) img {
 }
 
 /* --- tripple img template end -- */
+
+/* --- quad img template --- */
+
+.quadImgTxt div a{
+	font-size: 1.3vw;
+	color: rgb(70, 70, 70) !important;
+	text-decoration: none !important;
+	margin: 0 !important;
+}
+
+.quadImgs a img{
+	max-height: 25vh;
+}
+
+/* --- quad img template end -- */
 
 .arrow-left {
 	font-size: 4em;

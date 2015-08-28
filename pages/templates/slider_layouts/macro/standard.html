@@ -1,10 +1,8 @@
-<div id="holder">
+	<div id="holder">
     <div class="slider-content" id="slider">
-    	<div class="sliderImgs">
         {% for image in slide.slideimage_set.all|slice:":1" %}
             <!-- Current Slide Image -->
             <img src="{{ image.image.url }}" alt="{{ image.description }}" />
         {% endfor %}
-        </div>
     </div>
 </div>
