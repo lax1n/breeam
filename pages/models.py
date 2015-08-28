@@ -5,7 +5,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Template(models.Model):
-    name = models.CharField(max_length=50, blank=True, null=True)
+    name = models.CharField(max_length=70, blank=True, null=True)
     file_name = models.CharField(max_length=100, blank=True, null=True)
     headers = models.IntegerField(blank=True, null=True, default=0)
     images = models.IntegerField(blank=True, null=True, default=1)
@@ -15,7 +15,7 @@ class Template(models.Model):
 
 
 class Slide(MPTTModel):
-    title = models.CharField(max_length=50, unique=True, null=False)
+    title = models.CharField(max_length=70, unique=True, null=False)
     center = models.BooleanField(default=False, blank=True)
     align_title_in_image = models.BooleanField(default=False, blank=True)
     slug = models.SlugField(unique=True) #Used to access slides and if url is needed then it will be used to give a SEO friendly URL
@@ -28,13 +28,13 @@ class Slide(MPTTModel):
 
 class SlideButton(models.Model):
     slide = models.ForeignKey(Slide)
-    name = models.CharField(max_length=20, unique=False)
+    name = models.CharField(max_length=40, unique=False)
     url = models.URLField(max_length=100, unique=False)
 
 
 class SlideHeader(models.Model):
     slide = models.ForeignKey(Slide)
-    header = models.CharField(max_length=20, unique=False)
+    header = models.CharField(max_length=50, unique=False)
     url = models.URLField(blank=True) # If header should have a link to it
 
     class Meta:
