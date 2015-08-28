@@ -6,6 +6,25 @@
     top: 15vh;
 }
 
+.macroLinks{
+	display: block;
+	max-width: 100%;
+	height: 20vh;
+	transition: 0.3s;
+}
+
+.macroLinks img{
+	max-width: 100%;
+	height: 20vh;
+	opacity: 1;
+	display: block;
+	margin: 0 auto;
+}
+
+.macroLinks:hover{
+    transform: scale(1.05);
+}
+
 #macro_nav{
 	display: none;
 	position: absolute;
@@ -23,28 +42,6 @@
 	color: rgb(20, 20, 20);
 }
 
-.macroWrapper div div{
-	padding: 2vh 0 2vh 0;
-}
-
-.macroWrapper img{
-	max-width: 100%;
-	height: 20vh;
-	opacity: 1;
-	display: block;
-	margin: 0 auto;
-}
-.macroWrapper div div{
-	transition: 0.3s;
-}
-
-.macroWrapper div div:hover{
-    transform: scale(1.05);
-}
-
-.macroWrapper a img{
-	opacity: 1;
-}
 
 .macroTooltip a[data-tooltip] {
   position: relative;
@@ -82,16 +79,17 @@
 
 /* bottom tooltip */
 
+
 .macroTooltip a[data-tooltip][data-placement="bottom"]::before {
   top: 50%;
-  left: 25%;
-  right: 25%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 2;
 }
 
 .macroTooltip a[data-tooltip][data-placement="bottom"]::after {
   border-bottom-color: #000;
   border-top: none;
-  top: 50%;
   z-index: 2;
 }

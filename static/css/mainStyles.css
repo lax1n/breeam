@@ -186,12 +186,12 @@ header div:nth-child(3) img {
 	height: 60vh;
 }
 
-.slider-content {
+.slider-content, .sliderImgs {
 	width: auto;
 	height: 60vh;
 }
 
-.slider-content img{
+.slider-content div img{
 	min-width: 30%;
 	max-width: 80%;
 	height: inherit !important;

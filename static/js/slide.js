@@ -292,7 +292,7 @@ $(function(){
         $(".macro_content").each(function () {
 			var element = $(this);
             $.get('/pages/' + $(this).attr('href') + '/', function(data){
-                element.html($(data).find("#slider").html());
+                element.html($(data).find("#slider .sliderImgs").html());
             });
         });
     }

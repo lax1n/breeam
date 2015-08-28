@@ -3,10 +3,12 @@
         <h1 id="headline">{{ slide.title }}</h1>
     </div>
     <div class="slider-content" id="slider">
+    	<div class="sliderImgs">
         {% for image in slide.slideimage_set.all|slice:":1" %}
             <!-- Current Slide Image -->
             <img src="{{ image.image.url }}" alt="{{ image.description }}" />
         {% endfor %}
+        </div>
     </div>
 
     <div id="buttons">
