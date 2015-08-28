@@ -290,9 +290,10 @@ $(function(){
 
 	function loadMacroContent(){
         $(".macro_content").each(function () {
-            alert($(this).attr('href'));
+            //alert('/pages/' + $(this).attr('href') + '/');
             $.get('/pages/' + $(this).attr('href') + '/', function(data){
-                $(this).html($(data).find("#slider").html());
+                //$(this).html($(data).find("#slider").html());
+				$(this).addClass('derp');
             });
         });
     }
