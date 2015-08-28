@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="124.554px" height="118.154px" viewBox="60.83 -54.639 124.554 118.154"
+	 enable-background="new 60.83 -54.639 124.554 118.154" xml:space="preserve">
+<filter  id="StainedFilter">
+	<feBlend  result="blend" in="SourceGraphic" in2="BackgroundImage" mode="multiply"></feBlend>
+	<feComposite  operator="in" result="comp" in="blend" in2="SourceAlpha"></feComposite>
+</filter>
+<pattern  x="200.5" y="750.5" width="1000" height="1000" patternUnits="userSpaceOnUse" id="BitmapFill_1" viewBox="0 -1000 1000 1000" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 1000,0 1000,-1000 0,-1000 		"/>
+		<g transform="scale(106500 107250)">
+			<image overflow="visible" width="128" height="129" xlink:href="CDAAC58A.png"  transform="matrix(1 0 0 -1 -10.6499 10.7246)">
+			</image>
+		</g>
+	</g>
+</pattern>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="0.069" y="-1.668" width="959.999" height="542.399"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+</g>
+<g id="Shape" marker-end="none" marker-start="none" filter="url(#StainedFilter)">
+	<rect x="0.069" y="-1.668" fill="none" width="959.999" height="542.399"/>
+</g>
+<g id="Group_2">
+	<g id="Group_3">
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="69.774" y="-43.736" width="106.5" height="107.25">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="69.774" y="-43.736" width="106.5" height="107.25" id="TranspMask_1">
+			
+				<pattern  id="SVGID_3_" xlink:href="#BitmapFill_1" patternTransform="matrix(1 0 0 -1 -130.7266 -19622.9336)"  filter="url(#Adobe_OpacityMaskFilter)">
+			</pattern>
+			<rect x="-96" y="-54" fill="url(#SVGID_3_)" filter="url(#Adobe_OpacityMaskFilter)" width="1151.999" height="648"/>
+		</mask>
+		<path marker-end="none" marker-start="none" mask="url(#TranspMask_1)" fill="#D9D3BC" d="M69.774-43.736h106.5v107.25h-106.5
+			V-43.736z"/>
+		<path marker-end="none" marker-start="none" fill="#FFFFFF" d="M107.087,50.216C78.255,46.702,57.707,20.45,61.221-8.382
+			s29.766-49.38,58.598-45.866c28.832,3.515,49.381,29.767,45.866,58.599C162.171,33.182,135.919,53.73,107.087,50.216z"/>
+	</g>
+	<path marker-end="none" marker-start="none" fill="#E2E3CD" d="M110.756,46.326C89.015,43.677,73.522,23.88,76.171,2.139
+		c2.649-21.741,22.446-37.234,44.187-34.585c21.741,2.649,37.234,22.445,34.585,44.187S132.497,48.975,110.756,46.326z"/>
+	
+		<path marker-end="none" marker-start="none" fill="#C27363" stroke="#FFFFFF" stroke-width="5.676" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" d="
+		M110.563,33.84C89.29,31.247,74.128,11.876,76.721-9.398s21.964-36.436,43.238-33.842c21.272,2.593,36.435,21.964,33.842,43.237
+		S131.837,36.433,110.563,33.84z"/>
+	<path marker-end="none" marker-start="none" fill="#FFFFFF" d="M183.646,13.905l1.738-10.493L151.017-2.28l-1.738,10.492
+		L183.646,13.905z"/>
+	
+		<path fill="none" stroke="#A24F3F" stroke-width="11.683" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" d="
+		M89.156,0.576c-3.856-20.564,11.644-33.647,29.31-32.283"/>
+	
+		<path fill="none" stroke="#A24F3F" stroke-width="9.346" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="79.8403" d="
+		M101.354-4.723c-0.677-7.988,6.318-15.167,14.206-13.563"/>
+</g>
+</svg>
