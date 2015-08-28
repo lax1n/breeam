@@ -170,7 +170,7 @@ header div:nth-child(3) img {
 .pageTitleFloat h1{
 	z-index: 1;
 	position: absolute;
-	top: 30%;
+	top: 25%;
 }
 
 .pageTitleCenter h1{
