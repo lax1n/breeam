@@ -24,6 +24,14 @@ def macro(request, start, end):
                               context_instance=RequestContext(request))
 
 
+def macro_friendly_slide(request, slug):
+    slide = get_object_or_404(Slide, slug=slug)
+    template = slide.template.file_name
+    return render_to_response("slider_layouts/macro/" + template + ".html",
+                              {'slide': slide},
+                              context_instance=RequestContext(request))
+
+
 def show_slide(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
     template = slide.template.file_name

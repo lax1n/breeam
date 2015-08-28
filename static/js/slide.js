@@ -291,8 +291,8 @@ $(function(){
 	function loadMacroContent(){
         $(".macro_content").each(function () {
 			var element = $(this);
-            $.get('/pages/' + $(this).attr('href') + '/', function(data){
-                element.html($(data).find("#slider .sliderImgs").html());
+            $.get('/macro-friendly/' + $(this).attr('href') + '/', function(data){
+                element.html($(data).find("#slider").html());
             });
         });
     }
