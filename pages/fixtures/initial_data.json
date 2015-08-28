@@ -18,5 +18,15 @@
       "headers": 3,
       "images": 3
     }
+  },
+  {
+    "model": "pages.template",
+    "pk": 3,
+    "fields": {
+      "name": "4x headers, 4x images",
+      "file_name": "quad",
+      "headers": 4,
+      "images": 4
+    }
   }
 ]
