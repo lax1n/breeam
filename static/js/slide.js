@@ -32,7 +32,7 @@ $(function(){
 			var first = $('div#timeline a:first-child').attr('href');
 			//Set correct slide content
 			$.get('/pages/' + first + '/', function(data){
-				$("#slider").html($(data).find("#slider"));
+				$("#slider").html($(data).find("#slider").html());
 			});
             $('div#timeline a:first-child').addClass("selected");
 			updateArrows();
@@ -104,7 +104,7 @@ $(function(){
             	$.get('/pages/' + slide_href + '/', function(data){
 					$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
 					headline.text($(data).find("#headline").text());
-					$("#slider").html($(data).find("#slider"));
+					$("#slider").html($(data).find("#slider").html());
 					$("#buttons").html($(data).find("#buttons"));
 
 
@@ -163,7 +163,7 @@ $(function(){
             $.get('/pages/' + toLoad + '/', function(data){
 				$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
 				headline.text($(data).find("#headline").text());
-				$("#slider").html($(data).find("#slider"));
+				$("#slider").html($(data).find("#slider").html());
 				$("#buttons").html($(data).find("#buttons"));
                 /*if(data.align_title_in_image){
                     page_title.attr('class', 'pageTitleFloat')
