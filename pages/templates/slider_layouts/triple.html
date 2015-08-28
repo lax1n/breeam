@@ -1,0 +1,28 @@
+<div id="holder">
+    <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }} {{ slide.center|yesno:"pageTitleCenter," }}" id="page_title">
+        <h1 id="headline">{{ slide.title }}</h1>
+    </div>
+    <div class="slider-content" id="slider">
+        <!-- Current Slide Image -->
+        <div class="row container-fluid text-center trippleImgTxt">
+            {% for header in slide.slideheader_set.all|slice:":3" %}
+                <div class="col-xs-4">
+                    <a href="{{ header.url }}" >{{ header.header }}</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row container-fluid text-center trippleImgs">
+            {% for image in slide.slideimage_set.all|slice:":3" %}
+                <div class="col-xs-4">
+                    <a href="{{ image.url }}">
+                        <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" />
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="buttons">
+        {% include 'includes/buttons.html' %}
+    </div>
+</div>

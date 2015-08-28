@@ -9,12 +9,13 @@ from django.core.urlresolvers import reverse
 # Register your models here.
 
 
-class SlideButtonInline(admin.StackedInline):
+class SlideButtonInline(admin.TabularInline):
     model = SlideButton
     extra = 0
+    max_num = 6
 
 
-class SlideHeaderInline(admin.StackedInline):
+class SlideHeaderInline(admin.TabularInline):
     model = SlideHeader
 
     def get_extra(self, request, obj=None, **kwargs):
@@ -24,20 +25,39 @@ class SlideHeaderInline(admin.StackedInline):
         return extra
 
     def get_max_num(self, request, obj=None, **kwargs):
-
         if obj:
             return obj.template.headers
-        else:
-            return 0
 
 
-class SlideImageInline(admin.StackedInline):
+class SlideImageInline(admin.TabularInline):
     model = SlideImage
-    extra = 0
+
+    def get_extra(self, request, obj=None, **kwargs):
+        extra = 0
+        if obj:
+            extra = obj.template.images - obj.slideimage_set.count()
+        return extra
+
+    def get_max_num(self, request, obj=None, **kwargs):
+        if obj:
+            return obj.template.headers
 
 
 class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
     list_display = ('title', 'position')
+    list_editable = ('title',)
+    fieldsets = [
+        ('Title', {
+            'fields': [('title', 'center', 'align_title_in_image'), 'slug']
+        }),
+        (None, {
+            'fields': ['template']
+        }),
+        ('Advanced', {
+            'classes': ('collapse',),
+            'fields': ('parent',)
+        })
+    ]
     prepopulated_fields = {'slug': ('title',)}
     inlines = [SlideHeaderInline, SlideImageInline, SlideButtonInline]
 

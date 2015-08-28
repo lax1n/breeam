@@ -9,9 +9,10 @@ import math
 
 
 def index(request):
+    first_slide = Slide.objects.first
     return render_to_response("index.html",
                               {'slides': Slide.objects.all,
-                               'first_slide': Slide.objects.first,
+                               'slide': first_slide,
                                'siblings': Slide.objects.all,
                                'macro_pages': list(range(math.ceil(Slide.objects.count()/12)))},
                               context_instance=RequestContext(request))
@@ -25,7 +26,8 @@ def macro(request, start, end):
 
 def show_slide(request, slug):
     slide = get_object_or_404(Slide, slug=slug)
-    return render_to_response("slider_layouts/slide.html",
+    template = slide.template.file_name
+    return render_to_response("slider_layouts/" + template + ".html",
                               {'slide': slide,
                                'slide_prev': slide.get_previous_sibling,
                                'slide_next': slide.get_next_sibling,

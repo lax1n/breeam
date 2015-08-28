@@ -38,8 +38,8 @@
 
         <!-- Slide title -->
         {% block slide-title %}
-            <div class="{{ first_slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }}" id="page_title">
-                <h1 id="headline">{{ first_slide.title }}</h1>
+            <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }} {{ slide.center|yesno:"pageTitleCenter," }}" id="page_title">
+                <h1 id="headline">{{ slide.title }}</h1>
             </div>
         {% endblock slide-title %}
 
@@ -54,8 +54,7 @@
                   <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
             <div class="slider-content" id="slider">
-                <!-- Current Slide Image -->
-                <img src="{{ first_slide.image.url }}" alt="" id="image"/>
+                <!-- Load content with jQuery -->
             </div>
         </div>
 
@@ -76,7 +75,15 @@
         {% endblock timeline %}
 
         <!-- Slide buttons -->
-        <div class="navButtons" id="buttons"></div>
+        <div class="navButtons" id="buttons">
+            <div class="btn-group">
+	            <ul class="nav-pills">
+    	            {% for button in slide.slidebutton_set.all %}
+        	            <li><a href="{{ button.url }}" class="btn btn-primary btn-lg" role="button">{{ button.name }}</a></li>
+                    {% endfor %}
+	            </ul>
+            </div>
+        </div>
     </div> <!-- mainWrapper -->
 
     <div id="macro_wrapper">

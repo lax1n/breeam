@@ -30,8 +30,11 @@ $(function(){
 		
 		function setStartUp(){
 			var first = $('div#timeline a:first-child').attr('href');
+			//Set correct slide content
+			$.get('/pages/' + first + '/', function(data){
+				$("#slider").html($(data).find("#slider"));
+			});
             $('div#timeline a:first-child').addClass("selected");
-			setButtons(first);
 			updateArrows();
 			initiate_macro_view_nav();
 		};
@@ -98,21 +101,18 @@ $(function(){
 			});
 			$(document).on('click', '#macro_url', function() {
 				var slide_href = $(this).attr('href');
-				$.getJSON('/pages/' + slide_href + '/json', function(data){
-					if(data.align_title_in_image){
-						page_title.attr('class', 'pageTitleFloat')
-					}else{
-						page_title.attr('class', 'pageTitleStandard')
-					}
-					$("#headline").text(data.title);
-					image.attr('src', data.image_src);
-					$icon.toggleClass('is-open');
+            	$.get('/pages/' + slide_href + '/', function(data){
+					$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
+					headline.text($(data).find("#headline").text());
+					$("#slider").html($(data).find("#slider"));
+					$("#buttons").html($(data).find("#buttons"));
 
+
+					$icon.toggleClass('is-open');
 					//Update slide surroundings
 					$(".pagination").find(".selected").removeClass("selected");
 					$('.pagination a[href="' + slide_href + '"]').addClass("selected");
 					updateArrows();
-					setButtons(slide_href);
 					//Exit macro view
 					exitMacroView();
 				});
