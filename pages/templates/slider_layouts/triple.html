@@ -7,14 +7,14 @@
         <div class="row container-fluid text-center trippleImgTxt">
             {% for header in slide.slideheader_set.all|slice:":3" %}
                 <div class="col-xs-4">
-                    <a href="{{ header.url }}" >{{ header.header }}</a>
+                    <a href="{{ header.url }}" target="_blank" >{{ header.header }}</a>
                 </div>
             {% endfor %}
         </div>
         <div class="row container-fluid text-center trippleImgs sliderImgs">
             {% for image in slide.slideimage_set.all|slice:":3" %}
                 <div class="col-xs-4">
-                    <a href="{{ image.url }}">
+                    <a href="{{ image.url }}" target="_blank">
                         <img class="img-responsive" src="{{ image.image.url }}" alt="{{ image.description }}" />
                     </a>
                 </div>

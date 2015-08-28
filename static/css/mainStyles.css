@@ -127,7 +127,7 @@ header div:nth-child(3) img {
 .mainWrapper{
 	position: relative;
 	height: 85vh;
-	top: 5vh;
+	top: 13vh;
 	z-index: 1;
 }
 
@@ -158,12 +158,12 @@ header div:nth-child(3) img {
 
 #page_title{
 	width: 80%;
-	height: 15vh;
-	margin: 0 auto;
+	height: 10vh;
+	margin: 0 auto 0 auto;
 }
 
 #page_title h1{
-	font-size: 5vw !important;
+	font-size: 4vw !important;
 	margin: 0 !important;
 }
 
@@ -411,7 +411,7 @@ footer div:nth-child(2) img {
 
 @media all and (max-width: 1366px) {
 	#page_title h1{
-		font-size: 4vw !important;
+		font-size: 3vw !important;
 	}
 }
 
