@@ -234,10 +234,31 @@ header div:nth-child(3) img {
 /* --- quad img template --- */
 
 .quadImgTxt div a{
-	font-size: 1.3vw;
+	font-size: 4em;
+	font-family: GeosansLight;
 	color: rgb(70, 70, 70) !important;
 	text-decoration: none !important;
 	margin: 0 !important;
+}
+
+.quadRow1  div div:nth-child(1) a{
+	float: right;
+	width: 80%;
+}
+
+.quadRow1  div div:nth-child(2) a{
+	float: left;
+	width: 80%;
+}
+
+.quadRow2  div div:nth-child(1) a{
+	float: right;
+	width: 80%;
+}
+
+.quadRow2  div div:nth-child(2) a{
+	float: left;
+	width: 80%;
 }
 
 .quadImgs a img{
