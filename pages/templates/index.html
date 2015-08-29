@@ -18,6 +18,15 @@
             <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
         </div>
     </header>
+    
+	<!-- Loader -->
+    {% block loader %}
+    	<div class="loader" id="loader">
+        	<svg class="circular">
+            	<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+		</div>
+	{% endblock loader %}
 
     <div id="magnifier">
 		<div class="magnifier-icon">
@@ -34,6 +43,7 @@
     
         <div id="warning-message">
         	<h2>This website does not support portrait mode</h2>
+            <img src="../../media/cellphoneTilt.png" />
         </div>
 
         <!-- Slide title -->
@@ -57,15 +67,6 @@
                 <!-- Load content with jQuery -->
             </div>
         </div>
-
-        <!-- Loader -->
-        {% block loader %}
-            <div class="loader" id="loader">
-              <svg class="circular">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-              </svg>
-            </div>
-        {% endblock loader %}
 
         <!-- Timeline -->
         {% block timeline %}

@@ -1,18 +1,13 @@
 
 .loader {
-  position: absolute;
   display: none;
   overflow: hidden;
-  z-index: -1;
-  top: 40%;
-  left: 0;
-  right: 0;
-  bottom: 30%;
+  z-index: 5;
   margin: 0px auto;
-  width: 100px;
-  height: 100px;
-  zoom: 2.4;
-  -moz-transform: scale(2.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
   opacity: 0;
 }
 
@@ -20,7 +15,15 @@
   -webkit-animation: rotate 2s linear infinite;
           animation: rotate 2s linear infinite;
   height: 100px;
-  position: relative;
+  position: absolute;
+  background-color: purple;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -ms-transform: scale(3); /* IE 9 */
+  -webkit-transform: scale(3); /* Safari */
+  transform: scale(3);
   width: 100px;
 }
 
