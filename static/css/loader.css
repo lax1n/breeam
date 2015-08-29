@@ -16,7 +16,6 @@
           animation: rotate 2s linear infinite;
   height: 100px;
   position: absolute;
-  background-color: purple;
   top: 50%;
   left: 0;
   right: 0;
@@ -37,15 +36,15 @@
 
 @-webkit-keyframes rotate {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(360deg) scale(3);
+            transform: rotate(360deg) scale(3);
   }
 }
 
 @keyframes rotate {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(360deg) scale(3);
+            transform: rotate(360deg) scale(3);
   }
 }
 @-webkit-keyframes dash {
