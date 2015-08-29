@@ -61,6 +61,13 @@ class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     inlines = [SlideHeaderInline, SlideImageInline, SlideButtonInline]
 
+    class Media:
+        js = (
+            '//code.jquery.com/jquery-1.11.3.min.js',
+            '//code.jquery.com/jquery-migrate-1.2.1.min.js',
+            'js/slide_admin.js',
+        )
+
     @property
     def _list_url_args(self):
         return (reverse('admin:index')[:-1], \
