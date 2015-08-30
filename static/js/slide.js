@@ -110,17 +110,14 @@ $(function(){
 					var new_decor_id = $(data).find('#decor-id').text();
 					if(decor_id != new_decor_id && new_decor_id != null){
 						decor_id = new_decor_id;
-						decor.fadeOut(function () {
-							var decor_src = [];
-							$(data).find('#decor-top img').each(function () {
-								decor_src.push($(this).attr('src'));
-							});
-							$(data).find('#decor-bot img').each(function () {
-								decor_src.push($(this).attr('img'));
-							});
-							updateDecor(decor_src)
-							decor.fadeIn('slow');
+						var decor_src = [];
+						$(data).find('#decor-top img').each(function () {
+							decor_src.push($(this).attr('src'));
 						});
+						$(data).find('#decor-bot img').each(function () {
+							decor_src.push($(this).attr('img'));
+						});
+						updateDecor(decor_src)
 					}
 					$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
 					headline.text($(data).find("#headline").text());
