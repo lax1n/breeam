@@ -1,6 +1,6 @@
 
 .loader {
-  position: absolute;
+  position: fixed;
   display: none;
   overflow: hidden;
   z-index: -1;
@@ -12,7 +12,8 @@
   width: 100px;
   height: 100px;
   opacity: 0;
-  transform: scale(2);
+  zoom: 2.4;
+  -moz-transform: scale(2.4);
 }
 
 .circular {
