@@ -33,14 +33,14 @@ class SlideImageInline(admin.TabularInline):
     model = SlideImage
 
     def get_extra(self, request, obj=None, **kwargs):
-        extra = 0
+        extra = 1
         if obj:
             extra = obj.template.images - obj.slideimage_set.count()
         return extra
 
     def get_max_num(self, request, obj=None, **kwargs):
         if obj:
-            return obj.template.headers
+            return obj.template.images
 
 
 class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
