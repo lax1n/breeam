@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from pages.models import Slide, SlideButton, SlideHeader, SlideImage, Template
+from pages.models import Slide, SlideButton, SlideHeader, SlideImage, Template, Decor
 from django.conf.urls import url, patterns
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
@@ -51,7 +51,7 @@ class SlideAdmin(MPTTModelAdmin, admin.ModelAdmin):
             'fields': [('title', 'center', 'align_title_in_image'), 'slug']
         }),
         (None, {
-            'fields': ['template']
+            'fields': ['decor', 'template']
         }),
         ('Advanced', {
             'classes': ('collapse',),
@@ -117,5 +117,20 @@ class TemplateAdmin(admin.ModelAdmin):
     list_display = ('name', 'headers', 'images')
 
 
+class DecorAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': ['name']
+        }),
+        ('Top Decor', {
+            'fields': [('top_image_1', 'top_image_2', 'top_image_3')]
+        }),
+        ('Bottom Decor', {
+            'fields': [('bottom_image_1', 'bottom_image_2')]
+        })
+    ]
+
+
 admin.site.register(Slide, SlideAdmin)
 admin.site.register(Template, TemplateAdmin)
+admin.site.register(Decor, DecorAdmin)

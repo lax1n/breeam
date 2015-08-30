@@ -1,14 +1,12 @@
 <div id="holder">
-    <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }} {{ slide.center|yesno:"pageTitleCenter," }}" id="page_title">
-        <h1 id="headline">{{ slide.title }}</h1>
-    </div>
+    {% include 'includes/title.html' %}
     <div class="slider-content" id="slider">
         {% for image in slide.slideimage_set.all|slice:":1" %}
             <!-- Current Slide Image -->
             <img src="{{ image.image.url }}" alt="{{ image.description }}" />
         {% endfor %}
     </div>
-
+    {% include 'includes/decor.html' %}
     <div id="buttons">
         {% include 'includes/buttons.html' %}
     </div>

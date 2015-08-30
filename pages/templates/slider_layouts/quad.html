@@ -1,7 +1,5 @@
 <div id="holder">
-    <div class="{{ slide.align_title_in_image|yesno:"pageTitleFloat,pageTitleStandard" }} {{ slide.center|yesno:"pageTitleCenter," }}" id="page_title">
-        <h1 id="headline">{{ slide.title }}</h1>
-    </div>
+    {% include 'includes/title.html' %}
     <div class="slider-content" id="slider">
         <div class="row quadRow1">
             <div class="row container-fluid text-center quadImgs">
@@ -40,7 +38,7 @@
             </div>
         </div>
     </div>
-
+    {% include 'includes/decor.html' %}
     <div id="buttons">
         {% include 'includes/buttons.html' %}
     </div>

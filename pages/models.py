@@ -14,11 +14,24 @@ class Template(models.Model):
         return self.name
 
 
+class Decor(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    top_image_1 = models.FileField(upload_to='images/decor/')
+    top_image_2 = models.FileField(upload_to='images/decor/')
+    top_image_3 = models.FileField(upload_to='images/decor/')
+    bottom_image_1 = models.FileField(upload_to='images/decor/')
+    bottom_image_2 = models.FileField(upload_to='images/decor/')
+
+    def __str__(self):
+        return self.name
+
+
 class Slide(MPTTModel):
     title = models.CharField(max_length=70, unique=True, null=False)
     center = models.BooleanField(default=False, blank=True)
     align_title_in_image = models.BooleanField(default=False, blank=True)
     slug = models.SlugField(unique=True) #Used to access slides and if url is needed then it will be used to give a SEO friendly URL
+    decor = models.ForeignKey(Decor, null=True, blank=True, default=1)
     template = models.ForeignKey(Template, null=True, default=1)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
 
