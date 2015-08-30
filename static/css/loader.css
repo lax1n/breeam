@@ -12,8 +12,7 @@
   width: 100px;
   height: 100px;
   opacity: 0;
-  zoom: 2.4;
-  -moz-transform: scale(2.4);
+  zoom: 300%;
 }
 
 .circular {
@@ -41,8 +40,8 @@
 
 @keyframes rotate {
   100% {
-    -webkit-transform: rotate(360deg) scale(2);
-            transform: rotate(360deg) scale(2);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @-webkit-keyframes dash {
@@ -100,4 +99,23 @@
   80%, 90% {
     stroke: #ffa700;
   }
+}
+
+
+@media all and (max-width: 1366px) {
+	.loader {
+		zoom: 250%;
+	}
+}
+
+
+@media all and (max-width: 1280px) {
+	.loader {
+		zoom: 200%;
+	}
+}
+
+
+@media all and (max-width: 1024px) {
+
 }
