@@ -9,13 +9,13 @@
     <!-- Header with decor items -->
     <header>
         <div>
-            <img src="{% static "images/breeamImgs_coffeeCup.svg" %}">
+            <img src="{{ slide.decor.top_image_1.url }}">
         </div>
         <div>
-            <img src="{% static "images/breeamImgs_smartPhone.svg" %}">
+            <img src="{{ slide.decor.top_image_2.url }}">
         </div>
         <div>
-            <img src="{% static "images/breeamImgs_notePinkPencil.svg" %}">
+            <img src="{{ slide.decor.top_image_3.url }}">
         </div>
     </header>
 
@@ -112,10 +112,10 @@
     <!-- Footer with decor items -->
     <footer>
         <div>
-            <img src="{% static "images/breeamImgs_notesBrownPencil.svg" %}">
+            <img src="{{ slide.decor.bottom_image_1.url }}">
         </div>
         <div>
-            <img src="{% static "images/breeamImgs_notesSimple.svg" %}">
+            <img src="{{ slide.decor.bottom_image_2.url }}">
         </div>
     </footer>    
 
