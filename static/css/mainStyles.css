@@ -245,7 +245,7 @@ header div:nth-child(3) img {
 /* --- quad img template --- */
 
 .quadImgTxt div a{
-	font-size: 3vw;
+	font-size: 5vh;
 	font-family: GeosansLight;
 	color: rgb(70, 70, 70) !important;
 	text-decoration: none !important;
