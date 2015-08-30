@@ -183,11 +183,8 @@ $(function(){
 					decor_id = new_decor_id;
 					decor.fadeOut(function () {
 						var decor_src = [];
-						$(data).find('#decor-top img').each(function () {
+						$(data).find('#decor img').each(function () {
 							decor_src.push($(this).attr('src'));
-						});
-						$(data).find('#decor-bot img').each(function () {
-							decor_src.push($(this).attr('img'));
 						});
 						updateDecor(decor_src)
 						decor.fadeIn('slow');
