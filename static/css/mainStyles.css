@@ -83,6 +83,38 @@ header div:nth-child(3) img {
 	left: 10vh;
 }
 
+#warning-message{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	background-color: rgb(241, 196, 15); 
+	display: none;
+}
+
+#warning-message h2{
+	position: absolute;
+	top: 20%;
+	left: 10%;
+	right: 10%;
+	text-align: center;
+	font-size: 7vh;
+	font-family: GeosansLight;
+	color: rgb(100, 100, 100);	
+}
+
+#warning-message img{
+	position: absolute;
+	margin: 0 auto;	
+	top: 50%;
+	left: 0;
+	right: 0;
+}
+
 .logo{
 	font-family: GeosansLight;
 	font-weight: bold;
@@ -131,40 +163,6 @@ header div:nth-child(3) img {
 	margin: 0 auto;
 	top: 13vh;
 	z-index: 1;
-}
-
-#warning-message{
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 5;
-	background-color: rgb(241, 196, 15);
-	background-image: url(../images/breeamBG2.svg);
-	background-repeat: repeat; 
-	display: none;
-}
-
-#warning-message h2{
-	position: fixed;
-	top: 20%;
-	bottom: 80%;
-	left: 10%;
-	right: 10%;
-	text-align: center;
-	font-size: 5em;
-	font-family: GeosansLight;
-	color: rgb(100, 100, 100);	
-}
-
-#warning-message img{
-	position: fixed;
-	top: 60%;
-	bottom: 40%;
-	left: 0;
-	right: 0;
-	margin: 0 auto;	
 }
 
 #page_title{
