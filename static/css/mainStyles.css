@@ -129,7 +129,7 @@ header div:nth-child(3) img {
 	width: 80%;
 	height: 85vh;
 	margin: 0 auto;
-	top: 15vh;
+	top: 13vh;
 	z-index: 1;
 }
 
@@ -273,7 +273,7 @@ header div:nth-child(3) img {
 }
 
 .quadImgs a img{
-	max-height: 25vh;
+	max-height: 20vh;
 }
 
 /* --- quad img template end -- */
