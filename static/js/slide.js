@@ -176,7 +176,6 @@ $(function(){
         function loadContent() {
             $.get('/pages/' + toLoad + '/', function(data){
 				var new_decor_id = $(data).find('#decor-id').text();
-				alert(new_decor_id);
 				if(decor_id != new_decor_id && new_decor_id.trim() != ''){
 					decor_id = new_decor_id;
 					decor.fadeOut(function () {
