@@ -28,5 +28,17 @@
       "headers": 4,
       "images": 4
     }
+  },
+  {
+    "model": "pages.decor",
+    "pk": 1,
+    "fields": {
+      "name": "Coffee, Smartphone, Note Pink Pen, Note Simple, Note Brown Pen",
+      "top_image_1": "images/decor/breeamImgs_coffeeCup.svg",
+      "top_image_2": "images/decor/breeamImgs_smartPhone.svg",
+      "top_image_3": "images/decor/breeamImgs_notePinkPencil.svg",
+      "bottom_image_1": "images/decor/breeamImgs_notesSimple.svg",
+      "bottom_image_2": "images/decor/breeamImgs_notesBrownPencil.svg"
+    }
   }
 ]

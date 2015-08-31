@@ -31,7 +31,7 @@ class Slide(MPTTModel):
     center = models.BooleanField(default=False, blank=True)
     align_title_in_image = models.BooleanField(default=False, blank=True)
     slug = models.SlugField(unique=True) #Used to access slides and if url is needed then it will be used to give a SEO friendly URL
-    decor = models.ForeignKey(Decor, null=True, blank=True)
+    decor = models.ForeignKey(Decor, null=True, blank=True, default=1)
     template = models.ForeignKey(Template, null=True, default=1)
     parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
 
