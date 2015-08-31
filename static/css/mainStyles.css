@@ -158,7 +158,7 @@ header div:nth-child(3) img {
 
 .mainWrapper{
 	position: relative;
-	width: 80%;
+	width: 100%;
 	height: 85vh;
 	margin: 0 auto;
 	top: 13vh;
@@ -190,9 +190,10 @@ header div:nth-child(3) img {
 
 .content-container {
 	position: relative;
-	width: 100%;
+	width: 80%;
 	max-width: 100%;
 	height: 60vh;
+	margin: 0 auto;
 }
 
 .slider-content {
