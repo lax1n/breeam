@@ -5,12 +5,7 @@
         {% else %}
             <a href="javascript:void(0)" class="macro_nav_a">
         {% endif %}
-            <div data-tooltip="{{ forloop.counter }}" class="pagination__dot"></div>
+            <div data-tooltip="Macro slide: {{ forloop.counter }}" class="pagination__dot"></div>
         </a>
     {% endfor %}
 </div>
-
-<!-- Use for macro arrows
-<a href="javascript:void(0)" aria-label="Previous" id="macro_prev"></a>
-<a href="javascript:void(0)" aria-label="Next" id="macro_next"></a>
--->
