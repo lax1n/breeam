@@ -5,7 +5,7 @@
         {% else %}
             <a href="javascript:void(0)" class="macro_nav_a">
         {% endif %}
-            <div data-tooltip="Macro slide: {{ forloop.counter }}" class="pagination__dot"></div>
+            <div title="{{ forloop.counter }}" class="pagination__dot tooltip"></div>
         </a>
     {% endfor %}
 </div>
