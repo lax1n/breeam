@@ -42,6 +42,7 @@ $(function(){
             $('div#timeline a:first-child').addClass("selected");
 			updateArrows();
 			initiate_macro_view_nav();
+			$('.tooltip').tooltipster();
 		};
 		
 		function setEvents(){

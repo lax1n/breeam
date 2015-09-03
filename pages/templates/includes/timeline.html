@@ -1,9 +1,9 @@
 {% for sibling in siblings %}
     <a href="{{ sibling.slug }}">
     {% if sibling == slide %}
-        <div data-tooltip="{{ sibling.title }}" class="pagination__dot pagination__dot--active"></div>
+        <div title="{{ sibling.title }}" class="pagination__dot pagination__dot--active tooltip"></div>
     {% else %}
-        <div data-tooltip="{{ sibling.title }}" class="pagination__dot"></div>
+        <div title="{{ sibling.title }}" class="pagination__dot tooltip"></div>
     {% endif %}
     </a>
 {% endfor %}
