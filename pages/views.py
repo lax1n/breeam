@@ -10,15 +10,23 @@ import math
 
 def index(request):
     first_slide = Slide.objects.first
+    timeline_interval = 3 #Get value from settings
     return render_to_response("index.html",
                               {'slides': Slide.objects.all,
                                'slide': first_slide,
                                'siblings': Slide.objects.all,
+                               'timeline_interval': timeline_interval,
                                'macro_pages': list(range(math.ceil(Slide.objects.count()/12)))},
                               context_instance=RequestContext(request))
 
 
+def timeline_json(request, start, end):
+    if int(start) <= 0: start = 1
+    return JsonResponse(dict(values=list(Slide.objects.all()[int(start)-1:int(end)].values('slug'))))
+
+
 def macro(request, start, end):
+    if int(start) <= 0: start = 1
     return render_to_response("macro.html",
                               {'slides': Slide.objects.all()[int(start)-1:int(end)]},
                               context_instance=RequestContext(request))

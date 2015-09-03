@@ -71,7 +71,9 @@
         <!-- Timeline -->
         {% block timeline %}
             <div class="timelineContainer">
-                {% include 'includes/timeline.html' %}
+                <div class="pagination" id="timeline">
+                    {% include 'includes/timeline.html' %}
+                </div>
             </div> <!-- timelineContainer -->
         {% endblock timeline %}
 
@@ -98,7 +100,7 @@
 		<a href="javascript:void(0)"id="macro_next" class="arrow-right">
         	<span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-        
+
         {% include 'includes/macro_timeline.html' %}
     </div>
 
@@ -113,6 +115,30 @@
     </footer>    
 
 </div> <!-- mainContent -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+    //Timeline maintainer
+    var interval = {{ timeline_interval }};
+    var start = interval + 1;
+    var end = interval*2 + 1;
+    var timeline = $('div#timeline');
+    //Initiate startup time line
+    //Done in django view
+    //Update time line
+    $('div#timeline a:last-child').on('click', function () {
+        //Get elements data
+        $.getJSON('/timeline/' + start + '/' + end, function (data) {
+            //Check if more elements exist
 
+            //
+
+        });
+
+        //Load new elements
+
+       alert('Last');
+    });
+</script>
 
 {% endblock content %}
+
