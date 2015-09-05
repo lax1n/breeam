@@ -47,7 +47,7 @@ $(function(){
 		
 		function setEvents(){
 			$('div#timeline a').click(newPageClickEvent);
-			$(".pagination a").click(function(e){
+			$("#timeline a").click(function(e){
 				e.preventDefault();
 				// Remove the selected class from the currently selected indicator
 				$(this).parent().parent().find(".selected").removeClass("selected");
@@ -55,16 +55,16 @@ $(function(){
 				$(this).addClass("selected");
 				updateArrows();
 			});
-			$(".mainContainer").not(".arrow-left", ".arrow-right").swipe( {
+			$(".mainContainer").not("#prev_slide", "#next_slide").swipe( {
         		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
-					if($(".pagination .selected").next().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
-						nextSlide($(".pagination .selected").next());
+					if($("#timeline .selected").next().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
+						nextSlide($("#timeline .selected").next());
 					}
         		},
 
 				swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
-					if($(".pagination .selected").prev().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
-						prevSlide($(".pagination .selected").prev());
+					if($("#timeline .selected").prev().attr('href') != null && !($("#macro_wrapper").hasClass("macroWrapper"))){
+						prevSlide($("#timeline .selected").prev());
 					}
         		},
 				threshold:75
@@ -72,9 +72,9 @@ $(function(){
 
 			$(document).keydown(function(e){
 				if(e.which == 39){ // Right arrow click
-					nextSlide($(".pagination .selected").next());
+					nextSlide($("#timeline .selected").next());
 				}else if (e.which == 37){ // Left arrow click
-					prevSlide($(".pagination .selected").prev());
+					prevSlide($("#timeline .selected").prev());
 				}
 			});
 
@@ -88,11 +88,11 @@ $(function(){
 				$(".magnifier-handle, .magnifier-handle-x").css("background", "rgb(100, 100, 100)");
 			});	
 				
-			$('a.arrow-left').click(function(){
+			$('a#prev_slide').click(function(){
 				prevSlide(this);
 				return false;
 			});
-			$('a.arrow-right').click(function(){
+			$('a#next_slide').click(function(){
 				nextSlide(this);
 				return false;
 			});
@@ -125,8 +125,8 @@ $(function(){
 
 					$icon.toggleClass('is-open');
 					//Update slide surroundings
-					$(".pagination").find(".selected").removeClass("selected");
-					$('.pagination a[href="' + slide_href + '"]').addClass("selected");
+					$("#timeline").find(".selected").removeClass("selected");
+					$('#timeline a[href="' + slide_href + '"]').addClass("selected");
 					updateArrows();
 					//Exit macro view
 					exitMacroView();
@@ -143,10 +143,12 @@ $(function(){
 				);
 			});
 
-			$(document).on("click", "#macro_next", function () {
+			$(document).on("click", "#macro_next", function (e) {
+				e.preventDefault();
 				nextMacroView();
 			});
-			$(document).on("click", "#macro_prev", function () {
+			$(document).on("click", "#macro_prev", function (e) {
+				e.preventDefault();
 				prevMacroView();
 			});
 
@@ -158,7 +160,7 @@ $(function(){
 	
 	function newPageClickEvent(){
 		//Check position of click
-		if($(this).position().left > $(".pagination .selected").position().left){
+		if($(this).position().left > $("#timeline .selected").position().left){
             setSlide(this, 'left');
 		}else{
             setSlide(this, 'right');
@@ -235,31 +237,31 @@ $(function(){
 	}
 
 	function updateArrows(){
-		var prev = $(".pagination .selected").prev().attr('href');
+		var prev = $("#timeline .selected").prev().attr('href');
 		if(prev != null){
-			$(".arrow-left").attr('href', prev);
-			$(".arrow-left").css("display", "block");
+			$("#prev_slide").attr('href', prev);
+			$("#prev_slide").css("display", "block");
 		}else{
-			$(".arrow-left").css("display", "none");
+			$("#prev_slide").css("display", "none");
 		}
-		var next = $(".pagination .selected").next().attr('href');
+		var next = $("#timeline .selected").next().attr('href');
 		if(next != null){
-			$(".arrow-right").attr('href', next);
-			$(".arrow-right").css("display", "block");
+			$("#next_slide").attr('href', next);
+			$("#next_slide").css("display", "block");
 		}else{
-			$(".arrow-right").css("display", "none");
+			$("#next_slide").css("display", "none");
 		}
 	}
 
 	function prevSlide(prev){
-    	$(".pagination .selected").removeClass("selected").prev().addClass("selected");
+    	$("#timeline .selected").removeClass("selected").prev().addClass("selected");
 		setSlide(prev, 'right');
 		updateArrows();
 		return false;
 	}
 
 	function nextSlide(next){
-    	$(".pagination .selected").removeClass("selected").next().addClass("selected");
+    	$("#timeline .selected").removeClass("selected").next().addClass("selected");
 		setSlide(next, 'left');
 		updateArrows();
 		return false;
@@ -268,6 +270,7 @@ $(function(){
 	function showMacroView(){
 		$("header").fadeOut('slow');
 		$("footer").fadeOut('slow');
+		updateMacroArrows();
 		$("#wrapper").fadeOut('slow', function(){
 			$("#macro_wrapper").hide();
 			$("#macro_wrapper").load('/macro/' + start + '/' + end + '/', function(){
@@ -320,12 +323,30 @@ $(function(){
 		setMacroView('/macro/' + start + '/' + end + '/');
 	}
 
+	function updateMacroArrows(){
+		var prev = $("#macro_nav .selected").prev().attr('href');
+		if(prev != null){
+			$("#macro_prev").attr('href', prev);
+			$("#macro_prev").css("display", "block");
+		}else{
+			$("#macro_prev").css("display", "none");
+		}
+		var next = $("#macro_nav .selected").next().attr('href');
+		if(next != null){
+			$("#macro_next").attr('href', next);
+			$("#macro_next").css("display", "block");
+		}else{
+			$("#macro_next").css("display", "none");
+		}
+	}
+
 	function setMacroView(view){
 		$("#macro_wrapper").fadeOut(function(){
 			$("#macro_wrapper").load(view, function(){
 				$("#macro_wrapper").fadeIn();
 			});
 		});
+		updateMacroArrows();
 	}
 
 	function loadMacroContent(){
