@@ -46,14 +46,16 @@ $(function(){
 		};
 		
 		function setEvents(){
-			$('div#timeline a').click(newPageClickEvent);
 			$("#timeline a").click(function(e){
 				e.preventDefault();
-				// Remove the selected class from the currently selected indicator
-				$(this).parent().parent().find(".selected").removeClass("selected");
-				// Make the clicked indicator the selected one
-				$(this).addClass("selected");
-				updateArrows();
+				if(!($(this).hasClass('selected'))){
+					newPageClickEvent($(this));
+					// Remove the selected class from the currently selected indicator
+					$(this).parent().parent().find(".selected").removeClass("selected");
+					// Make the clicked indicator the selected one
+					$(this).addClass("selected");
+					updateArrows();
+				}
 			});
 			$(".mainContainer").not("#prev_slide", "#next_slide").swipe( {
         		swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -153,22 +155,29 @@ $(function(){
 			});
 
 			$(".macro_nav_a").click(function (e) {
-				// Remove the selected class from the currently selected indicator
-				$(this).parent().parent().find(".selected").removeClass("selected");
-				// Make the clicked indicator the selected one
-				$(this).addClass("selected");
 				e.preventDefault();
-				setMacroView($(this).attr('href'))
+				if(!($(this).hasClass('selected'))){
+					//Update interval variables
+					var index = $('.macro_nav_a').index($(this)); //Index
+					start = 1 + (index * interval);
+					end = interval + (index * interval);
+
+					// Remove the selected class from the currently selected indicator
+					$(this).parent().parent().find(".selected").removeClass("selected");
+					// Make the clicked indicator the selected one
+					$(this).addClass("selected");
+					setMacroView($(this).attr('href'));
+				}
 			});
 		};
 	}();
 	
-	function newPageClickEvent(){
+	function newPageClickEvent(clicked){
 		//Check position of click
-		if($(this).position().left > $("#timeline .selected").position().left){
-            setSlide(this, 'left');
+		if(clicked.position().left > $("#timeline .selected").position().left){
+            setSlide(clicked, 'left');
 		}else{
-            setSlide(this, 'right');
+            setSlide(clicked, 'right');
 		}
     	return false;
 	};
