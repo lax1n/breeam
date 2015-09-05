@@ -199,13 +199,6 @@ $(function(){
 				headline.text($(data).find("#headline").text());
 				$("#slider").html($(data).find("#slider").html());
 				$("#buttons").html($(data).find("#buttons"));
-                /*if(data.align_title_in_image){
-                    page_title.attr('class', 'pageTitleFloat')
-                }else{
-                    page_title.attr('class', 'pageTitleStandard')
-                }
-                $("#headline").text(data.title);
-                image.attr('src', data.image_src);*/
                 hideLoader();
             });
         }
@@ -297,8 +290,6 @@ $(function(){
 			$("#macro_wrapper").empty();
 			$("#wrapper").fadeIn();
 		});
-		start = 1;
-		end = interval;
 	}
 
 	function initiate_macro_view_nav(){
