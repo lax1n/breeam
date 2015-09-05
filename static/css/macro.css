@@ -14,6 +14,11 @@
 	margin-bottom: 20px;
 }
 
+.macroLinks a{
+	position: relative;
+	text-align: center;
+}
+
 .macroLinks img{
 	max-width: 100%;
 	height: 20vh;
