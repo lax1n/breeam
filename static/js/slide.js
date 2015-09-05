@@ -152,8 +152,13 @@ $(function(){
 				prevMacroView();
 			});
 
-			$(".macro_nav_a").click(function () {
+			$(".macro_nav_a").click(function (e) {
+				e.preventDefault();
 				setMacroView($(this).attr('href'))
+				// Remove the selected class from the currently selected indicator
+				$(this).parent().parent().find(".selected").removeClass("selected");
+				// Make the clicked indicator the selected one
+				$(this).addClass("selected");
 			});
 		};
 	}();
@@ -278,7 +283,7 @@ $(function(){
 				$("#wrapper").css("display", "none");
 				$("#macro_wrapper").addClass("macroWrapper");
 				$("#macro_wrapper").fadeIn();
-				$("#macro_nav").fadeIn();
+				$("div#macro_nav").fadeIn();
 			});
 		});
 	}
@@ -307,12 +312,16 @@ $(function(){
 	}
 
 	function nextMacroView(){
+		//Update macro nav
+		$("#macro_nav .selected").removeClass("selected").next().addClass("selected");
 		start += interval;
 		end += interval;
 		setMacroView('/macro/' + start + '/' + end + '/');
 	}
 
 	function prevMacroView(){
+		//Update macro nav
+		$("#macro_nav .selected").removeClass("selected").prev().addClass("selected");
 		if(start - interval < 1){
 			start = 1;
 			end = interval
