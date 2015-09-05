@@ -153,12 +153,12 @@ $(function(){
 			});
 
 			$(".macro_nav_a").click(function (e) {
-				e.preventDefault();
-				setMacroView($(this).attr('href'))
 				// Remove the selected class from the currently selected indicator
 				$(this).parent().parent().find(".selected").removeClass("selected");
 				// Make the clicked indicator the selected one
 				$(this).addClass("selected");
+				e.preventDefault();
+				setMacroView($(this).attr('href'))
 			});
 		};
 	}();
@@ -352,6 +352,7 @@ $(function(){
 	function setMacroView(view){
 		$("#macro_wrapper").fadeOut(function(){
 			$("#macro_wrapper").load(view, function(){
+				loadMacroContent();
 				$("#macro_wrapper").fadeIn();
 			});
 		});
