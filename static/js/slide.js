@@ -46,7 +46,7 @@ $(function(){
 		};
 		
 		function setEvents(){
-			$("#timeline a").click(function(e){
+			$(document).on('click', "#timeline a", function(e){
 				e.preventDefault();
 				if(!($(this).hasClass('selected'))){
 					newPageClickEvent($(this));

@@ -1,9 +1,9 @@
-{% for sibling in siblings %}
-    <a href="{{ sibling.slug }}">
-    {% if sibling == slide %}
-        <div title="{{ sibling.title }}" class="pagination__dot pagination__dot--active tooltip"></div>
+{% for obj in timeline_objects %}
+    <a href="{{ obj.slug }}">
+    {% if obj == slide %}
+        <div title="{{ obj.title }}" class="pagination__dot pagination__dot--active tooltip"></div>
     {% else %}
-        <div title="{{ sibling.title }}" class="pagination__dot tooltip"></div>
+        <div title="{{ obj.title }}" class="pagination__dot tooltip"></div>
     {% endif %}
     </a>
 {% endfor %}

@@ -115,10 +115,11 @@
     </footer>    
 
 </div> <!-- mainContent -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript">
-    //Timeline maintainer
-    var interval = {{ timeline_interval }};
+    //Set global variables
+    timelineSize = {{ timeline_size }};
+
+    /*
     var start = interval + 1;
     var end = interval*2 + 1;
     var timeline = $('div#timeline');
@@ -136,7 +137,7 @@
 
         //Load new elements
 
-    });
+    });*/
 </script>
 
 {% endblock content %}
