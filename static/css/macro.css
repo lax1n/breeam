@@ -15,7 +15,6 @@
 }
 
 .macroLinks a{
-	position: relative;
 	text-align: center;
 }
 
@@ -35,6 +34,24 @@
 
 .macroLinks:hover{
     transform: scale(1.05);
+}
+
+.macroTooltip{
+	position: absolute;
+	top: 45%;
+	left: 0;
+	right: 0;
+	width: 50%;
+	margin: 0 auto;
+	z-index: 1;
+	text-decoration: none !important;
+	display: none;
+}
+
+.macroTooltip p{
+	background-color: white;
+	border-radius: 5px;
+	color: rgb(100, 100, 100);
 }
 
 #macro_nav{

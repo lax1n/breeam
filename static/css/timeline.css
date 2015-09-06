@@ -8,8 +8,7 @@
 }
 
 .pagination a{
-	display: inline-block;
-	margin: 10px;	
+	display: inline-block;	
 }
 
 .tooltipster-default{
@@ -20,6 +19,7 @@
 
 .tooltip{
 	opacity: 1 !important;
+	position: static !important;
 }
 
 .tooltipster-arrow{
