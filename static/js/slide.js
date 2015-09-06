@@ -298,19 +298,13 @@ $(function(){
 				$("#macro_wrapper").addClass("macroWrapper");
 				$("#macro_wrapper").fadeIn();
 				$("div#macro_nav").fadeIn();
-				$('.tooltip').tooltipster({
-					functionReady: function(origin, tooltip){
-          				var offset = $(this).offset();
-						console.log(this);
-						offset.top = offset.top + $("div.macroLinks").height()/2 - $(".tooltipster-base").height()/2;
-						offset.left = offset.left + $("div.macroLinks").width()/2 - $(".tooltipster-base").width()/2;
-						console.log(offset);
-          				$(".tooltipster-base").offset(offset);
-    				},
-					//offsetX: $("div.macroLinks").width()/2 * -1,
-					//position: 'bottom',
-					//offsetY: $("div.macroLinks").height()/2 * -1,
-					arrow: false	
+				$('.tooltip').tooltipster();
+				$(".macroLinks").mouseover(function(){
+					$(this).children(".macroTooltip").fadeIn(200)	
+				});
+				
+				$(".macroLinks").mouseleave(function(){
+					$(this).children(".macroTooltip").fadeOut(200)	
 				});
 			});
 		});
