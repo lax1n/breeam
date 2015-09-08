@@ -30,8 +30,11 @@ def timeline(request, start, end):
 
 def macro(request, start, end):
     if int(start) <= 0: start = 1
+    #Calculate column value based on number from settings
+    column_value = 3
     return render_to_response("macro.html",
-                              {'slides': Slide.objects.all()[int(start)-1:int(end)]},
+                              {'slides': Slide.objects.all()[int(start)-1:int(end)],
+                               'column_value': column_value},
                               context_instance=RequestContext(request))
 
 

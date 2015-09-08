@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from pages.models import Slide, SlideButton, SlideHeader, SlideImage, Template, Decor
+from pages.models import Slide, SlideButton, SlideHeader, SlideImage, Template, Decor, Setting
 from django.conf.urls import url, patterns
 from django.shortcuts import redirect
 from django.utils.safestring import mark_safe
@@ -134,3 +134,4 @@ class DecorAdmin(admin.ModelAdmin):
 admin.site.register(Slide, SlideAdmin)
 admin.site.register(Template, TemplateAdmin)
 admin.site.register(Decor, DecorAdmin)
+admin.site.register(Setting)

@@ -4,6 +4,24 @@ from mptt.models import MPTTModel, TreeForeignKey
 # Create your models here.
 
 
+class Value(models.Model):
+    timeline_size = models.IntegerField(max_length=100, blank=True, null=True)
+    macro_column_value = models.IntegerField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return self.timeline_size
+
+
+class Setting(models.Model):
+    name = models.CharField(max_length=70, blank=True, null=True)
+    site_name = models.CharField(max_length=255, blank=True, null=True)
+    site_title = models.CharField(max_length=255, blank=True, null=True)
+    timeline_and_macro_objects = models.ForeignKey(Value, null=True, default=1)
+
+    def __str__(self):
+        return self.name
+
+
 class Template(models.Model):
     name = models.CharField(max_length=70, blank=True, null=True)
     file_name = models.CharField(max_length=100, blank=True, null=True)

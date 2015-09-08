@@ -40,5 +40,31 @@
       "bottom_image_1": "images/decor/breeamImgs_notesSimple.svg",
       "bottom_image_2": "images/decor/breeamImgs_notesBrownPencil.svg"
     }
+  },
+  {
+    "model": "pages.value",
+    "pk": 1,
+    "fields": {
+      "timeline_size": 16,
+      "macro_column_value": 3
+    }
+  },
+  {
+    "model": "pages.value",
+    "pk": 2,
+    "fields": {
+      "timeline_size": 20,
+      "macro_column_value": 2
+    }
+  },
+  {
+    "model": "pages.setting",
+    "pk": 1,
+    "fields": {
+      "name": "standard",
+      "site_name": "site name",
+      "site_title": "site title",
+      "timeline_and_macro_objects": 1
+    }
   }
 ]
