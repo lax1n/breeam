@@ -22,12 +22,13 @@ def index(request):
                                'timeline_objects': Slide.objects.all()[:interval],
                                'interval': interval,
                                'macro_views': macro_views,
-                               'macro_pages': list(range(macro_views))},
+                               'macro_pages': list(range(macro_views + 2*macro_views))},
                               context_instance=RequestContext(request))
 
 
 def timeline(request, start, end):
-    if int(start) < 0: start = 0
+    if int(start) < 0:
+        start = 0
     #return JsonResponse(dict(values=list(Slide.objects.all()[int(start)-1:int(end)].values('slug'))))
     return render_to_response("includes/timeline.html",
                               {'timeline_objects': Slide.objects.all()[int(start):int(end)]},
@@ -35,7 +36,8 @@ def timeline(request, start, end):
 
 
 def macro(request, start, end):
-    if int(start) < 0: start = 0
+    if int(start) < 0:
+        start = 0
     #Calculate column value based on number from settings
     column_value = 3
     return render_to_response("macro.html",

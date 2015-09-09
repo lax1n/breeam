@@ -13,8 +13,8 @@ $(function(){
 	var decor_id;
 
 	//Macro view variables
-	var interval = 12;
-	var start = 1;
+	//var interval = 12;
+	var start = 0;
 	var end = interval;
 	
 	var init = function(){
@@ -324,10 +324,10 @@ $(function(){
 	function initiate_macro_view_nav(){
 		$(".macro_nav_a").each(function(){
 			$(this).attr('href', '/macro/' + start + '/' + end + '/');
-			start += interval;
-			end += interval;
+			start += interval - 2;
+			end += interval - 2;
 		});
-		start = 1;
+		start = 0;
 		end = interval;
 	}
 
@@ -342,8 +342,8 @@ $(function(){
 	function prevMacroView(){
 		//Update macro nav
 		$("#macro_nav .selected").removeClass("selected").prev().addClass("selected");
-		if(start - interval < 1){
-			start = 1;
+		if(start - interval < 0){
+			start = 0;
 			end = interval
 		}else{
 			start -= interval;
