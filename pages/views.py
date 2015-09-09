@@ -14,7 +14,8 @@ def index(request):
     interval = 6 #settings.timeline_and_macro_objects.interval
     site_name = settings.site_name
     site_title = settings.site_title
-    macro_views = math.ceil(Slide.objects.count()/interval)
+    slide_count = Slide.objects.count()/interval
+    macro_views = math.ceil(slide_count + 2*math.ceil(slide_count)/interval)
     return render_to_response("index.html",
                               {'site_name': site_name,
                                'site_title': site_title,
@@ -22,7 +23,7 @@ def index(request):
                                'timeline_objects': Slide.objects.all()[:interval],
                                'interval': interval,
                                'macro_views': macro_views,
-                               'macro_pages': list(range(macro_views + 2*macro_views))},
+                               'macro_pages': list(range(macro_views))},
                               context_instance=RequestContext(request))
 
 

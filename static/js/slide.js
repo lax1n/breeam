@@ -13,7 +13,6 @@ $(function(){
 	var decor_id;
 
 	//Macro view variables
-	//var interval = 12;
 	var start = 0;
 	var end = interval;
 	
@@ -170,9 +169,9 @@ $(function(){
 				e.preventDefault();
 				if(!($(this).hasClass('selected'))){
 					//Update interval variables
-					var index = $('.macro_nav_a').index($(this)); //Index
-					start = 1 + (index * interval);
-					end = interval + (index * interval);
+					//var index = $('.macro_nav_a').index($(this)); //Index
+					//start = 1 + (index * interval);
+					//end = interval + (index * interval);
 
 					// Remove the selected class from the currently selected indicator
 					$(this).parent().parent().find(".selected").removeClass("selected");
@@ -333,23 +332,16 @@ $(function(){
 
 	function nextMacroView(){
 		//Update macro nav
+		var href = $("#macro_nav .selected").next().attr("href");
 		$("#macro_nav .selected").removeClass("selected").next().addClass("selected");
-		start += interval;
-		end += interval;
-		setMacroView('/macro/' + start + '/' + end + '/');
+		setMacroView(href);
 	}
 
 	function prevMacroView(){
 		//Update macro nav
+		var href = $("#macro_nav .selected").prev().attr("href");
 		$("#macro_nav .selected").removeClass("selected").prev().addClass("selected");
-		if(start - interval < 0){
-			start = 0;
-			end = interval
-		}else{
-			start -= interval;
-			end -= interval;
-		}
-		setMacroView('/macro/' + start + '/' + end + '/');
+		setMacroView(href);
 	}
 
 	function updateMacroArrows(){
@@ -369,9 +361,9 @@ $(function(){
 		}
 	}
 
-	function setMacroView(view){
+	function setMacroView(href){
 		$("#macro_wrapper").fadeOut(function(){
-			$("#macro_wrapper").load(view, function(){
+			$("#macro_wrapper").load(href, function(){
 				loadMacroContent();
 				$("#macro_wrapper").fadeIn();
 			});

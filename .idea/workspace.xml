@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36887923">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="e#0#66#0" expanded="true" />
               </folding>
@@ -94,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slide.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="slide.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/slide.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.214286">
-              <caret line="327" column="31" selection-start-line="327" selection-start-column="31" selection-end-line="327" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.45307067">
+              <caret line="359" column="52" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -171,8 +171,8 @@
         <option value="$PROJECT_DIR$/pages/fixtures/initial_data.json" />
         <option value="$PROJECT_DIR$/static/js/timeline.js" />
         <option value="$PROJECT_DIR$/pages/templates/index.html" />
-        <option value="$PROJECT_DIR$/static/js/slide.js" />
         <option value="$PROJECT_DIR$/pages/views.py" />
+        <option value="$PROJECT_DIR$/static/js/slide.js" />
       </list>
     </option>
   </component>
@@ -1148,21 +1148,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/slide.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.214286">
-          <caret line="327" column="31" selection-start-line="327" selection-start-column="31" selection-end-line="327" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36887923">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
           <folding>
             <element signature="e#0#66#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/slide.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45307067">
+          <caret line="359" column="52" selection-start-line="359" selection-start-column="52" selection-end-line="359" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
