@@ -48,7 +48,7 @@ $(function(){
 			$(document).on('click', "#timeline a", function(e){
 				e.preventDefault();
 				if(!($(this).hasClass('selected'))){
-					newPageClickEvent($(this));
+					findClickPosition($(this));
 					// Remove the selected class from the currently selected indicator
 					$(this).parent().parent().find(".selected").removeClass("selected");
 					// Make the clicked indicator the selected one
@@ -168,11 +168,6 @@ $(function(){
 			$(".macro_nav_a").click(function (e) {
 				e.preventDefault();
 				if(!($(this).hasClass('selected'))){
-					//Update interval variables
-					//var index = $('.macro_nav_a').index($(this)); //Index
-					//start = 1 + (index * interval);
-					//end = interval + (index * interval);
-
 					// Remove the selected class from the currently selected indicator
 					$(this).parent().parent().find(".selected").removeClass("selected");
 					// Make the clicked indicator the selected one
@@ -182,8 +177,12 @@ $(function(){
 			});
 		};
 	}();
+
+	/*
+	 * SLIDE FUNCTIONS BEGIN
+	 */
 	
-	function newPageClickEvent(clicked){
+	function findClickPosition(clicked){
 		//Check position of click
 		if(clicked.position().left > $("#timeline .selected").position().left){
             setSlide(clicked, 'left');
@@ -242,18 +241,6 @@ $(function(){
 		}
 	}
 
-	function updateDecor(decor_srcs){
-		//Top decor
-		$('header img').each(function () {
-			$(this).attr('src', decor_srcs.shift());
-		});
-
-		//Bottom decor
-		$('footer img').each(function () {
-			$(this).attr('src', decor_srcs.shift());
-		});
-	}
-
 	function updateArrows(){
 		var prev = $("#timeline .selected").prev().attr('href');
 		if(prev != null){
@@ -285,6 +272,35 @@ $(function(){
 		return false;
 	}
 
+	/*
+	 * SLIDE FUNCTIONS END
+	 */
+
+
+	/*
+	 * DECOR FUNCTIONS BEGIN
+	 */
+
+	function updateDecor(decor_srcs){
+		//Top decor
+		$('header img').each(function () {
+			$(this).attr('src', decor_srcs.shift());
+		});
+
+		//Bottom decor
+		$('footer img').each(function () {
+			$(this).attr('src', decor_srcs.shift());
+		});
+	}
+
+	/*
+	 * DECOR FUNCTIONS END
+	 */
+
+	/*
+	 * MACRO VIEW FUNCTIONS BEGIN
+	 */
+	
 	function showMacroView(){
 		$("header").fadeOut('slow');
 		$("footer").fadeOut('slow');
@@ -321,13 +337,15 @@ $(function(){
 	}
 
 	function initiate_macro_view_nav(){
+		var first = 0;
+		var last = interval;
 		$(".macro_nav_a").each(function(){
-			$(this).attr('href', '/macro/' + start + '/' + end + '/');
-			start += interval - 2;
-			end += interval - 2;
+			$(this).attr('href', '/macro/' + first + '/' + last + '/');
+			first += interval - 2;
+			last += interval - 2;
 		});
-		start = 0;
-		end = interval;
+		first = 0;
+		last = interval;
 	}
 
 	function nextMacroView(){
@@ -379,4 +397,8 @@ $(function(){
             });
         });
     }
+	
+	/*
+	 * MACRO VIEW FUNCTIONS END
+	 */
 });

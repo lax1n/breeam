@@ -18,6 +18,14 @@ $(function(){
 		};
 
 		function setEvents(){
+            $(document).on('click', "a#next_slide", function(e){
+                e.preventDefault();
+                alert($(this).attr('href'));
+                if($(this).attr('href') == $("div#timeline a:last-child").attr('href')){
+                    alert('lol');
+                    //Initiate next timeline
+                }
+            });
             $(document).on('click', "div#timeline a:last-child", function (e) {
                 e.preventDefault();
                 processTimelineVariables('next');
@@ -29,33 +37,29 @@ $(function(){
 		};
 	}();
 
-    var current_direction = null;
     function processTimelineVariables(direction){
         var proceed = false;
         if(direction == 'prev' && view > 0){
-            start -= interval;
-            end -= interval;
+            prevTimelineUpdate();
             proceed = true;
-        }else if(direction == 'next' && view < macro_views){
-            start += interval;
-            end += interval;
+        }else if(direction == 'next' && view < macro_views - 1){
+            nextTimelineUpdate();
             proceed = true;
         }else{
             return false;
         }
-        //if(direction != current_direction){
-            //alert('yes!');
-            if(direction == 'next'){
-                start -= 2;
-                end -= 2;
-            }else if(direction == 'prev'){
-                start += 2;
-                end += 2;
-            }
-            //current_direction = direction;
-        //}
         if(proceed)
             updateTimeline(direction);
+    }
+
+    function prevTimelineUpdate(){
+        start -= interval + 2;
+        end -= interval + 2;
+    }
+
+    function nextTimelineUpdate(){
+        start += interval - 2;
+        end += interval - 2;
     }
 
     function updateTimeline(direction){
@@ -98,47 +102,5 @@ $(function(){
             }
         });
         return timelineData;
-    }
-
-    function nextTimeline(){
-        $.get('/timeline/' + start + '/' + end, function(data){
-            //Check if more timeline elements
-            if($(data).find('.pagination__dot').length > 1){
-                //Load new elements
-                timeline.fadeOut('slow', function () {
-                    /*timeline.load('/timeline/' + start + '/' + end, function(){
-                    });*/
-                    timeline.html($(data));
-                    $('div#timeline a:nth-child(2)').addClass('selected');
-                    timeline.fadeIn('slow', function () {
-                        //Update tooltips
-                        $('.tooltip').tooltipster();
-
-                        //Update arrows
-                    });
-                });
-                //Update timeline variables
-            }
-        });
-    }
-    function prevTimeline(){
-        $.get('/timeline/' + start + '/' + end, function(data){
-            //Check if more timeline elements
-            if($(data).find('.pagination__dot').length > 1){
-                //Load new elements
-                timeline.fadeOut('slow', function () {
-                    /*timeline.load('/timeline/' + start + '/' + end, function(){
-                    });*/
-                    timeline.html($(data));
-                    $('div#timeline a:nth-last-child(2)').addClass('selected');
-                    timeline.fadeIn('slow', function () {
-                        //Update tooltips
-                        $('.tooltip').tooltipster();
-
-                        //Update arrows
-                    });
-                });
-            }
-        });
     }
 });
