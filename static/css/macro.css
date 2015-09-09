@@ -6,6 +6,8 @@
     top: 15vh;
 }
 
+/* -- Macro page link settings -- */
+
 .macroLinks{
 	position: relative;
 	max-width: 100%;
@@ -24,12 +26,12 @@
 	opacity: 1;
 }
 
-.quad img{
-	height: 10vh;
-}
-
 .macroLinks .trippleImgs a img{
 	margin-top: 0vh;
+}
+
+.quad img{
+	height: 10vh;
 }
 
 .macroLinks:hover{
@@ -54,6 +56,8 @@
 	color: rgb(100, 100, 100);
 }
 
+/* -- Macro timeline settings --*/
+
 #macro_nav{
 	display: none;
 	position: absolute;
@@ -61,12 +65,4 @@
 	bottom: 10%;
 	left: 0;
 	right: 0;
-}
-
-#macro_nav ul li{
-	opacity: 0.7;
-}
-
-#macro_nav ul li a{
-	color: rgb(20, 20, 20);
 }
