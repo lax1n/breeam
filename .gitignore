@@ -47,3 +47,4 @@ Temporary Items
 .idea/workspace.xml
 .idea/dataSources.local.xml
 .idea/workspace.xml
+*.pyc
