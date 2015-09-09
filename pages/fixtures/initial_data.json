@@ -45,7 +45,7 @@
     "model": "pages.value",
     "pk": 1,
     "fields": {
-      "timeline_size": 16,
+      "interval": 12,
       "macro_column_value": 3
     }
   },
@@ -53,7 +53,7 @@
     "model": "pages.value",
     "pk": 2,
     "fields": {
-      "timeline_size": 20,
+      "interval": 20,
       "macro_column_value": 2
     }
   },
@@ -61,9 +61,9 @@
     "model": "pages.setting",
     "pk": 1,
     "fields": {
-      "name": "standard",
-      "site_name": "site name",
-      "site_title": "site title",
+      "name": "Standard",
+      "site_name": "Site name",
+      "site_title": "Site title",
       "timeline_and_macro_objects": 1
     }
   }

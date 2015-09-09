@@ -5,11 +5,11 @@ from mptt.models import MPTTModel, TreeForeignKey
 
 
 class Value(models.Model):
-    timeline_size = models.IntegerField(max_length=100, blank=True, null=True)
-    macro_column_value = models.IntegerField(max_length=100, blank=True, null=True)
+    interval = models.IntegerField(blank=True, null=True)
+    macro_column_value = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return self.timeline_size
+        return str(self.interval)
 
 
 class Setting(models.Model):

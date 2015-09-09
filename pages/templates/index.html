@@ -1,6 +1,6 @@
 {% extends 'layouts/layout.html' %}
 {% load staticfiles %}
-{% block title %}<title>Breeam</title>{% endblock title %}
+{% block title %}<title>{{ site_title }}</title>{% endblock title %}
 {% block content %}
 
 <!-- Main content, including slider, timeline and page buttons. -->
@@ -31,7 +31,7 @@
 		</div>
     </div>
 
-	<a class="logo" href="/">NGBC</a>
+	<a class="logo" href="/">{{ site_name }}</a>
     <!-- Link for admin -->
     <a class="loginBtn" href="{% url 'admin:login' %}">Sign in</a>
     
@@ -117,7 +117,8 @@
 </div> <!-- mainContent -->
 <script type="text/javascript">
     //Set global variables
-    timelineSize = {{ timeline_size }};
+    interval = {{ interval }};
+    macro_views = {{ macro_views }};
 
     /*
     var start = interval + 1;
