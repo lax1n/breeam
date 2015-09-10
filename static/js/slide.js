@@ -182,11 +182,11 @@ $(function(){
 			//TIMELINE EVENTS
             $(document).on('click', "div#timeline a:last-child", function (e) {
                 e.preventDefault();
-                processTimelineVariables('next');
+                changeTimeline('next');
             });
             $(document).on('click', "div#timeline a:first-child", function (e) {
                 e.preventDefault();
-                processTimelineVariables('prev');
+                changeTimeline('prev');
             });
 		};
 	}();
@@ -281,6 +281,9 @@ $(function(){
 	function nextSlide(next){
     	$("#timeline .selected").removeClass("selected").next().addClass("selected");
 		setSlide(next, 'left');
+		if(next == $("#timeline a:last-child").attr('href')){
+			
+		}
 		updateArrows();
 		return false;
 	}
@@ -419,7 +422,7 @@ $(function(){
 	 * TIMELINE FUNCTIONS BEGIN
 	 */
 
-    function processTimelineVariables(direction){
+    function changeTimeline(direction){
         var proceed = false;
         if(direction == 'prev' && view > 0){
             prevTimelineUpdate();
