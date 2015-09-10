@@ -329,14 +329,6 @@ $(function(){
 				$("#macro_wrapper").addClass("macroWrapper");
 				$("#macro_wrapper").fadeIn();
 				$("div#macro_nav").fadeIn();
-				$('.tooltip').tooltipster();
-				$(".macroLinks").mouseover(function(){
-					$(this).children(".macroTooltip").fadeIn(200)	
-				});
-				
-				$(".macroLinks").mouseleave(function(){
-					$(this).children(".macroTooltip").fadeOut(200)	
-				});
 			});
 		});
 	}
@@ -412,6 +404,14 @@ $(function(){
                 element.html($(data).find("#slider").html());
             });
         });
+		$('.tooltip').tooltipster();
+		$(".macroLinks").mouseover(function(){
+			$(this).children(".macroTooltip").fadeIn(200)	
+		});
+				
+		$(".macroLinks").mouseleave(function(){
+			$(this).children(".macroTooltip").fadeOut(200)	
+		});
     }
 	
 	/*
