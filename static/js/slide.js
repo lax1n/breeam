@@ -321,7 +321,7 @@ $(function(){
 	}
 
 	function exitMacroView(){
-		$("#macro_nav").fadeOut();
+		$("#macro_menu").fadeOut();
 		$("#macro_wrapper").fadeOut('slow', function(){
 			$("header").fadeIn('slow');
 			$("footer").fadeIn('slow');
