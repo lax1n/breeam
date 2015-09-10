@@ -11,11 +11,11 @@ import math
 def index(request):
     settings = Setting.objects.first()
     first_slide = Slide.objects.first
-    interval = 6 #settings.timeline_and_macro_objects.interval
+    interval = settings.timeline_and_macro_objects.interval
     site_name = settings.site_name
     site_title = settings.site_title
     slide_count = Slide.objects.count()/interval
-    macro_views = math.ceil(slide_count + 2*math.ceil(slide_count)/interval)
+    macro_views = math.ceil(slide_count + 2*math.ceil(slide_count-2)/interval)
     return render_to_response("index.html",
                               {'site_name': site_name,
                                'site_title': site_title,
@@ -30,7 +30,6 @@ def index(request):
 def timeline(request, start, end):
     if int(start) < 0:
         start = 0
-    #return JsonResponse(dict(values=list(Slide.objects.all()[int(start)-1:int(end)].values('slug'))))
     return render_to_response("includes/timeline.html",
                               {'timeline_objects': Slide.objects.all()[int(start):int(end)]},
                               context_instance=RequestContext(request))
@@ -39,8 +38,9 @@ def timeline(request, start, end):
 def macro(request, start, end):
     if int(start) < 0:
         start = 0
+    settings = Setting.objects.first()
     #Calculate column value based on number from settings
-    column_value = 3
+    column_value = settings.timeline_and_macro_objects.macro_column_value
     return render_to_response("macro.html",
                               {'slides': Slide.objects.all()[int(start):int(end)],
                                'column_value': column_value},
