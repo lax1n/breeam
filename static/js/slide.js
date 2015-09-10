@@ -104,11 +104,13 @@ $(function(){
 				$(".magnifier-handle, .magnifier-handle-x").css("background", "rgb(100, 100, 100)");
 			});	
 				
-			$('a#prev_slide').click(function(){
+			$('a#prev_slide').click(function(e){
+				e.preventDefault();
 				prevSlide(this);
 				return false;
 			});
-			$('a#next_slide').click(function(){
+			$('a#next_slide').click(function(e){
+				e.preventDefault();
 				nextSlide(this);
 				return false;
 			});
@@ -274,7 +276,7 @@ $(function(){
 	function prevSlide(prev){
     	$("#timeline .selected").removeClass("selected").prev().addClass("selected");
 		setSlide(prev, 'right');
-		if(prev == $("#timeline a:first-child").attr('href')){
+		if($(prev).attr('href') == $("#timeline a:first-child").attr('href')){
 			changeTimeline('prev');
 		}else{
 			updateArrows();
@@ -285,7 +287,7 @@ $(function(){
 	function nextSlide(next){
     	$("#timeline .selected").removeClass("selected").next().addClass("selected");
 		setSlide(next, 'left');
-		if(next == $("#timeline a:last-child").attr('href')){
+		if($(next).attr('href') == $("#timeline a:last-child").attr('href')){
 			changeTimeline('next');
 		}else{
 			updateArrows();
