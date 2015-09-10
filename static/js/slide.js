@@ -413,8 +413,13 @@ $(function(){
         });
 		$('.tooltip').tooltipster();
 		$(".macroLinks").mouseover(function(){
-			$(this).children(".macroTooltip").fadeIn(200)	
-		});
+			$(this).children(".macroTooltip").fadeIn(200);
+            if($(window).width() < 1024 && $(this).find(".macroTooltip p").text().length > 15){
+                $(this).find(".macroTooltip").css("top", "25%")
+            }else if($(window).width() > 1024 && $(this).find(".macroTooltip p").text().length > 15){
+                $(this).find(".macroTooltip").css("top", "45%");
+            }
+        });
 				
 		$(".macroLinks").mouseleave(function(){
 			$(this).children(".macroTooltip").fadeOut(200)	
