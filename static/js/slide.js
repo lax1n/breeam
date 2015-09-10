@@ -315,7 +315,7 @@ $(function(){
 				$("#wrapper").css("display", "none");
 				$("#macro_wrapper").addClass("macroWrapper");
 				$("#macro_wrapper").fadeIn();
-				$("div#macro_nav").fadeIn();
+				$("#macro_menu").fadeIn();
 			});
 		});
 	}
