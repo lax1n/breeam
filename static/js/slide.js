@@ -15,6 +15,7 @@ $(function(){
 
 	//Macro & Timeline view variables
     var view = 0; //Use to keep up which timeline is currently active, can correspond with macro view
+	var current_macro_view = 0; //Use to keep track of current viewed macro view
     var start = 0;
     var end = interval;
 	
@@ -123,33 +124,9 @@ $(function(){
 					showMacroView();
 				}
 			});
-			$(document).on('click', '#macro_url', function() {
-				var slide_href = $(this).attr('href');
-            	$.get('/pages/' + slide_href + '/', function(data){
-					var new_decor_id = $(data).find('#decor-id').text();
-					if(decor_id != new_decor_id &&  new_decor_id.trim() != ''){
-						decor_id = new_decor_id;
-						var decor_src = [];
-						$(data).find('#decor img').each(function () {
-							decor_src.push($(this).attr('src'));
-						});
-						updateDecor(decor_src)
-					}
-					$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
-					headline.text($(data).find("#headline").text());
-					$("#slider").html($(data).find("#slider").html());
-					$("#buttons").html($(data).find("#buttons"));
-
-
-					$icon.toggleClass('is-open');
-					//Update slide surroundings
-					$("#timeline").find(".selected").removeClass("selected");
-					$('#timeline a[href="' + slide_href + '"]').addClass("selected");
-					updateArrows();
-					//Exit macro view
-					exitMacroView();
-				});
-				return false;
+			$(document).on('click', '.macro_url', function(e) {
+				e.preventDefault();
+				goToSlide(this);
 			});
 			
 			$(".macroWrapper a").visited(function() {
@@ -325,12 +302,15 @@ $(function(){
 	 */
 	
 	function showMacroView(){
+		var macro_href = '/macro/' + start + '/' + end + '/';
 		$("header").fadeOut('slow');
 		$("footer").fadeOut('slow');
-		updateMacroArrows();
+		$("#macro_nav .selected").removeClass("selected");
+		$('#macro_nav a[href="' + macro_href + '"]').addClass("selected");
 		$("#wrapper").fadeOut('slow', function(){
 			$("#macro_wrapper").hide();
-			$("#macro_wrapper").load('/macro/' + start + '/' + end + '/', function(){
+			updateMacroArrows();
+			$("#macro_wrapper").load(macro_href, function(){
 				loadMacroContent();
 				$("#wrapper").css("display", "none");
 				$("#macro_wrapper").addClass("macroWrapper");
@@ -401,6 +381,7 @@ $(function(){
 				$("#macro_wrapper").fadeIn();
 			});
 		});
+		current_macro_view = $("#macro_nav .selected").index();
 		updateMacroArrows();
 	}
 
@@ -425,6 +406,60 @@ $(function(){
 			$(this).children(".macroTooltip").fadeOut(200)	
 		});
     }
+
+	function goToSlide(slide){
+		//Check if first-child
+		if($(slide).parent().is(':first-child') && current_macro_view != 0){
+			current_macro_view --;
+		}
+		//Check if last-child
+		else if($(slide).parent().is(':last-child') && current_macro_view != macro_views - 1){
+			current_macro_view ++;
+		}
+		//Check for view change
+		if(current_macro_view != view){
+
+			//Update the views
+			if(view > current_macro_view){
+				for(var i=0; i < view - current_macro_view; i++){
+					prevTimelineUpdate();
+				}
+			}else if(view < current_macro_view){
+				for(var i=0; i < current_macro_view - view; i++){
+					nextTimelineUpdate();
+				}
+			}else{
+				return false;
+			}
+			view = current_macro_view;
+			setTimelineData();
+			//Update tooltips
+			$('.tooltip').tooltipster();
+		}
+		var slide_href = $(slide).attr('href');
+		$.get('/pages/' + slide_href + '/', function(data){
+			var new_decor_id = $(data).find('#decor-id').text();
+			if(decor_id != new_decor_id &&  new_decor_id.trim() != ''){
+				decor_id = new_decor_id;
+				var decor_src = [];
+				$(data).find('#decor img').each(function () {
+					decor_src.push($(slide).attr('src'));
+				});
+				updateDecor(decor_src)
+			}
+			$("#page_title").attr('class', $(data).find("#page_title").attr('class'));
+			headline.text($(data).find("#headline").text());
+			$("#slider").html($(data).find("#slider").html());
+			$("#buttons").html($(data).find("#buttons"));
+			$icon.toggleClass('is-open');
+			//Update slide surroundings
+			$("#timeline").find(".selected").removeClass("selected");
+			$('#timeline a[href="' + slide_href + '"]').addClass("selected");
+			updateArrows();
+			//Exit macro view
+			exitMacroView();
+		});
+	}
 	
 	/*
 	 * MACRO VIEW FUNCTIONS END
@@ -486,6 +521,15 @@ $(function(){
             end -= interval + 2;
         }
     }
+
+	function setTimelineData(){
+		var data = getTimelineData();
+		if(data != null){
+			timeline.html(data);
+		}else{
+			return null;
+		}
+	}
 
     function getTimelineData(){
         var timelineData = null;

@@ -1,10 +1,6 @@
 <div class="pagination" id="macro_nav">
     {% for macro_page in macro_pages %}
-        {% if forloop.first %}
-            <a href="javascript:void(0)" class="macro_nav_a selected">
-        {% else %}
-            <a href="javascript:void(0)" class="macro_nav_a">
-        {% endif %}
+        <a href="javascript:void(0)" class="macro_nav_a">
             <div title="{{ forloop.counter }}" class="pagination__dot tooltip"></div>
         </a>
     {% endfor %}
