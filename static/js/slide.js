@@ -274,7 +274,11 @@ $(function(){
 	function prevSlide(prev){
     	$("#timeline .selected").removeClass("selected").prev().addClass("selected");
 		setSlide(prev, 'right');
-		updateArrows();
+		if(prev == $("#timeline a:first-child").attr('href')){
+			changeTimeline('prev');
+		}else{
+			updateArrows();
+		}
 		return false;
 	}
 
@@ -282,9 +286,10 @@ $(function(){
     	$("#timeline .selected").removeClass("selected").next().addClass("selected");
 		setSlide(next, 'left');
 		if(next == $("#timeline a:last-child").attr('href')){
-			
+			changeTimeline('next');
+		}else{
+			updateArrows();
 		}
-		updateArrows();
 		return false;
 	}
 
@@ -438,8 +443,10 @@ $(function(){
     }
 
     function prevTimelineUpdate(){
-        start -= interval + 2;
-        end -= interval + 2;
+		start -= interval;
+		start += 2;
+        end -= interval;
+		end += 2;
     }
 
     function nextTimelineUpdate(){
