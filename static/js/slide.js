@@ -472,8 +472,8 @@ $(function(){
                 timeline.fadeIn('slow', function () {
                     //Update tooltips
                     $('.tooltip').tooltipster();
-
                     //Update arrows
+					updateArrows();
                 });
             });
         }else if(data == null && direction == 'next'){
