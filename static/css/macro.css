@@ -9,36 +9,36 @@
 /* -- Macro page link settings -- */
 
 .macroLinks{
-	position: relative;
-	max-width: 100%;
-	height: 15vh;
-	transition: 0.3s;
-	margin-bottom: 20px;
+    position: relative;
+    max-width: 100%;
+    height: 15vh;
+    transition: 0.3s;
+    margin-bottom: 20px;
 }
 
 .macroLinks a{
-	text-align: center;
-    height: inherit;
+    text-align: center;
 }
 
 .macroLinks img{
-	max-width: 100%;
-	height :inherit;
-	opacity: 1;
+    max-width: 100%;
+    height: 15vh;
+    opacity: 1;
     margin: auto;
 }
 
+.macroLinks .trippleImgs a img{
+    margin-top: 0vh;
+}
+
 .quad img{
-	height: 7vh;
+height: 7vh;
 }
 
 .macroLinks:hover{
     transform: scale(1.05);
 }
 
-.macroSetting-2{
-
-}
 
 .macroTooltip{
 	position: absolute;
