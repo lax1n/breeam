@@ -46,14 +46,22 @@
     "pk": 1,
     "fields": {
       "interval": 12,
-      "macro_column_value": 3
+      "macro_column_value": 4
     }
   },
   {
     "model": "pages.value",
     "pk": 2,
     "fields": {
-      "interval": 20,
+      "interval": 16,
+      "macro_column_value": 3
+    }
+  },
+  {
+    "model": "pages.value",
+    "pk": 3,
+    "fields": {
+      "interval": 24,
       "macro_column_value": 2
     }
   },
