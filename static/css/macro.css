@@ -18,17 +18,14 @@
 
 .macroLinks a{
 	text-align: center;
+    height: inherit;
 }
 
 .macroLinks img{
 	max-width: 100%;
-	height: 15vh;
+	height :inherit;
 	opacity: 1;
     margin: auto;
-}
-
-.macroLinks .trippleImgs a img{
-	margin-top: 0vh;
 }
 
 .quad img{
@@ -37,6 +34,10 @@
 
 .macroLinks:hover{
     transform: scale(1.05);
+}
+
+.macroSetting-2{
+
 }
 
 .macroTooltip{

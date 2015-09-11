@@ -1,6 +1,6 @@
 <div class="row">
     {% for slide in slides %}
-        <div class="col-xs-{{ column_value }} text-center macroLinks">
+        <div class="col-xs-{{ column_value }} text-center macroLinks macroSetting-{{ column_value }}">
         	<a href="{{ slide.slug }}" class="macroTooltip"><p>{{ slide.title }}</p>
                 <a href="{{ slide.slug }}" class="macro_content macro_url">
                 </a>
