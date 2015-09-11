@@ -156,6 +156,10 @@ header div:nth-child(3) img {
 	opacity: 1;
 }
 
+.loginBtn:active, .loginBtn:visited{
+    text-decoration: none !important;
+}
+
 .mainWrapper{
 	position: relative;
 	width: 100%;

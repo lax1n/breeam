@@ -1,6 +1,6 @@
 <div id="holder">
     <div class="slider-content" id="slider">
-        <div class="row container-fluid text-center quad">
+        <div class="row container-fluid text-center macroQuad">
             {% for image in slide.slideimage_set.all|slice:":4" %}
                 <div class="col-xs-6">
                     <a href="{{ image.url }}">

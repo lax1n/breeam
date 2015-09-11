@@ -1,6 +1,6 @@
 <div id="holder">
     <div class="slider-content" id="slider">
-        <div class="row container-fluid text-center trippleImgs">
+        <div class="row container-fluid text-center macroTripple">
             {% for image in slide.slideimage_set.all|slice:":3" %}
                 <div class="col-xs-4">
                     <a href="{{ image.url }}" target="_blank">

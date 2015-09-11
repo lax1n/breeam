@@ -6,6 +6,10 @@
     top: 15vh;
 }
 
+.row{
+    margin: auto !important;
+}
+
 /* -- Macro page link settings -- */
 
 .macroLinks{
@@ -27,12 +31,16 @@
     margin: auto;
 }
 
-.macroLinks .trippleImgs a img{
-    margin-top: 0vh;
+.macroTripple{
+    width: 80%;
 }
 
-.quad img{
-height: 7vh;
+.macroQuad{
+    width: 80%;
+}
+
+.macroQuad img{
+    height: 8vh;
 }
 
 .macroLinks:hover{
