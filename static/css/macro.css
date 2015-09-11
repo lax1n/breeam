@@ -11,7 +11,7 @@
 .macroLinks{
 	position: relative;
 	max-width: 100%;
-	height: 20vh;
+	height: 15vh;
 	transition: 0.3s;
 	margin-bottom: 20px;
 }
@@ -22,8 +22,9 @@
 
 .macroLinks img{
 	max-width: 100%;
-	height: 20vh;
+	height: 15vh;
 	opacity: 1;
+    margin: auto;
 }
 
 .macroLinks .trippleImgs a img{
@@ -31,7 +32,7 @@
 }
 
 .quad img{
-	height: 10vh;
+	height: 7vh;
 }
 
 .macroLinks:hover{
